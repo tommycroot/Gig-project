@@ -2,6 +2,7 @@ import jwt
 from django.conf import settings
 import time
 from datetime import datetime, timedelta
+from rest_framework import status
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.response import Response
 from rest_framework.views import APIView
