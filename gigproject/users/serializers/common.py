@@ -30,4 +30,29 @@ class UserSerializer(serializers.ModelSerializer):
     # Meta with selected fields
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'profile_image', 'password', 'password_confirmation')
+        fields = '__all__'
+
+class UserGigs(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('gigs',)
+
+class UserUpcoming(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('upcoming',)
+
+class UserFollowing(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('following',)
+
+class UserInfo(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'profile_image', 'gigs', 'upcoming', 'id',)
+
+class Username(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'id')

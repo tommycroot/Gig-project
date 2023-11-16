@@ -1,7 +1,7 @@
-from django.contrib import admin
 from django.urls import path
-from .views import GigListView
+from .views import GigListView, GigDetailView
 
-urlpatterns = {
+urlpatterns = [
   path('', GigListView.as_view()),
-} 
+  path('<int:id>/', GigDetailView.as_view())
+] 
