@@ -1,4 +1,5 @@
 import jwt
+from datetime import date
 from django.conf import settings
 from django.contrib.auth.hashers import check_password
 from datetime import datetime, timedelta
@@ -89,81 +90,66 @@ class AllProfiles(APIView):
     
 class AddGigToGigsView(APIView):
     def put(self, request, id1, id2):
-        #Retrieve both the user profile and the gig
         user = User.objects.get(id=id1)
         gig = Gig.objects.get(id=id2)
-
-        #Serialize gig instance and save to variable
         serialized_gig = GigSerializer(gig)
-
-        #Save gig data to variable
         to_add = serialized_gig.data
-        
-        #Serialize User instance instance and save to variabe
-        serialize_user = UserGigs(user)
+        gig_date = datetime.strptime(to_add['date'], '%Y-%m-%d').date()
 
-        #Save User data to variable
-        to_update = serialize_user.data
+        # Check if the gig date is in the past
+        if gig_date < datetime.now().date():
+            serialize_user = UserGigs(user)
+            to_update = serialize_user.data
+            to_update['gigs'].append(to_add['id'])
+            final = UserGigs(user, to_update, partial=True)
+            final.is_valid(raise_exception=True)
+            final.save()
 
-        #Append the Gig ID to the User Collection
-        to_update['gigs'].append(to_add['id'])
+            upcoming = UserUpcoming(user)
+            upcoming_update = upcoming.data
+            
+            if to_add['id'] in upcoming_update['upcoming']:
+                upcoming_update['upcoming'].remove(to_add['id'])
+                final_upcoming_update = UserUpcoming(user, upcoming_update, partial=True)
+                final_upcoming_update.is_valid(raise_exception=True)
+                final_upcoming_update.save()
 
-        #Update/Validate/Save and return User with updated gigs field
-        final = UserGigs(user, to_update, partial=True)
-
-        final.is_valid(raise_exception=True)
-        final.save()
-
-        upcoming = UserUpcoming(user)
-
-        upcoming_update = upcoming.data
-        
-        if to_add['id'] in upcoming_update['upcoming']:
-            upcoming_update['upcoming'].remove(to_add['id'])
-            final_upcoming_update = UserUpcoming(user, upcoming_update, partial=True)
-            final_upcoming_update.is_valid(raise_exception=True)
-            final_upcoming_update.save()
-
-        return Response(final.data)
+            return Response(final.data)
+        else:
+            return Response({'message': 'Cannot add a future gig to your gigs'})
     
 class AddGigToUpcomingView(APIView):
     @exceptions
     def put(self, request, id1, id2):
-        #Retrieve both the user profile and the record
         user = User.objects.get(id=id1)
         gig = Gig.objects.get(id=id2)
         
-        #Serialize gig instance and save to variable
         serialized_gig = GigSerializer(gig)
-
-        #Save gig data to variable
         to_add = serialized_gig.data
 
-        #Serialize User instance and save to variable
+        gig_date = datetime.strptime(to_add['date'], '%Y-%m-%d').date()
+
+        # Check if the gig date is in the past
+        if gig_date < datetime.now().date():
+            return Response({'message': 'Cannot add a past gig to your upcoming'})
+
         serialized_user = UserUpcoming(user)
-
-        gigs = UserGigs(user)
-        to_check = gigs.data
-
-        #Save User data to variable
+        upcoming_gigs = UserUpcoming(user)
+        to_check = upcoming_gigs.data
 
         to_update = serialized_user.data
 
-        #Check to see if gig to be added to upcoming is not already in collection
-        if not to_add['id'] in to_check['gigs']:
-            #Append the Gig ID to the User Collection 
+        # Check if gig to be added to upcoming is not already in the collection
+        if not to_add['id'] in to_check['upcoming']:
             to_update['upcoming'].append(to_add['id'])
 
-            #Update/Validate/Save and return User with updated gigs field
-
             final = UserUpcoming(user, to_update, partial=True)
-
             final.is_valid(raise_exception=True)
             final.save()
             return Response(final.data)
         
         else:
-            return Response({'message': 'Gig already in your gigs'})
+            return Response({'message': 'Gig already in your upcoming'})
     
 class RemoveGigFromGigs(APIView):
     @exceptions
