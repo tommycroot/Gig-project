@@ -5,11 +5,12 @@ import axios from 'axios'
 import NavBar from './components/nav/NavBar'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
+import Profile from './components/user/Profile'
 
 const App = () => {
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get('http://localhost:8000/api/gigs/') // * <-- replace with your endpoint
+      const { data } = await axios.get('/api/gigs/') // * <-- replace with your endpoint
       console.log(data)
     }
     getData()
@@ -23,6 +24,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Register />}></Route>
           <Route path='/login' element={<Login />}></Route>
+          <Route path='/profile/:id' element={<Profile />}></Route>
           
         </Routes>
         <footer className='text-center'><small>Encore was created by <a href='https://github.com/tommycroot' target='_blank' rel='noreferrer'>Tommy Croot</a></small></footer>

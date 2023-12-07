@@ -12,6 +12,7 @@ import Button from 'react-bootstrap/Button'
 import { getPayloadSub } from '../helpers/Auth'
 
 import hero from '../../images/hero.jpg'
+import png from '../../images/png.png'
 
 
 const Login = () => {
@@ -39,7 +40,7 @@ const Login = () => {
     e.preventDefault()
 
     try {
-      const { data } = await axios.post('/api/profile/login/', formFields)
+      const { data } = await axios.post('/api/auth/login/', formFields)
       localStorage.setItem('ENCORE-TOKEN', data.token)
       console.log('DATA TOKEN', data.token)
       axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`
@@ -65,10 +66,10 @@ const Login = () => {
           </Col>
 
           <Col xs={12} sm={12} md={6} lg={6}>
-            <Row>
+            <Row className='form-logo-row'>
               <Col className='title-container'>
-                <h1 className='display-4 text-center'>ENCORE</h1>
-                <p className='text-center'>Catalogue your gigs. Follow friends.</p>
+                <img alt='record collection' src={png}></img>
+                <p className='text-center'>Remember your gigs with your friends forever.</p>
               </Col>
             </Row>
 
