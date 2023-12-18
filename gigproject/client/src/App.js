@@ -6,6 +6,7 @@ import NavBar from './components/nav/NavBar'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import Profile from './components/user/Profile'
+import GigPage from './components/gigs/GigPage'
 
 const App = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const App = () => {
           <Route path='/' element={<Register />}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/profile/:id' element={<Profile />}></Route>
+          <Route path='/gigs/:gigId/' element={<GigPage />}></Route>
           
         </Routes>
         <footer className='text-center'><small>Encore was created by <a href='https://github.com/tommycroot' target='_blank' rel='noreferrer'>Tommy Croot</a></small></footer>
