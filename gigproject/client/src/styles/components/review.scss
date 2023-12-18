@@ -1,0 +1,44 @@
+.right-review {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .mobile-gig-container {
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    .mobile-gig-review {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      h1 {
+        font-weight: 800;
+      }
+
+      .mobile-gig-pic {
+        width: 270px;
+        margin-top: 7%;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
+        border: solid 5px white;
+        padding: 0;
+      }
+
+    }
+  }
+
+
+
+
+}
+
+.review-content {
+  margin: 0 5px;
+
+  .review {
+    height: 100%;
+  }
+
+}
