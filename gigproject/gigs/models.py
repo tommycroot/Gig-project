@@ -5,7 +5,7 @@ from django.core.validators import URLValidator
 class Gig(models.Model):
     date = models.DateField()
     band = models.CharField(max_length=1000)
-    image = models.URLField(validators=[URLValidator()], default='https://png.pngtree.com/png-clipart/20190517/original/pngtree-cartoon-kids-band-singing-elements-element-png-image_4074731.jpg')
+    image = models.URLField(validators=[URLValidator()], default='https://a0.anyrgb.com/pngimg/374/226/anirudh-ravichander-phil-lesh-concert-crowd-free-music-concert-music-download-singer-sky-music-silhouette.png')
     venue = models.CharField(max_length=500)
     setlist = models.CharField(max_length=1000, default='')
     price = models.DecimalField(max_digits=10, decimal_places=2)

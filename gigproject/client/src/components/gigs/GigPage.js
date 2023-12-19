@@ -5,6 +5,8 @@ import { useParams, Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { camelizeKeys } from 'humps'
+
 
 import Error from '../error/Error'
 
@@ -26,8 +28,9 @@ const GigPage = () => {
     const getGig = async () => {
       try {
         const { data } = await axios.get(`/api/gigs/${gigId}/`)
-        console.log('GIG DATA', data)
-        setGig(data)
+        const camelizedData = camelizeKeys(data)// Convert keys to camelCase
+        console.log('GIG DATA', camelizedData)
+        setGig(camelizedData)
       } catch (err) {
         console.log(err)
         setError(err.message)
@@ -114,8 +117,8 @@ const GigPage = () => {
                         return (
                           <div key={id} className='review-container'>
                             <p className='review-content'><Link to={`/profile/${owner.id}`}>{owner.username}</Link></p>
-                            <p className='review-content'>{reviewText}</p>
                             <p className='review-content'>Rating: {rating}/5</p>
+                            <p className='review-content'>{reviewText}</p>
                           </div>
                         )
                       } 
