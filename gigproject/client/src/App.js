@@ -9,6 +9,8 @@ import Profile from './components/user/Profile'
 import GigPage from './components/gigs/GigPage'
 import AddReview from './components/user/AddReview'
 import AddGig from './components/user/AddGig'
+import EditProfile from './components/user/EditProfile'
+import SearchGigs from './components/user/SearchGigs'
 
 const App = () => {
   useEffect(() => {
@@ -28,8 +30,10 @@ const App = () => {
           <Route path='/' element={<Register />}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/profile/:id' element={<Profile />}></Route>
+          <Route path='/auth/:id/edit' element={<EditProfile />}></Route>
           <Route path='/gigs/:gigId/' element={<GigPage />}></Route>
           <Route path='/add-review/:gigId/:sub' element={<AddReview />}></Route>
+          <Route path='/search-gigs' element={<SearchGigs />}></Route>
           <Route path='/add-gig' element={<AddGig />}></Route>
         </Routes>
         <footer className='text-center'><small>Encore was created by <a href='https://github.com/tommycroot' target='_blank' rel='noreferrer'>Tommy Croot</a></small></footer>

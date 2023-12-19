@@ -247,7 +247,10 @@ const Profile = () => {
                       const { id, band, image, venue, date } = gig
                       return (
                         <Col key={id}>
-                          <Link to={`/gigs/${id}`}><img src={image} height='100'></img>{band} {venue} {date}</Link>
+                          <Link to={`/gigs/${id}`}>
+                            <img src={image} height='100' alt={`${band} at ${venue} on ${date}`} />
+                            <span>{band} {venue} {date}</span>
+                          </Link>
                         </Col>
                       )
                     })
@@ -262,7 +265,10 @@ const Profile = () => {
                       const { id, band, image, venue, date } = gig
                       return (
                         <Col key={id}>
-                          <Link to={`/gigs/${id}`}><img src={image} height='100'>{band} {venue} {date}</img></Link>
+                          <Link to={`/gigs/${id}`}>
+                            <img src={image} height='100' alt={`${band} at ${venue} on ${date}`} />
+                            <span>{band} {venue} {date}</span>
+                          </Link>
                         </Col>
                       )
                     })
@@ -312,9 +318,14 @@ const Profile = () => {
                     const { id, image, band, venue, date } = gig
                     return (
                       <Col key={id} md={8} lg={4} className='gig-container'>
-                        <Link to={`/gig/${id}`}>
+                        <Link to={`/gigs/${id}`}>
                           <Card className='gig-card'>
-                            <Card.Img variant='top' src={image}>{band} {venue} {date}</Card.Img>
+                            <Card.Img variant='top' src={image} alt={`${band} at ${venue} on ${date}`} />
+                            <Card.Body>
+                              <Card.Title>{band}</Card.Title>
+                              <Card.Text>{venue}</Card.Text>
+                              <Card.Text>{date}</Card.Text>
+                            </Card.Body>
                           </Card>
                         </Link>
                       </Col>

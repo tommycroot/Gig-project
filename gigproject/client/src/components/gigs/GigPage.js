@@ -22,6 +22,10 @@ const GigPage = () => {
 
   const [user, setUser] = useState([])
 
+  const [addedToGigs, setAddedToGigs] = useState(false)
+  const [addedToUpcoming, setAddedToUpcoming] = useState(false)
+  const [averageRating, setAverageRating] = useState(0)
+
   const sub = getPayloadSub()
 
   useEffect(() => {
@@ -58,7 +62,7 @@ const GigPage = () => {
   const addToGigs = async () => {
     try {
       await axios.put(`/api/auth/${sub}/gigs/${gigId}/`)
-      //! ADD IN RESPONSE TO LET USER KNOW IF GIG SUCCESSFULLY ADDED
+      setAddedToGigs(true) // Set state to indicate successful addition to gigs
     } catch (err) {
       console.log(err)
       setError(err.message)
@@ -68,14 +72,23 @@ const GigPage = () => {
   const addToUpcoming = async () => {
     try {
       await axios.put(`/api/auth/${sub}/upcoming/${gigId}/`)
-      //! ADD IN RESPONSE TO LET USER KNOW IF RECORD SUCCESSFULLY ADDED
+      setAddedToUpcoming(true) // Set state to indicate successful addition to upcoming gigs
     } catch (err) {
       console.log(err)
       setError(err.message)
     }
   }
-
-
+  
+  useEffect(() => {
+    if (gig.reviews && gig.reviews.length > 0) {
+      // Calculate the average rating
+      const totalRatings = gig.reviews.reduce((total, review) => {
+        return total + review.rating
+      }, 0)
+      const avgRating = totalRatings / gig.reviews.length
+      setAverageRating(avgRating)
+    }
+  }, [gig.reviews])
 
   return (
     <main>
@@ -98,10 +111,20 @@ const GigPage = () => {
                   <p>Date: {gig?.date}</p>
                   <p>Price: {gig?.price}</p>
                   <p>Setlist: {gig?.setlist}</p>
-                  <p>Insert avg. rating</p>
-                  <button className='toggle-button' onClick={addToGigs}>Add gig to your gigs</button>
-                  <button className='toggle-button' onClick={addToUpcoming}>Add gig to your upcoming gigs</button>
-                  <Link className='toggle-button' to={`/add-review/${gigId}/${sub}`}>Submit gig review</Link>
+                  {gig.reviews && gig.reviews.length > 0 ? (
+                    <p>Average Rating: {averageRating}</p>
+                  ) : (
+                    <p>No reviews yet</p>
+                  )}
+                  <button className='toggle-button' onClick={addToGigs}>
+                    Add gig to your gigs
+                  </button>
+                  {addedToGigs && <p>Gig successfully added to your gigs!</p>}
+                  <button className='toggle-button' onClick={addToUpcoming}>
+                    Add gig to your upcoming gigs
+                  </button>
+                  {addedToUpcoming && <p>Gig successfully added to your upcoming gigs!</p>}
+                  <Link className='toggle-button toggle-button-link' to={`/add-review/${gigId}/${sub}`}>Submit gig review</Link>
                 </Col>
               </>
             </Row>

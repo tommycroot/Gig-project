@@ -8,6 +8,9 @@ import { isAuthenticated, removeToken, getPayloadSub } from '../helpers/Auth'
 
 import logo from '../../images/favicon.png'
 
+import axios from 'axios'
+import { useState, useEffect } from 'react'
+
 
 
 
@@ -17,6 +20,26 @@ const NavBar = () => {
   const sub = getPayloadSub()
   const location = useLocation()
   const navigate = useNavigate()
+  const [profileImage, setProfileImage] = useState(null)
+
+  useEffect(() => {
+    const fetchProfileImage = async () => {
+      try {
+        // Fetch the user's profile data to get the profile image URL
+        const { data } = await axios.get(`/api/auth/${sub}/`)
+        if (data.profile_image) {
+          setProfileImage(data.profile_image) // Set the profile image URL in state
+        }
+      } catch (err) {
+        console.error(err)
+        // Handle error if needed
+      }
+    }
+
+    if (isAuthenticated()) {
+      fetchProfileImage() // Fetch the profile image URL if the user is authenticated
+    }
+  }, [sub])
 
   const handleLogOut = () => {
     removeToken()
@@ -43,7 +66,18 @@ const NavBar = () => {
               </>
               :
               <>
+                <Nav.Link to='/search-gigs' as={Link}>Search Gigs</Nav.Link>
+                <Nav.Link to='/add-gig' as={Link}>Add Gig</Nav.Link>
                 <span className='nav-link' onClick={handleLogOut}>Sign Out</span>
+                {profileImage && ( // Display profile image if available
+                  <div className='profile-image-container'>
+                    <img
+                      src={profileImage}
+                      alt='Profile'
+                      className='profile-image-in-navbar'
+                    />
+                  </div>
+                )}
               </>
             }
           </Nav>

@@ -1,0 +1,35 @@
+.search-h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-top: 3%;
+}
+
+.search-h3 {
+  font-size: 1.5rem;
+}
+
+.search-link {
+  text-decoration: none;
+  color: wheat;
+}
+
+.search-field-wrapper {
+  margin: 15px 0;
+
+  h2 {
+    font-weight: 700;
+  }
+
+  input {
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+  }
+}
+
+.user-container {
+  margin-bottom: 10px;
+  border: solid white 2px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
+}
