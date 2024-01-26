@@ -18,6 +18,7 @@ const SearchGigs = () => {
   const [gigs, setGigs] = useState([])
 
   const [filters, setFilters] = useState('')
+  const [dateFilter, setDateFilter] = useState('')
 
   const [filteredGigs, setFilteredGigs] = useState([])
 
@@ -53,11 +54,20 @@ const SearchGigs = () => {
     const newFilteredGigs = gigs.filter(gig => {
       return regex.test(gig.band) || regex.test(gig.venue)// Check both band and venue
     })
-    setFilteredGigs(newFilteredGigs)
-  }, [filters, gigs])
+
+    const filteredByDate = dateFilter
+      ? newFilteredGigs.filter((gig) => gig.date.includes(dateFilter))
+      : newFilteredGigs
+
+    setFilteredGigs(filteredByDate)
+  }, [filters, gigs, dateFilter])
 
   const handleChange = (e) => {
     setFilters(e.target.value)
+  }
+
+  const handleDateChange = (e) => {
+    setDateFilter(e.target.value)
   }
 
   return (
@@ -69,20 +79,40 @@ const SearchGigs = () => {
             <h3 className='search-h3'>Use the search bar below to find shows to add.</h3>
             <Link className='search-link' to={'/add-gig'}>Can&apos;t see the show you&apos;re looking for? Click here to add it to the our database!</Link>
             <div className='search-field-wrapper'>
-              <h2>SEARCH</h2>
-              <input type='text' name='artist' placeholder='Artist or Venue Name' onChange={handleChange} value={filters} />
+              <div className='search-field-wrapper'>
+                <input
+                  type='text'
+                  name='artist'
+                  placeholder='Artist or Venue Name'
+                  onChange={handleChange}
+                  value={filters}
+                />
+      
+                <input
+                  type='text'
+                  name='date'
+                  placeholder='YYYY-MM-DD'
+                  onChange={handleDateChange}
+                  value={dateFilter}
+                />
+              </div>
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row className='search-mob'>
           {filteredGigs.length > 0 ?
             filteredGigs.map(gig => {
               const { id, band, date, venue, image } = gig
               return (
-                <Col key={id} lg={2} md={2} sm={4} xs={4} className='album-container'>
+                <Col key={id} lg={2} md={2} sm={4} xs={4} className='gig-container'>
                   <Link to={`/gigs/${id}`}>
                     <Card className='album-card'>
                       <Card.Img variant='top' src={image}></Card.Img>
+                      <Card.Body>
+                        <Card.Title>{band}</Card.Title>
+                        <Card.Text>{venue}</Card.Text>
+                        <Card.Text>{date}</Card.Text>
+                      </Card.Body>
                     </Card>
                   </Link>
                 </Col>

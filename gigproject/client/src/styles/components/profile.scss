@@ -115,10 +115,32 @@
 }
 
 .gig-container {
-  padding: 0;
+  padding: 10px;
   margin-bottom: 15px;
 }
 
 .gig-card {
   overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .card-title {
+    font-size: 10px;
+    color:#0f1e3c;
+  }
+  span {
+    font-size: 10px;
+    color:#0f1e3c;
+  }
+  .card-text-mob {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .gig-card .card-title,
+  .gig-card span {
+    white-space: normal;
+    display: block;
+  }
 }

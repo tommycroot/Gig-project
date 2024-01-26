@@ -9,6 +9,10 @@ form {
   border-radius: 15px;
   font-family: 'M PLUS 1p', sans-serif;
 
+  .form-control {
+    line-height: 0.75 !important;
+  }
+
   h2 {
     margin-top: 20px;
     margin-bottom: 20px;

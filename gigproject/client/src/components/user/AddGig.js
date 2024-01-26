@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -8,15 +7,13 @@ import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-import hero from '../../images/hero.jpg'
+import { useNavigate } from 'react-router-dom'
 import favicon from '../../images/favicon.png'
 
 import humps from 'humps'
 
 const AddGig = () => {
-
   const navigate = useNavigate()
-
   //! STATE
 
   const [formFields, setFormFields] = useState({
@@ -24,7 +21,7 @@ const AddGig = () => {
     band: '',
     price: '',
     venue: '',
-    image: 'https://a0.anyrgb.com/pngimg/374/226/anirudh-ravichander-phil-lesh-concert-crowd-free-music-concert-music-download-singer-sky-music-silhouette.png',
+    image: 'https://w7.pngwing.com/pngs/104/393/png-transparent-musical-ensemble-musician-rock-band-angle-animals-logo-thumbnail.png', 
     setlist: '',
     reviews: [],
   })
@@ -95,8 +92,8 @@ const AddGig = () => {
     e.preventDefault()
     try {
       const vals = humps.decamelizeKeys(formFields)
-      await axios.post('/api/gigs/', vals)
-      navigate('/search-gigs/')
+      const response = await axios.post('/api/gigs/', vals)
+      navigate(`/gigs/${response.data.id}`)
     } catch (err) {
       console.log('error', err)
       setError(err.response.data.message)
@@ -112,13 +109,9 @@ const AddGig = () => {
       <Container className='primary-container'>
         <Row className='top-row'>
 
-          <Col xs={0} sm={0} md={0} lg={6} className='d-none d-lg-block left'>
-            <div className='img-container'>
-              <img alt='gig picture' src={hero}></img>
-            </div>
-          </Col>
+      
 
-          <Col xs={12} sm={12} md={6} lg={6} className='right-add-gig'>
+          <Col xs={12} sm={12} md={6} lg={6} className='add-gig'>
 
             <Row>
 

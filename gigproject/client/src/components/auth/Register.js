@@ -57,6 +57,7 @@ const Register = () => {
           <Col xs={0} sm={0} md={0} lg={6} className='d-none d-lg-block left'>
             <div className='img-container'>
               <img alt='record collection' src={hero}></img>
+              <p className='text-center'>Remember your gigs with your friends forever.</p>
             </div>
           </Col>
 
@@ -64,7 +65,7 @@ const Register = () => {
             <Row className='form-logo-row'>
               <Col className='title-container'>
                 <img alt='goldfinger' src={png}></img>
-                <p className='text-center'>Remember your gigs with your friends forever.</p>
+                
               </Col>
             </Row>
 

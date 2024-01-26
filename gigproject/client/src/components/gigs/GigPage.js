@@ -25,6 +25,10 @@ const GigPage = () => {
   const [addedToGigs, setAddedToGigs] = useState(false)
   const [addedToUpcoming, setAddedToUpcoming] = useState(false)
   const [averageRating, setAverageRating] = useState(0)
+  const [addToUpcomingClicked, setAddToUpcomingClicked] = useState(false)
+  const [addToCollectionClicked, setAddToCollectionClicked] = useState(false)
+  
+  
 
   const sub = getPayloadSub()
 
@@ -32,7 +36,7 @@ const GigPage = () => {
     const getGig = async () => {
       try {
         const { data } = await axios.get(`/api/gigs/${gigId}/`)
-        const camelizedData = camelizeKeys(data)// Convert keys to camelCase
+        const camelizedData = camelizeKeys(data)
         console.log('GIG DATA', camelizedData)
         setGig(camelizedData)
       } catch (err) {
@@ -61,24 +65,49 @@ const GigPage = () => {
 
   const addToGigs = async () => {
     try {
-      await axios.put(`/api/auth/${sub}/gigs/${gigId}/`)
-      setAddedToGigs(true) // Set state to indicate successful addition to gigs
+      const currentDate = new Date()
+      const gigDate = new Date(gig.date)
+
+      if (gigDate <= currentDate) {
+        // Gig is in the past
+        await axios.put(`/api/auth/${sub}/gigs/${gigId}/`)
+        setAddedToGigs(true)
+        setAddToCollectionClicked(true)
+      } else {
+        // Gig is in the future
+        // You can handle future gigs differently if needed
+        console.log('Cannot add a future gig to gigs collection.')
+        setAddToCollectionClicked(true)
+      }
     } catch (err) {
       console.log(err)
       setError(err.message)
+      setAddToCollectionClicked(true)
     }
   }
 
   const addToUpcoming = async () => {
     try {
-      await axios.put(`/api/auth/${sub}/upcoming/${gigId}/`)
-      setAddedToUpcoming(true) // Set state to indicate successful addition to upcoming gigs
+      const currentDate = new Date()
+      const gigDate = new Date(gig.date)
+
+      if (gigDate >= currentDate) {
+        // Gig is in the future or today
+        await axios.put(`/api/auth/${sub}/upcoming/${gigId}/`)
+        setAddedToUpcoming(true)
+        setAddToUpcomingClicked(true)
+      } else {
+        // Gig is in the past
+        console.log('Cannot add a past gig to upcoming gigs collection.')
+        setAddToUpcomingClicked(true)
+      }
     } catch (err) {
       console.log(err)
       setError(err.message)
+      setAddToUpcomingClicked(true)
     }
   }
-  
+
   useEffect(() => {
     if (gig.reviews && gig.reviews.length > 0) {
       // Calculate the average rating
@@ -119,11 +148,29 @@ const GigPage = () => {
                   <button className='toggle-button' onClick={addToGigs}>
                     Add gig to your gigs
                   </button>
-                  {addedToGigs && <p>Gig successfully added to your gigs!</p>}
+                  {addToCollectionClicked && (
+                    <>
+                      {addedToGigs ? (
+                        <p>Gig successfully added to your gig collection!</p>
+                      ) : (
+                        <p>Cannot add a future gig to past gig collection.</p>
+                        
+                      )}
+                    </>
+                  )}
+
                   <button className='toggle-button' onClick={addToUpcoming}>
                     Add gig to your upcoming gigs
                   </button>
-                  {addedToUpcoming && <p>Gig successfully added to your upcoming gigs!</p>}
+                  {addToUpcomingClicked && (
+                    <>
+                      {addedToUpcoming ? (
+                        <p>Gig successfully added to your upcoming gigs!</p>
+                      ) : (
+                        <p>Cannot add a past gig to upcoming gig collection.</p>
+                      )}
+                    </>
+                  )}
                   <Link className='toggle-button toggle-button-link' to={`/add-review/${gigId}/${sub}`}>Submit gig review</Link>
                 </Col>
               </>
@@ -144,7 +191,7 @@ const GigPage = () => {
                             <p className='review-content'>{reviewText}</p>
                           </div>
                         )
-                      } 
+                      }
                     })
                     :
                     <>

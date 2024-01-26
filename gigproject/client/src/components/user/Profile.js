@@ -11,6 +11,7 @@ import Error from '../error/Error'
 
 import { getPayloadSub, removeToken } from '../helpers/Auth'
 import humps from 'humps'
+import CardBody from 'react-bootstrap/esm/CardBody'
 
 
 const Profile = () => {
@@ -302,6 +303,12 @@ const Profile = () => {
                                 No Image Available
                               </div>
                             )}
+                            <CardBody>
+
+                              <Card.Title>{band}</Card.Title>
+                              <Card.Text>{venue}</Card.Text>
+                              <Card.Text>{date}</Card.Text>
+                            </CardBody>
                           </Card>
                         </Link>
                       </Col>
@@ -322,9 +329,11 @@ const Profile = () => {
                           <Card className='gig-card'>
                             <Card.Img variant='top' src={image} alt={`${band} at ${venue} on ${date}`} />
                             <Card.Body>
-                              <Card.Title>{band}</Card.Title>
-                              <Card.Text>{venue}</Card.Text>
-                              <Card.Text>{date}</Card.Text>
+                              <div className='card-text-mob'>
+                                <Card.Title>{band}</Card.Title>
+                                <Card.Text>@ {venue}</Card.Text>
+                                <Card.Text>{date}</Card.Text>
+                              </div>
                             </Card.Body>
                           </Card>
                         </Link>

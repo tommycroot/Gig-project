@@ -50,6 +50,12 @@ footer {
 
 }
 
+@media (max-width: 767px) {
+  .card-title {
+    font-size: 15px;
+}
+}
+
 .content-slider {
   overflow-x: scroll;
   flex-wrap: nowrap;
