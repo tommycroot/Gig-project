@@ -34,24 +34,47 @@ const Profile = () => {
 
   const [buttonUserData, setButtonUserData] = useState({})
   const [buttonAccountData, setButtonAccountData] = useState({})
+  const [bandSearch, setBandSearch] = useState('')
+  const [venueSearch, setVenueSearch] = useState('')
+  const [dateSearch, setDateSearch] = useState('')
+  const [filteredGigs, setFilteredGigs] = useState([])
+
+
+
 
 
   useEffect(() => {
     const getProfile = async () => {
       try {
+        const { data } = await axios.get(`/api/auth/${id}/`, {
+          params: {
+            band: bandSearch,
+            venue: venueSearch,
+            date: dateSearch,
+          },
+        })
 
-        const { data } = await axios.get(`/api/auth/${id}/`)
-        console.log('USER DATA', data)
+        // Filter gigs based on search criteria
+        let filteredGigs = data.gigs
+        if (bandSearch) {
+          filteredGigs = filteredGigs.filter(gig => gig.band.toLowerCase().includes(bandSearch.toLowerCase()))
+        }
+        if (venueSearch) {
+          filteredGigs = filteredGigs.filter(gig => gig.venue.toLowerCase().includes(venueSearch.toLowerCase()))
+        }
+        if (dateSearch) {
+          filteredGigs = filteredGigs.filter(gig => gig.date.toLowerCase().includes(dateSearch.toLowerCase()))
+        }
+
         setProfile(data)
-        console.log('PROFILE', data)
+        setFilteredGigs(filteredGigs)
       } catch (err) {
         console.log(err)
         setError(err.message)
       }
     }
     getProfile()
-
-  }, [id])
+  }, [id, bandSearch, venueSearch, dateSearch])
 
   useEffect(() => {
     const getLoggedUser = async () => {
@@ -187,10 +210,8 @@ const Profile = () => {
         setError(err.message)
       }
     }
-
-
-
   }
+
 
 
   return (
@@ -241,6 +262,8 @@ const Profile = () => {
             </div>
             <div className='following-collection-wrapper d-md-none'>
               {gigView ? <h4 className='d-md-none'>Gigs:</h4> : <h4 className='d-md-none'>Upcoming Gigs:</h4>}
+
+
               <Row className='content-slider d-md-none' xs={12} sm={12}>
                 {gigView ?
                   profile.gigs && profile.gigs.length > 0 ?
@@ -285,11 +308,34 @@ const Profile = () => {
           </Col>
 
           <Col xs={0} sm={0} md={6} lg={6} className='d-none d-md-block right'>
+            
             {gigView ? <h4>Gigs:</h4> : <h4>Upcoming gigs:</h4>}
+            <input
+              type="text"
+              placeholder="Search by Band"
+              value={bandSearch}
+              onChange={(e) => setBandSearch(e.target.value)}
+              className="form-row"
+            />
+            <input
+              type="text"
+              placeholder="Search by Venue"
+              value={venueSearch}
+              onChange={(e) => setVenueSearch(e.target.value)}
+              className="form-row"
+            />
+            <input
+              type="text"
+              placeholder="Search by Date"
+              value={dateSearch}
+              onChange={(e) => setDateSearch(e.target.value)}
+              className="form-row"
+            />
+
             <Row className='content-slider-vert'>
               {gigView ?
                 profile.gigs && profile.gigs.length > 0 ?
-                  profile.gigs.map(gig => {
+                  filteredGigs.map(gig => {
                     const { id, image, band, venue, date } = gig
                     return (
                       <Col key={id} md={8} lg={4} className='gig-container'>
@@ -304,7 +350,6 @@ const Profile = () => {
                               </div>
                             )}
                             <CardBody>
-
                               <Card.Title>{band}</Card.Title>
                               <Card.Text>{venue}</Card.Text>
                               <Card.Text>{date}</Card.Text>
@@ -315,13 +360,10 @@ const Profile = () => {
                     )
                   })
                   :
-                  <>
-                    <p>No attended gigs.</p>
-                  </>
-
+                  <p>No attended gigs match the search criteria.</p>
                 :
                 profile.upcoming && profile.upcoming.length > 0 ?
-                  profile.upcoming.map(gig => {
+                  filteredGigs.map(gig => {
                     const { id, image, band, venue, date } = gig
                     return (
                       <Col key={id} md={8} lg={4} className='gig-container'>
@@ -341,9 +383,7 @@ const Profile = () => {
                     )
                   })
                   :
-                  <>
-                    <p>No upcoming gigs</p>
-                  </>
+                  <p>No upcoming gigs match the search criteria.</p>
               }
             </Row>
 

@@ -9,6 +9,8 @@
 @import './components/editProfile.scss';
 @import './components/addGig.scss';
 @import './components/searchGigs.scss';
+@import './components/searchUsers.scss';
+
 
 
 * {
@@ -46,9 +48,8 @@ footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-
 }
+
 
 @media (max-width: 767px) {
   .card-title {

@@ -1,0 +1,17 @@
+.search-user-field-wrapper {
+  margin: 35px 0;
+  display: flex;
+  justify-content: space-around;
+
+  h2 {
+    font-weight: 700;
+  }
+
+  input {
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    margin: 0px 20px 0px 0px;
+  }
+}

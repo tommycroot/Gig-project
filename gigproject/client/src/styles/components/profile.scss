@@ -74,8 +74,10 @@
     h2 {
       color: #0f1e3c;
     }
+
   }
 
+ 
   .following-collection-wrapper {
     overflow-x: hidden;
     margin-top: 15px;
@@ -91,19 +93,15 @@
       font-weight: 600;
       font-size: 16px;
     }
-
-    h4 {
-      font-weight: 700;
-    }
-
-   
-    
-
-
   }
-
-
 }
+
+
+.left-col .following-collection-wrapper h4 {
+  font-weight: 1000;
+  color: #0f1e3c;
+}
+
 
 .right {
 
@@ -144,3 +142,4 @@
     display: block;
   }
 }
+

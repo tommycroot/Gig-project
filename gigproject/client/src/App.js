@@ -11,11 +11,12 @@ import AddReview from './components/user/AddReview'
 import AddGig from './components/user/AddGig'
 import EditProfile from './components/user/EditProfile'
 import SearchGigs from './components/user/SearchGigs'
+import SearchUsers from './components/user/SearchUsers'
 
 const App = () => {
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get('/api/gigs/') // * <-- replace with your endpoint
+      const { data } = await axios.get('/api/gigs/') 
       console.log(data)
     }
     getData()
@@ -35,6 +36,7 @@ const App = () => {
           <Route path='/add-review/:gigId/:sub' element={<AddReview />}></Route>
           <Route path='/search-gigs' element={<SearchGigs />}></Route>
           <Route path='/add-gig' element={<AddGig />}></Route>
+          <Route path='/search-users' element={<SearchUsers />}></Route>
         </Routes>
         <footer className='text-center'><small>Encore was created by <a href='https://github.com/tommycroot' target='_blank' rel='noreferrer'>Tommy Croot</a></small></footer>
       </BrowserRouter>

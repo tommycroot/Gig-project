@@ -56,6 +56,15 @@ const NavBar = () => {
             src={logo}
             className='d-inline-block align-top logo'
           />
+          {profileImage && ( // Display profile image if available
+            <div className='profile-image-container'>
+              <img
+                src={profileImage}
+                alt='Profile'
+                className='profile-image-in-navbar'
+              />
+            </div>
+          )}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='encore-nav' />
         <Navbar.Collapse id='encore-nav' className='justify-content-end'>
@@ -63,21 +72,15 @@ const NavBar = () => {
             {!isAuthenticated() ?
               <>
                 <Nav.Link to='/login' as={Link}>Login</Nav.Link>
+
               </>
               :
               <>
-                <Nav.Link to='/search-gigs' as={Link}>Search Gigs</Nav.Link>
                 <Nav.Link to='/add-gig' as={Link}>Add Gig</Nav.Link>
+                <Nav.Link to='/search-gigs' as={Link}>Search Gigs</Nav.Link>
+                <Nav.Link to='/search-users' as={Link}>Search Users</Nav.Link>
                 <span className='nav-link' onClick={handleLogOut}>Sign Out</span>
-                {profileImage && ( // Display profile image if available
-                  <div className='profile-image-container'>
-                    <img
-                      src={profileImage}
-                      alt='Profile'
-                      className='profile-image-in-navbar'
-                    />
-                  </div>
-                )}
+
               </>
             }
           </Nav>

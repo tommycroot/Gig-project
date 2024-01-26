@@ -26,10 +26,30 @@
 }
 
 .profile-image-in-navbar {
-  height: 30px;
-  width:30px;
+  height: 40px;
+  width: 40px;
   border-radius: 10px;
-  margin-top: 5px;
+  margin-top: 20px;
   padding: 1px;
   margin-left:3px
+}
+
+.navbar-brand {
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .profile-image-in-navbar {
+    display: none;
+  }
 }
