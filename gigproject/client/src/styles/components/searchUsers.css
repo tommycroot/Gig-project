@@ -2,38 +2,32 @@
   margin: 35px 0;
   display: flex;
   justify-content: space-around;
-
-  h2 {
-    font-weight: 700;
-  }
-
-  input {
-    border: none;
-    border-radius: 5px;
-    width: 300px;
-    text-align: center;
-    margin: 0px 20px 0px 0px;
-  }
 }
-
-
+.search-user-field-wrapper h2 {
+  font-weight: 700;
+}
+.search-user-field-wrapper input {
+  border: none;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  margin: 0px 20px 0px 0px;
+}
 
 @media (max-width: 767px) {
   .search-user-field-wrapper {
     display: block;
-
-    input {
-      margin: 0 0 15px 0;
-    }
-}
+  }
+  .search-user-field-wrapper input {
+    margin: 0 0 15px 0;
+  }
   .search-mob {
     display: flex;
     flex-direction: column;
     align-content: space-around;
     margin-right: 100px;
   }
-
   .card {
     width: 180px;
   }
-}
+}/*# sourceMappingURL=searchUsers.css.map */

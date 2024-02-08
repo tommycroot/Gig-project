@@ -27,8 +27,9 @@ const GigPage = () => {
   const [averageRating, setAverageRating] = useState(0)
   const [addToUpcomingClicked, setAddToUpcomingClicked] = useState(false)
   const [addToCollectionClicked, setAddToCollectionClicked] = useState(false)
-  
-  
+  const [alreadyOwned, setAlreadyOwned] = useState(false)
+
+
 
   const sub = getPayloadSub()
 
@@ -53,8 +54,55 @@ const GigPage = () => {
     const getUser = async () => {
       try {
         const { data } = await axios.get(`/api/auth/${sub}/`)
-        console.log('USER DATA', data)
+        // const { gigId } = await axios.get(`/api/gigs/${gigId}`)
+        console.log('USER DATA', data.gigs)
+        console.log('GIG ID', gigId)
         setUser(data)
+
+        const master = []
+        data.gigs.forEach(gig => {
+          console.log('GIG VALS', Object.values(gig)[0])
+          master.push(Object.values(gig)[0])
+        })
+
+        console.log('MASTER', master)
+        console.log(Array.isArray(master))
+        console.log(typeof master[0])
+
+        if (master.includes(parseInt(gigId))) {
+          setAddedToGigs(true)
+          setAlreadyOwned(true)
+          console.log('GIG MATCH')
+        } else {
+          setAddedToGigs(false)
+          setAddToCollectionClicked(false)
+          console.log('GIG NOT MATCHING')
+        }
+
+        const master2 = []
+        data.upcoming.forEach(gig => {
+          console.log('UP GIG VALS', Object.values(gig)[0])
+          master2.push(Object.values(gig)[0])
+        })
+
+        console.log('MASTER 2', master2)
+        console.log(Array.isArray(master2))
+        console.log(typeof master2[0])
+
+        if (master2.includes(parseInt(gigId))) {
+          setAddedToUpcoming(true)
+          setAlreadyOwned(true)
+          console.log('UP GIG MATCH')
+        } else {
+          setAddedToUpcoming(false)
+          setAddToUpcomingClicked(false)
+          console.log('UP GIG NO MATCH')
+        }
+
+        // Check if the gig is already in the user's upcoming gigs collection
+        if (data.upcoming.includes(gigId)) {
+          setAddedToUpcoming(true)
+        }
       } catch (err) {
         console.log(err)
         setError(err.message)
@@ -65,19 +113,25 @@ const GigPage = () => {
 
   const addToGigs = async () => {
     try {
-      const currentDate = new Date()
-      const gigDate = new Date(gig.date)
-
-      if (gigDate <= currentDate) {
-        // Gig is in the past
-        await axios.put(`/api/auth/${sub}/gigs/${gigId}/`)
-        setAddedToGigs(true)
+      if (addedToGigs) {
+        // If already added, remove from gigs
+        await axios.put(`/api/auth/${sub}/delete-gigs/${gigId}/`)
+        setAddedToGigs(false)
         setAddToCollectionClicked(true)
       } else {
-        // Gig is in the future
-        // You can handle future gigs differently if needed
-        console.log('Cannot add a future gig to gigs collection.')
-        setAddToCollectionClicked(true)
+        // If not added, add to gigs
+        const currentDate = new Date()
+        const gigDate = new Date(gig.date)
+
+        if (gigDate <= currentDate) {
+          await axios.put(`/api/auth/${sub}/gigs/${gigId}/`)
+          setAddedToGigs(true)
+          setAddToCollectionClicked(true)
+        } else {
+          // Show message if gig is in the future
+          console.log('Cannot add a future gig to gigs collection.')
+          setError('Cannot add a future gig to gigs!')
+        }
       }
     } catch (err) {
       console.log(err)
@@ -88,18 +142,25 @@ const GigPage = () => {
 
   const addToUpcoming = async () => {
     try {
-      const currentDate = new Date()
-      const gigDate = new Date(gig.date)
-
-      if (gigDate >= currentDate) {
-        // Gig is in the future or today
-        await axios.put(`/api/auth/${sub}/upcoming/${gigId}/`)
-        setAddedToUpcoming(true)
+      if (addedToUpcoming) {
+        // If already added, remove from upcoming
+        await axios.put(`/api/auth/${sub}/delete-upcoming/${gigId}/`)
+        setAddedToUpcoming(false)
         setAddToUpcomingClicked(true)
       } else {
-        // Gig is in the past
-        console.log('Cannot add a past gig to upcoming gigs collection.')
-        setAddToUpcomingClicked(true)
+        // If not added, add to upcoming
+        const currentDate = new Date()
+        const gigDate = new Date(gig.date)
+
+        if (gigDate >= currentDate) {
+          await axios.put(`/api/auth/${sub}/upcoming/${gigId}/`)
+          setAddedToUpcoming(true)
+          setAddToUpcomingClicked(true)
+        } else {
+          // Show message if gig is in the past
+          console.log('Cannot add a past gig to upcoming gigs collection.')
+          setError('Cannot add a past gig to upcoming gigs!')
+        }
       }
     } catch (err) {
       console.log(err)
@@ -145,29 +206,32 @@ const GigPage = () => {
                   ) : (
                     <p>No reviews yet</p>
                   )}
+                  {error && <p className="error-message">{error}</p>}
                   <button className='toggle-button' onClick={addToGigs}>
-                    Add gig to your gigs
+                    {addedToGigs ? 'Remove gig from gigs' : 'Add gig to gigs'}
                   </button>
                   {addToCollectionClicked && (
                     <>
-                      {addedToGigs ? (
+                      {!alreadyOwned ? (
                         <p>Gig successfully added to your gig collection!</p>
+
                       ) : (
-                        <p>Cannot add a future gig to past gig collection.</p>
-                        
+                        <p>Gig succesfully removed from your gig collection.</p>
+
+
                       )}
                     </>
                   )}
 
                   <button className='toggle-button' onClick={addToUpcoming}>
-                    Add gig to your upcoming gigs
+                    {addedToUpcoming ? 'Remove gig from upcoming' : 'Add gig to upcoming'}
                   </button>
                   {addToUpcomingClicked && (
                     <>
-                      {addedToUpcoming ? (
+                      {!alreadyOwned ? (
                         <p>Gig successfully added to your upcoming gigs!</p>
                       ) : (
-                        <p>Cannot add a past gig to upcoming gig collection.</p>
+                        <p>Gig succesfully removed from your upcoming gigs.</p>
                       )}
                     </>
                   )}
@@ -205,6 +269,7 @@ const GigPage = () => {
           </Col>
         </Row>
       </Container>
+
     </main >
   )
 }

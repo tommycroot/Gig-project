@@ -106,7 +106,7 @@ const SearchGigs = () => {
               return (
                 <Col key={id} lg={2} md={2} sm={4} xs={4} className='gig-container'>
                   <Link to={`/gigs/${id}`}>
-                    <Card className='album-card'>
+                    <Card>
                       <Card.Img variant='top' src={image}></Card.Img>
                       <Card.Body>
                         <Card.Title>{band}</Card.Title>

@@ -1,0 +1,55 @@
+.search-h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-top: 3%;
+}
+
+.search-h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.search-link {
+  text-decoration: none;
+  color: wheat;
+}
+
+.search-field-wrapper {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.search-field-wrapper h2 {
+  font-weight: 700;
+}
+.search-field-wrapper input {
+  border: none;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  margin: 0px 20px 0px 0px;
+}
+
+.user-container {
+  margin-bottom: 10px;
+  border: solid white 2px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 767px) {
+  .search-field-wrapper {
+    display: block;
+  }
+  .search-field-wrapper input {
+    margin: 0 0 15px 0;
+  }
+  .search-mob {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    margin-right: 100px;
+  }
+  .card {
+    width: 180px;
+  }
+}/*# sourceMappingURL=searchGigs.css.map */

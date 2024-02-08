@@ -1,0 +1,152 @@
+.left-col {
+  height: 100%;
+}
+.left-col .user-info {
+  justify-content: center;
+}
+.left-col .user-info .profile-pic {
+  width: 150px;
+  margin-top: 7%;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
+  border: solid 5px white;
+  padding: 0;
+  border-radius: 15px;
+}
+.left-col .user-info .user-info {
+  margin-top: 15px;
+  background: #ff69b4;
+  text-align: center;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
+  border: solid 5px white;
+  width: 80%;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+}
+.left-col .user-info .user-info p {
+  color: #0f1e3c;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+.left-col .user-info .user-info .username {
+  font-size: 30px;
+  font-weight: 800;
+}
+.left-col .user-info .user-info .toggle-button {
+  background-color: #0f1e3c;
+  border: #0f1e3c;
+  width: 50%;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #ff69b4;
+}
+.left-col .user-info .user-info .delete {
+  background-color: red;
+  color: white;
+  font-size: 14px;
+}
+.left-col .user-info .user-info a {
+  background-color: #0f1e3c;
+  border: #0f1e3c;
+  width: 50%;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.left-col .user-info h2 {
+  color: #0f1e3c;
+}
+.left-col .following-collection-wrapper {
+  overflow-x: hidden;
+  margin-top: 15px;
+  padding: 15px;
+  background: #ff69b4;
+  text-align: center;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
+  border: solid 5px white;
+  border-radius: 15px;
+  width: 80%;
+  margin-left: 46px;
+}
+.left-col .following-collection-wrapper p {
+  color: #0f1e3c;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.left-col .following-collection-wrapper h4 {
+  font-weight: 1000;
+  color: #0f1e3c;
+}
+
+.right h4 {
+  font-size: 70px;
+  font-weight: 700;
+  margin-top: 5%;
+}
+
+.gig-container {
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.gig-card {
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .card-title {
+    font-size: 10px;
+    color: #0f1e3c;
+  }
+  span {
+    font-size: 10px;
+    color: #0f1e3c;
+  }
+  .card-text-mob {
+    display: flex;
+    flex-direction: column;
+  }
+  .search-bars input {
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+    margin: 5px 0px 0px 0px;
+  }
+  .gig-card .card-title,
+  .gig-card span {
+    white-space: normal;
+    display: block;
+  }
+}
+.following-collection-wrapper {
+  width: 100% !important;
+  margin-left: 0px !important;
+}
+
+.search-bars {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  margin: 5px 0px 0px 0px;
+}
+
+#show-upcoming {
+  padding: 10px;
+}/*# sourceMappingURL=profile.css.map */

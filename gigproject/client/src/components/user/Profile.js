@@ -54,20 +54,35 @@ const Profile = () => {
           },
         })
 
-        // Filter gigs based on search criteria
-        let filteredGigs = data.gigs
+        // Filter attended gigs based on search criteria
+        let filteredAttendedGigs = data.gigs || []
         if (bandSearch) {
-          filteredGigs = filteredGigs.filter(gig => gig.band.toLowerCase().includes(bandSearch.toLowerCase()))
+          filteredAttendedGigs = filteredAttendedGigs.filter(gig => gig.band.toLowerCase().includes(bandSearch.toLowerCase()))
         }
         if (venueSearch) {
-          filteredGigs = filteredGigs.filter(gig => gig.venue.toLowerCase().includes(venueSearch.toLowerCase()))
+          filteredAttendedGigs = filteredAttendedGigs.filter(gig => gig.venue.toLowerCase().includes(venueSearch.toLowerCase()))
         }
         if (dateSearch) {
-          filteredGigs = filteredGigs.filter(gig => gig.date.toLowerCase().includes(dateSearch.toLowerCase()))
+          filteredAttendedGigs = filteredAttendedGigs.filter(gig => gig.date.toLowerCase().includes(dateSearch.toLowerCase()))
+        }
+
+        // Filter upcoming gigs based on search criteria
+        let filteredUpcomingGigs = data.upcoming || []
+        if (bandSearch) {
+          filteredUpcomingGigs = filteredUpcomingGigs.filter(gig => gig.band.toLowerCase().includes(bandSearch.toLowerCase()))
+        }
+        if (venueSearch) {
+          filteredUpcomingGigs = filteredUpcomingGigs.filter(gig => gig.venue.toLowerCase().includes(venueSearch.toLowerCase()))
+        }
+        if (dateSearch) {
+          filteredUpcomingGigs = filteredUpcomingGigs.filter(gig => gig.date.toLowerCase().includes(dateSearch.toLowerCase()))
         }
 
         setProfile(data)
-        setFilteredGigs(filteredGigs)
+        setFilteredGigs({
+          attended: filteredAttendedGigs,
+          upcoming: filteredUpcomingGigs,
+        })
       } catch (err) {
         console.log(err)
         setError(err.message)
@@ -229,7 +244,30 @@ const Profile = () => {
                   {profile.gigs ? <p>Gigs attended: {profile.gigs.length}</p> : <p>Gigs: 0</p>}
                   {profile.following ? <p>Following: {profile.following.length}</p> : <p>Following: 0</p>}
                   {profile.reviews ? <p>Reviews: {profile.reviews.length}</p> : <p>Reviews: 0</p>}
-                  <button className='toggle-button' onClick={toggleGigView}>Show Upcoming</button>
+                  <button className='toggle-button' id='show-upcoming' onClick={toggleGigView}>Show Upcoming</button>
+                  <div className="search-bars">
+                    <input
+                      type="text"
+                      placeholder="Search by Band"
+                      value={bandSearch}
+                      onChange={(e) => setBandSearch(e.target.value)}
+                      className="form-row"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Search by Venue"
+                      value={venueSearch}
+                      onChange={(e) => setVenueSearch(e.target.value)}
+                      className="form-row"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Search by Date"
+                      value={dateSearch}
+                      onChange={(e) => setDateSearch(e.target.value)}
+                      className="form-row"
+                    />
+                  </div>
                   <button onClick={followUnfollow} className={sub === profile.id ? 'd-none' : 'toggle-button'}>{followButtonVal}</button>
                   <Link to={`/auth/${id}/edit`} state={{ info: profile }} className={sub !== profile.id ? 'd-none' : 'toggle-button'}>Edit Profile</Link>
                   <button className={sub !== profile.id ? 'd-none' : 'toggle-button delete'} onClick={deleteAccount}>Delete Account</button>
@@ -237,7 +275,7 @@ const Profile = () => {
               </>
             </Row>
             <div className='following-collection-wrapper'>
-              <h4>Following:</h4>
+              <h4 id='following'>Following:</h4>
               <Row className='content-slider'>
                 {/* eslint-disable-next-line camelcase */}
                 {profile.following && profile.following.length > 0 ? (
@@ -248,7 +286,7 @@ const Profile = () => {
                       <Col key={id}>
                         {/* eslint-disable-next-line camelcase */}
                         <img src={profile_image} height='100' />
-                        <h4><Link to={`/auth/${id}`}>{username}</Link></h4>
+                        <h4><Link to={`/profile/${id}`}>{username}</Link></h4>
 
                       </Col>
                     )
@@ -308,34 +346,14 @@ const Profile = () => {
           </Col>
 
           <Col xs={0} sm={0} md={6} lg={6} className='d-none d-md-block right'>
-            
+
             {gigView ? <h4>Gigs:</h4> : <h4>Upcoming gigs:</h4>}
-            <input
-              type="text"
-              placeholder="Search by Band"
-              value={bandSearch}
-              onChange={(e) => setBandSearch(e.target.value)}
-              className="form-row"
-            />
-            <input
-              type="text"
-              placeholder="Search by Venue"
-              value={venueSearch}
-              onChange={(e) => setVenueSearch(e.target.value)}
-              className="form-row"
-            />
-            <input
-              type="text"
-              placeholder="Search by Date"
-              value={dateSearch}
-              onChange={(e) => setDateSearch(e.target.value)}
-              className="form-row"
-            />
+
 
             <Row className='content-slider-vert'>
               {gigView ?
-                profile.gigs && profile.gigs.length > 0 ?
-                  filteredGigs.map(gig => {
+                filteredGigs.attended && filteredGigs.attended.length > 0 ?
+                  filteredGigs.attended.map(gig => {
                     const { id, image, band, venue, date } = gig
                     return (
                       <Col key={id} md={8} lg={4} className='gig-container'>
@@ -362,11 +380,11 @@ const Profile = () => {
                   :
                   <p>No attended gigs match the search criteria.</p>
                 :
-                profile.upcoming && profile.upcoming.length > 0 ?
-                  filteredGigs.map(gig => {
+                filteredGigs.upcoming && filteredGigs.upcoming.length > 0 ?
+                  filteredGigs.upcoming.map(gig => {
                     const { id, image, band, venue, date } = gig
                     return (
-                      <Col key={id} md={8} lg={4} className='gig-container'>
+                      <Col key={id} sm={16} md={8} lg={4} className='gig-container'>
                         <Link to={`/gigs/${id}`}>
                           <Card className='gig-card'>
                             <Card.Img variant='top' src={image} alt={`${band} at ${venue} on ${date}`} />

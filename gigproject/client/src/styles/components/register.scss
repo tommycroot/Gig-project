@@ -16,6 +16,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        flex-direction: column-reverse;
         height: 80%;
 
         p {
@@ -28,7 +29,7 @@
         }
 
         img {
-          margin-top: 20px;
+          margin-top: 10px;
           margin-bottom: 0px;
           padding-bottom: 0px;
           max-height: 70% ;
@@ -36,6 +37,7 @@
           border: solid 5px white !important;
           border-radius: 15px;
           margin-left: 120px;
+          margin-bottom: 33px;
           
         }
 
@@ -59,8 +61,8 @@
   img {
     height: 105px;
     margin: 25px 0px 25px 76px; 
-
   }
+ 
 }
 
 .mb-3 {
@@ -75,3 +77,4 @@
     }
   }
 }
+

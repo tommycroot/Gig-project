@@ -62,14 +62,14 @@ const Login = () => {
           <Col xs={0} sm={0} md={0} lg={6} className='d-none d-lg-block left'>
             <div className='img-container'>
               <img alt='gig' src={hero}></img>
-              <p className='text-center'>Remember your gigs with your friends forever.</p>
+              <p className='text-center-neon'>Remember your gigs with your friends forever.</p>
             </div>
           </Col>
 
           <Col xs={12} sm={12} md={6} lg={6}>
             <Row className='form-logo-row'>
               <Col className='title-container2'>
-                <img alt='record collection' src={png}></img>
+                <img alt='goldfinger' src={png} className='glowing-img'></img>
                 <p className='text-center'>Please use your credentials to login.</p>
 
               </Col>

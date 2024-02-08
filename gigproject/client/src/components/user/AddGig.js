@@ -21,7 +21,7 @@ const AddGig = () => {
     band: '',
     price: '',
     venue: '',
-    image: 'https://w7.pngwing.com/pngs/104/393/png-transparent-musical-ensemble-musician-rock-band-angle-animals-logo-thumbnail.png', 
+    image: '',
     setlist: '',
     reviews: [],
   })
@@ -62,22 +62,22 @@ const AddGig = () => {
       const apiUrl = `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(
         suggestion.name
       )}&api_key=${apiKey}&format=json`
-  
+
       const response = await axios.get(apiUrl)
       const artistInfo = response.data.artist
-  
+
       setFormFields({
         ...formFields,
         band: suggestion.name,
         setlist: artistInfo.bio.summary, // Set the setlist to band information
       })
-  
+
       setBandSuggestions([])
     } catch (err) {
       setError(err.message)
     }
   }
-  
+
 
   const handleShowMore = () => {
     setDisplayedResults(prev => prev + 5)
@@ -91,6 +91,10 @@ const AddGig = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
+      if (!formFields.image) {
+        formFields.image = 'https://w7.pngwing.com/pngs/104/393/png-transparent-musical-ensemble-musician-rock-band-angle-animals-logo-thumbnail.png'
+      }
+
       const vals = humps.decamelizeKeys(formFields)
       const response = await axios.post('/api/gigs/', vals)
       navigate(`/gigs/${response.data.id}`)
@@ -109,7 +113,7 @@ const AddGig = () => {
       <Container className='primary-container'>
         <Row className='top-row'>
 
-      
+
 
           <Col xs={12} sm={12} md={6} lg={6} className='add-gig'>
 
@@ -118,7 +122,7 @@ const AddGig = () => {
               <Form onSubmit={handleSubmit} >
                 <div className='form-container'>
                   <h2>ADD GIG</h2>
-                  <img className='form-img' src={favicon}/>
+                  <img className='form-img' src={favicon} />
                   {/* <p className='text-center'>Enter the gig&apos;s info into the form to add it to the ENCORE database.</p> */}
                   <Form.Group className='mb-3'>
                     <Form.Control
@@ -155,7 +159,14 @@ const AddGig = () => {
                   </Form.Group>
 
                   <Form.Group className='mb-3'>
-                    <Form.Control type="text" name="gigImage" placeholder='Gig Picture (insert image URL)' onChange={handleChange} value={formFields.image} />
+                    <Form.Control
+                      type="text"
+                      name="gigImage"
+                     
+                      onChange={handleChange}
+                      value={formFields.image}
+                      placeholder={'Gig Picture (insert image URL)'}
+                    />
                   </Form.Group>
 
                   <Form.Group className='mb-3'>
@@ -180,7 +191,7 @@ const AddGig = () => {
 
 
       </Container>
-      
+
     </main>
   )
 }

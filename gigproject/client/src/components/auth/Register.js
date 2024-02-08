@@ -57,15 +57,15 @@ const Register = () => {
           <Col xs={0} sm={0} md={0} lg={6} className='d-none d-lg-block left'>
             <div className='img-container'>
               <img alt='record collection' src={hero}></img>
-              <p className='text-center'>Remember your gigs with your friends forever.</p>
+              <p className='text-center-neon'>Remember your gigs with your friends forever.</p>
             </div>
           </Col>
 
           <Col xs={12} sm={12} md={6} lg={6}>
             <Row className='form-logo-row'>
               <Col className='title-container'>
-                <img alt='goldfinger' src={png}></img>
-                
+                <img alt='goldfinger' src={png} className='glowing-img'></img>
+
               </Col>
             </Row>
 

@@ -1,0 +1,105 @@
+.left .desktop-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.left .desktop-img img {
+  max-height: 65%;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
+  border: solid 5px white;
+  border-radius: 15px;
+}
+
+.gig-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8%;
+  background: #ff69b4;
+  text-align: center;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
+  border: solid 5px white;
+  width: 80%;
+  padding: 15px 0;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 15px;
+}
+.gig-info h1 {
+  font-weight: 800;
+  margin-top: 15px;
+  color: #0f1e3c !important;
+}
+.gig-info .mobile-image {
+  width: 270px;
+  margin-top: 7%;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
+  border: solid 5px white;
+  padding: 0;
+  border-radius: 15px;
+}
+.gig-info .toggle-button {
+  background-color: #0f1e3c;
+  border: #0f1e3c;
+  width: 50%;
+  color: ff69b4;
+  border-radius: 5px;
+  padding: 10px 0;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.gig-info .toggle-button.toggle-button-link {
+  color: #ff69b4;
+  text-decoration-color: #ff69b4;
+}
+
+.review-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ff69b4;
+  text-align: center;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
+  border: solid 5px white;
+  width: 80%;
+  padding: 15px 0;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 250px;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+.review-info h2 {
+  font-weight: 800;
+  color: #0f1e3c;
+}
+
+p {
+  color: #0f1e3c;
+}
+
+h2 {
+  color: #0f1e3c;
+}
+
+.slider {
+  overflow-y: scroll;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.review-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  background: white;
+  padding: 10px 0;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+.review-container .review-content {
+  margin: 0;
+}/*# sourceMappingURL=gigpage.css.map */

@@ -67,12 +67,14 @@ footer {
       border: solid 2px white;
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
       margin-bottom: 5px;
+      height: 60px;
     }
 
     h4 {
       a {
         text-decoration: none;
         color: black;
+        font-size: 14px;
       }
     }
   }
@@ -84,7 +86,7 @@ footer {
 
 .content-slider-vert {
   overflow-y: scroll;
-  max-height: calc(100vh - 110px);
+  max-height: calc(100vh - 0px);
 }
 
 .content-slider-vert::-webkit-scrollbar {
@@ -97,4 +99,49 @@ footer {
 
 #encore-nav {
   height:100%;
+}
+
+.text-center-neon {
+  animation: neon 2.5s infinite alternate;
+  font-size: 14px;;
+}
+
+@keyframes neon {
+  0% {
+    text-shadow: 0 0 0px #0f1e3c, 0 0 10px #0f1e3c, 0 0 15px #0f1e3c, 0 0 20px #ff7fd3, 0 0 35px #ff7fd3, 0 0 40px #ff7fd3, 0 0 50px #ff7fd3, 0 0 75px #ff7fd3;
+  }
+  100% {
+    text-shadow: 0 0 4px #0f1e3c, 0 0 20px #0f1e3c 0 0 30px #0f1e3c, 0 0 40px #ff7fd3, 0 0 50px #ff7fd3, 0 0 60px #ff7fd3, 0 0 70px #ff7fd3, 0 0 80px #ff7fd3;
+  }
+}
+
+.glowing-img {
+  filter: drop-shadow(0 0 1rem #ff69b4);
+  animation: glowAnimation 1.5s infinite alternate;
+}
+
+@keyframes glowAnimation {
+  0% {
+    filter: drop-shadow(0 0 0.5rem #ff69b4);
+  }
+  100% {
+    filter: drop-shadow(0 0 1rem #ff69b4) brightness(1.2);
+  }
+}
+
+.right {
+  margin-top: 50px;
+}
+
+.edit-button, .delete-button {
+  padding: 0px !important;
+}
+
+.error-message {
+  color: black;
+  background-color: red;
+  border: 1 px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: 'M PLUS 1p', sans-serif;
 }

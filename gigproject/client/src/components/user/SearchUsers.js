@@ -77,15 +77,15 @@ const SearchUsers = () => {
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row className='search-mob'>
           {filteredUsers.length > 0 ?
             filteredUsers.map(user => {
               // eslint-disable-next-line camelcase
               const { id, profile_image, username, gigs } = user
               return (
-                <Col key={id} lg={2} md={2} sm={4} xs={4} className={sub === id ? 'd-none' : ''}>
+                <Col key={id} lg={2} md={2} sm={4} xs={4} className={sub === id ? 'gig-container' : 'gig-container'}>
                   <Link to={`/profile/${id}/`}>
-                    <Card className='user-container'>
+                    <Card>
                       {/* eslint-disable-next-line camelcase */}
                       <Card.Img className='card-image' style={{ backgroundImage: `url('${profile_image}')` }}></Card.Img>
                       <Card.Body>

@@ -1,0 +1,13 @@
+.edit-profile-container {
+  margin: 0 5px;
+}
+.edit-profile-container form {
+  height: 100% !important;
+}
+.edit-profile-container #image-text {
+  color: #0f1e3c;
+  text-align: left;
+  margin-left: 5px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}/*# sourceMappingURL=editProfile.css.map */
