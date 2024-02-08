@@ -66,6 +66,37 @@
   }
 }
 
+.toggle-button-edit {
+  background-color: orange;
+  border: #0f1e3c;
+  width: 25%;
+  color: ff69b4;
+  border-radius: 5px;
+  padding: 10px 0;
+  text-decoration: none;
+  margin-top: 10px;
+  &.toggle-button-link {
+    color: black;
+    text-decoration-color: black;
+  }
+}
+
+.toggle-button-delete {
+  background-color: red;
+  border: #0f1e3c;
+  width: 25%;
+  color: ff69b4;
+  border-radius: 5px;
+  padding: 10px 0;
+  text-decoration: none;
+  margin-top: 10px;
+  &.toggle-button-link {
+    color: wheat;
+    text-decoration-color: wheat;
+  }
+}
+
+
 .review-info {
   display: flex;
   flex-direction: column;

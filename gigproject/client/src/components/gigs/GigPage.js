@@ -10,7 +10,7 @@ import { camelizeKeys } from 'humps'
 
 import Error from '../error/Error'
 
-import { getPayloadSub } from '../helpers/Auth'
+import { userIsOwner, authenticated, getPayloadSub } from '../helpers/Auth'
 
 const GigPage = () => {
 
@@ -28,6 +28,7 @@ const GigPage = () => {
   const [addToUpcomingClicked, setAddToUpcomingClicked] = useState(false)
   const [addToCollectionClicked, setAddToCollectionClicked] = useState(false)
   const [alreadyOwned, setAlreadyOwned] = useState(false)
+  const [userIsOwnerState, setUserIsOwnerState] = useState(false)
 
 
 
@@ -36,7 +37,7 @@ const GigPage = () => {
   useEffect(() => {
     const getGig = async () => {
       try {
-        const { data } = await axios.get(`/api/gigs/${gigId}/`)
+        const { data } = await authenticated.get(`/api/gigs/${gigId}/`)
         const camelizedData = camelizeKeys(data)
         console.log('GIG DATA', camelizedData)
         setGig(camelizedData)
@@ -106,6 +107,10 @@ const GigPage = () => {
       } catch (err) {
         console.log(err)
         setError(err.message)
+      }
+      if (userIsOwner) {
+        console.log('USER IS OWNER')
+        setUserIsOwnerState(true)
       }
     }
     getUser()
@@ -236,6 +241,8 @@ const GigPage = () => {
                     </>
                   )}
                   <Link className='toggle-button toggle-button-link' to={`/add-review/${gigId}/${sub}`}>Submit gig review</Link>
+                  {userIsOwnerState && <Link className='toggle-button-edit toggle-button-link' id="edit" to={`/gigs/${gigId}/edit`}>Edit Gig</Link>}
+                  {userIsOwnerState && <Link className='toggle-button-delete toggle-button-link' id="delete" to={`/delete-gig/${gigId}/${sub}`}>Delete Gig</Link>}
                 </Col>
               </>
             </Row>

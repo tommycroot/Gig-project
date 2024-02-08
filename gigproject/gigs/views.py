@@ -23,10 +23,11 @@ class GigListView(APIView):
   def post(self, request):
     print('POST /api/gigs endpoint hit')
     print('Request data =>', request.data)
-    gig = GigSerializer(data=request.data)
-    gig.is_valid(raise_exception=True)
-    gig.save()
-    return Response(gig.data, status.HTTP_201_CREATED)
+    gig_data = {**request.data, 'owner': request.user.id}  # Add owner field with user's ID
+    gig_serializer = GigSerializer(data=gig_data)
+    gig_serializer.is_valid(raise_exception=True)
+    gig_serializer.save()
+    return Response(gig_serializer.data, status=status.HTTP_201_CREATED)
 
 class GigDetailView(APIView):
   #GET A SPECIFIC GIG

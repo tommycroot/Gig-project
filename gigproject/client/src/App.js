@@ -12,6 +12,7 @@ import AddGig from './components/user/AddGig'
 import EditProfile from './components/user/EditProfile'
 import SearchGigs from './components/user/SearchGigs'
 import SearchUsers from './components/user/SearchUsers'
+import EditGig from './components/user/EditGig'
 
 const App = () => {
   useEffect(() => {
@@ -33,12 +34,13 @@ const App = () => {
           <Route path='/profile/:id' element={<Profile />}></Route>
           <Route path='/auth/:id/edit' element={<EditProfile />}></Route>
           <Route path='/gigs/:gigId/' element={<GigPage />}></Route>
+          <Route path='/gigs/:gigId/edit/' element={<EditGig />}></Route>
           <Route path='/add-review/:gigId/:sub' element={<AddReview />}></Route>
           <Route path='/search-gigs' element={<SearchGigs />}></Route>
           <Route path='/add-gig' element={<AddGig />}></Route>
           <Route path='/search-users' element={<SearchUsers />}></Route>
         </Routes>
-        <footer className='text-center'><small>Encore was created by <a href='https://github.com/tommycroot' target='_blank' rel='noreferrer'>Tommy Croot</a></small></footer>
+        <footer className='text-center'><small>Encore was created by <a href='https://thomascroot.com' target='_blank' rel='noreferrer'>Tommy Croot</a></small></footer>
       </BrowserRouter>
     </div>
 

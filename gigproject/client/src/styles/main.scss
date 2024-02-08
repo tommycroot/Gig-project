@@ -116,18 +116,22 @@ footer {
 }
 
 .glowing-img {
-  filter: drop-shadow(0 0 1rem #ff69b4);
-  animation: glowAnimation 1.5s infinite alternate;
+  filter: drop-shadow(2px 2px 0.5rem #ff69b4);
+  animation: sparkleAnimation 3.5s infinite alternate;
 }
 
-@keyframes glowAnimation {
+@keyframes sparkleAnimation {
   0% {
-    filter: drop-shadow(0 0 0.5rem #ff69b4);
+    filter: drop-shadow(0 0 1.5rem #ff69b4);
+  }
+  50% {
+    filter: drop-shadow(2px 2px 0.5rem #ff69b4);
   }
   100% {
-    filter: drop-shadow(0 0 1rem #ff69b4) brightness(1.2);
+    filter: drop-shadow(0 0 1.5rem #ff69b4);
   }
 }
+
 
 .right {
   margin-top: 50px;
