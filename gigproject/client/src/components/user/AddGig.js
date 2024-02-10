@@ -9,11 +9,14 @@ import Button from 'react-bootstrap/Button'
 
 import { useNavigate } from 'react-router-dom'
 import favicon from '../../images/favicon.png'
+import { getPayloadSub } from '../helpers/Auth'
 
 import humps from 'humps'
 
 const AddGig = () => {
   const navigate = useNavigate()
+  
+  const sub = getPayloadSub()
   //! STATE
 
   const [formFields, setFormFields] = useState({
@@ -97,7 +100,18 @@ const AddGig = () => {
 
       const vals = humps.decamelizeKeys(formFields)
       const response = await axios.post('/api/gigs/', vals)
-      navigate(`/gigs/${response.data.id}`)
+      const currentDate = new Date()
+      const gigDate = new Date(formFields.date)
+      if (gigDate > currentDate) {
+        const sub = getPayloadSub()
+        await axios.put(`/api/auth/${sub}/upcoming/${response.data.id}/`)
+        navigate(`/profile/${sub}`)
+      } else {
+        const sub = getPayloadSub()
+        await axios.put(`/api/auth/${sub}/gigs/${response.data.id}/`)
+        navigate(`/profile/${sub}`)
+      }
+     
     } catch (err) {
       console.log('error', err)
       setError(err.response.data.message)

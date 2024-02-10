@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
-
+import Spinner from '../Spinner.js'
 import Error from '../error/Error'
 
 import { getPayloadSub } from '../helpers/Auth'
@@ -14,7 +14,7 @@ import { getPayloadSub } from '../helpers/Auth'
 
 const SearchUsers = () => {
 
-  
+
 
   //! STATE
 
@@ -27,15 +27,19 @@ const SearchUsers = () => {
   const [error, setError] = useState('')
 
   const [sub, setSub] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
+
 
   useEffect(() => {
 
     const getUsers = async () => {
       try {
+        setIsLoading(true)
         const { data } = await axios.get('/api/auth/')
         const sub = getPayloadSub()
         console.log('USER DATA', data)
         setUsers(data.sort((a, b) => a.username > b.username ? 1 : -1))
+        setIsLoading(false)
         setSub(sub)
       } catch (err) {
         console.log(err.message)
@@ -78,7 +82,12 @@ const SearchUsers = () => {
           </Col>
         </Row>
         <Row className='search-mob'>
-          {filteredUsers.length > 0 ?
+          {isLoading ? (
+            <Col className="text-center">
+              <Spinner />
+              <h1 id='loader'>Loading...</h1>
+            </Col>
+          ) : filteredUsers.length > 0 ? (
             filteredUsers.map(user => {
               // eslint-disable-next-line camelcase
               const { id, profile_image, username, gigs } = user
@@ -97,15 +106,11 @@ const SearchUsers = () => {
                 </Col>
               )
             })
-            :
-            <>
-              {error ?
-                <Error error={error} />
-                :
-                <h1>Loading</h1>
-              }
-            </>
-          }
+          ) : (
+            <Col className="text-center">
+              <h3>No matching users</h3>
+            </Col>
+          )}
         </Row>
       </Container>
     </main>

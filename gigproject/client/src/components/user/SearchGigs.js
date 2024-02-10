@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 
 import Error from '../error/Error'
+import Spinner from '../Spinner.js'
 
 
 const SearchGigs = () => {
@@ -23,6 +24,7 @@ const SearchGigs = () => {
   const [filteredGigs, setFilteredGigs] = useState([])
 
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
 
   //! Executions
 
@@ -30,9 +32,11 @@ const SearchGigs = () => {
 
     const getGigs = async () => {
       try {
+        setIsLoading(true)
         const { data } = await axios.get('/api/gigs/')
         console.log(data)
         setGigs(data.sort((a, b) => a.band > b.band ? 1 : -1))
+        setIsLoading(false)
       } catch (err) {
         console.log(err)
         setError(err.message)
@@ -72,7 +76,9 @@ const SearchGigs = () => {
 
   return (
     <main>
+
       <Container>
+
         <Row>
           <Col className='text-center'>
             <h1 className='search-h1'>SEARCH SHOWS</h1>
@@ -87,7 +93,7 @@ const SearchGigs = () => {
                   onChange={handleChange}
                   value={filters}
                 />
-      
+
                 <input
                   type='text'
                   name='date'
@@ -100,7 +106,12 @@ const SearchGigs = () => {
           </Col>
         </Row>
         <Row className='search-mob'>
-          {filteredGigs.length > 0 ?
+          {isLoading ? (
+            <Col className="text-center">
+              <Spinner />
+              <h1 id='loader'>Loading...</h1>
+            </Col>
+          ) : filteredGigs.length > 0 ? (
             filteredGigs.map(gig => {
               const { id, band, date, venue, image } = gig
               return (
@@ -118,15 +129,11 @@ const SearchGigs = () => {
                 </Col>
               )
             })
-            :
-            <>
-              {error ?
-                <Error error={error} />
-                :
-                <h1>No match found</h1>
-              }
-            </>
-          }
+          ) : (
+            <Col className="text-center">
+              <h3>No matching gigs</h3>
+            </Col>
+          )}
         </Row>
       </Container>
     </main>

@@ -12,6 +12,7 @@ import Error from '../error/Error'
 import { getPayloadSub, removeToken } from '../helpers/Auth'
 import humps from 'humps'
 import CardBody from 'react-bootstrap/esm/CardBody'
+import ProfileSpinner from '../ProfileSpinner.js'
 
 
 const Profile = () => {
@@ -27,6 +28,7 @@ const Profile = () => {
   const [loggedUser, setLoggedUser] = useState({})
 
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
 
   const [gigView, setGigView] = useState(true)
 
@@ -46,6 +48,7 @@ const Profile = () => {
   useEffect(() => {
     const getProfile = async () => {
       try {
+        setIsLoading(true)
         const { data } = await axios.get(`/api/auth/${id}/`, {
           params: {
             band: bandSearch,
@@ -83,6 +86,7 @@ const Profile = () => {
           attended: filteredAttendedGigs,
           upcoming: filteredUpcomingGigs,
         })
+        setIsLoading(false)
       } catch (err) {
         console.log(err)
         setError(err.message)
@@ -303,12 +307,14 @@ const Profile = () => {
 
 
               <Row className='content-slider d-md-none' xs={12} sm={12}>
+                {isLoading && <ProfileSpinner />}
                 {gigView ?
                   profile.gigs && profile.gigs.length > 0 ?
                     profile.gigs.map(gig => {
                       const { id, band, image, venue, date } = gig
                       return (
                         <Col key={id}>
+
                           <Link to={`/gigs/${id}`}>
                             <img src={image} height='100' alt={`${band} at ${venue} on ${date}`} />
                             <span>{band} {venue} {date}</span>
@@ -351,58 +357,65 @@ const Profile = () => {
 
 
             <Row className='content-slider-vert'>
-              {gigView ?
-                filteredGigs.attended && filteredGigs.attended.length > 0 ?
-                  filteredGigs.attended.map(gig => {
-                    const { id, image, band, venue, date } = gig
-                    return (
-                      <Col key={id} md={8} lg={4} className='gig-container'>
-                        <Link to={`/gigs/${id}`}>
-                          <Card className='gig-card'>
-                            {image ? (
-                              <Card.Img variant='top' src={image} alt={`${band} at ${venue} on ${date}`} />
-                            ) : (
-                              <div>
-                                {/* Some fallback content when image is missing */}
-                                No Image Available
-                              </div>
-                            )}
-                            <CardBody>
-                              <Card.Title>{band}</Card.Title>
-                              <Card.Text>{venue}</Card.Text>
-                              <Card.Text>{date}</Card.Text>
-                            </CardBody>
-                          </Card>
-                        </Link>
-                      </Col>
-                    )
-                  })
-                  :
-                  <p>No attended gigs match the search criteria.</p>
-                :
-                filteredGigs.upcoming && filteredGigs.upcoming.length > 0 ?
-                  filteredGigs.upcoming.map(gig => {
-                    const { id, image, band, venue, date } = gig
-                    return (
-                      <Col key={id} sm={16} md={8} lg={4} className='gig-container'>
-                        <Link to={`/gigs/${id}`}>
-                          <Card className='gig-card'>
-                            <Card.Img variant='top' src={image} alt={`${band} at ${venue} on ${date}`} />
-                            <Card.Body>
-                              <div className='card-text-mob'>
+              {isLoading ? (
+                <Col className="text-center">
+                  <ProfileSpinner />
+                  <h1 id='loader'>Loading...</h1>
+                </Col>
+              ) : (
+                gigView ? (
+                  filteredGigs.attended && filteredGigs.attended.length > 0 ?
+                    filteredGigs.attended.map(gig => {
+                      const { id, image, band, venue, date } = gig
+                      return (
+                        <Col key={id} md={8} lg={4} className='gig-container'>
+                          <Link to={`/gigs/${id}`}>
+                            <Card className='gig-card'>
+                              {image ? (
+                                <Card.Img variant='top' src={image} alt={`${band} at ${venue} on ${date}`} />
+                              ) : (
+                                <div>
+                                  {/* Some fallback content when image is missing */}
+                                  No Image Available
+                                </div>
+                              )}
+                              <CardBody>
                                 <Card.Title>{band}</Card.Title>
-                                <Card.Text>@ {venue}</Card.Text>
+                                <Card.Text>{venue}</Card.Text>
                                 <Card.Text>{date}</Card.Text>
-                              </div>
-                            </Card.Body>
-                          </Card>
-                        </Link>
-                      </Col>
-                    )
-                  })
-                  :
-                  <p>No upcoming gigs match the search criteria.</p>
-              }
+                              </CardBody>
+                            </Card>
+                          </Link>
+                        </Col>
+                      )
+                    })
+                    :
+                    <p className='profile-p'>No attended gigs match the search criteria.</p>
+                ) : (
+                  filteredGigs.upcoming && filteredGigs.upcoming.length > 0 ?
+                    filteredGigs.upcoming.map(gig => {
+                      const { id, image, band, venue, date } = gig
+                      return (
+                        <Col key={id} sm={16} md={8} lg={4} className='gig-container'>
+                          <Link to={`/gigs/${id}`}>
+                            <Card className='gig-card'>
+                              <Card.Img variant='top' src={image} alt={`${band} at ${venue} on ${date}`} />
+                              <Card.Body>
+                                <div className='card-text-mob'>
+                                  <Card.Title>{band}</Card.Title>
+                                  <Card.Text>@ {venue}</Card.Text>
+                                  <Card.Text>{date}</Card.Text>
+                                </div>
+                              </Card.Body>
+                            </Card>
+                          </Link>
+                        </Col>
+                      )
+                    })
+                    :
+                    <p className='profile-p'>No upcoming gigs match the search criteria.</p>
+                )
+              )}
             </Row>
 
           </Col>

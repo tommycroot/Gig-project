@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useNavigation } from 'react-router-dom'
 import axios from 'axios'
 import { authenticated, isAuthenticated, userIsOwner } from '../helpers/Auth.js'
 import Container from 'react-bootstrap/Container'
@@ -29,6 +29,7 @@ const EditGig = () => {
     reviews: [],
   })
 
+  
   console.log('GIG ID', gigId)
   useEffect(() => {
     if (gigId) {
@@ -156,7 +157,7 @@ const EditGig = () => {
 
               <Form onSubmit={handleSubmit} >
                 <div className='form-container'>
-                  <h2>Edit GIG</h2>
+                  <h2>Edit Gig</h2>
                   <img className='form-img' src={favicon} />
                   {/* <p className='text-center'>Enter the gig&apos;s info into the form to add it to the ENCORE database.</p> */}
                   <Form.Group className='mb-3'>
@@ -209,7 +210,7 @@ const EditGig = () => {
                   </Form.Group>
 
                   <Button variant='primary' type='submit' className='mb-3'>
-                    Add Show
+                    Update Gig
                   </Button>
 
                   {error && <p className='text-danger text-center'>{error}</p>}

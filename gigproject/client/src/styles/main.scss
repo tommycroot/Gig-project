@@ -18,13 +18,13 @@
   color: #ff69b4;
   font-family: 'M PLUS 1p', sans-serif;
   background-size: cover;
-  
+
 }
 
 main {
   height: calc(100vh - 120px);
   overflow-y: scroll;
-  background-color: #0f1e3c ;
+  background-color: #0f1e3c;
 }
 
 .primary-container {
@@ -36,11 +36,11 @@ main {
 }
 
 body {
-  background-color: #0f1e3c ; 
+  background-color: #0f1e3c;
 }
 
 footer {
-  background-color: #0f1e3c ;
+  background-color: #0f1e3c;
 }
 
 .card-image {
@@ -54,7 +54,7 @@ footer {
 @media (max-width: 767px) {
   .card-title {
     font-size: 15px;
-}
+  }
 }
 
 .content-slider {
@@ -98,18 +98,20 @@ footer {
 }
 
 #encore-nav {
-  height:100%;
+  height: 100%;
 }
 
 .text-center-neon {
   animation: neon 2.5s infinite alternate;
-  font-size: 14px;;
+  font-size: 14px;
+  ;
 }
 
 @keyframes neon {
   0% {
     text-shadow: 0 0 0px #0f1e3c, 0 0 10px #0f1e3c, 0 0 15px #0f1e3c, 0 0 20px #ff7fd3, 0 0 35px #ff7fd3, 0 0 40px #ff7fd3, 0 0 50px #ff7fd3, 0 0 75px #ff7fd3;
   }
+
   100% {
     text-shadow: 0 0 4px #0f1e3c, 0 0 20px #0f1e3c 0 0 30px #0f1e3c, 0 0 40px #ff7fd3, 0 0 50px #ff7fd3, 0 0 60px #ff7fd3, 0 0 70px #ff7fd3, 0 0 80px #ff7fd3;
   }
@@ -124,9 +126,11 @@ footer {
   0% {
     filter: drop-shadow(0 0 1.5rem #ff69b4);
   }
+
   50% {
     filter: drop-shadow(2px 2px 0.5rem #ff69b4);
   }
+
   100% {
     filter: drop-shadow(0 0 1.5rem #ff69b4);
   }
@@ -137,7 +141,8 @@ footer {
   margin-top: 50px;
 }
 
-.edit-button, .delete-button {
+.edit-button,
+.delete-button {
   padding: 0px !important;
 }
 
@@ -148,4 +153,41 @@ footer {
   border-radius: 5px;
   padding: 10px;
   font-family: 'M PLUS 1p', sans-serif;
+}
+
+.spinner img {
+  text-align: center;
+  height: 200px;
+}
+
+@media (max-width: 767px) {
+  .spinner img {
+    max-width: 180px;
+    height: auto;
+    margin-left: 85px;
+  }
+}
+
+#loader {
+  text-align: center;
+  font-size: 16px;
+}
+
+@media (max-width: 767px) {
+  #loader {
+    text-align: center;
+    margin-left: 105px;
+  }
+}
+
+.profile-spinner img {
+  text-align: center;
+  height: 200px;
+}
+
+@media (max-width: 767px) {
+  .profile-spinner img {
+    max-width: 180px;
+    height: auto;
+  }
 }

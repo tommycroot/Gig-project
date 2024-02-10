@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -13,7 +13,7 @@ import Error from '../error/Error'
 import { userIsOwner, authenticated, getPayloadSub } from '../helpers/Auth'
 
 const GigPage = () => {
-
+  const navigate = useNavigate()
   const { gigId } = useParams()
 
   const [gig, setGig] = useState([])
@@ -185,7 +185,23 @@ const GigPage = () => {
     }
   }, [gig.reviews])
 
+  const handleDelete = async () => {
+    try {
+      const confimation = window.confirm('Are you sure you want to permanently delete this gig?')
+      if (confimation) {
+        await authenticated.delete(`/api/gigs/${gigId}/`)
+        console.log('deleted')
+        navigate(`/profile/${sub}`)
+      } else {
+        console.log('Deletion canceled')
+      }
+      
+    } catch (err) {
+      console.log(err)
+    }
+  }
   return (
+
     <main>
       <Container className='primary-container'>
         <Row className='top-row'>
@@ -242,7 +258,7 @@ const GigPage = () => {
                   )}
                   <Link className='toggle-button toggle-button-link' to={`/add-review/${gigId}/${sub}`}>Submit gig review</Link>
                   {userIsOwnerState && <Link className='toggle-button-edit toggle-button-link' id="edit" to={`/gigs/${gigId}/edit`}>Edit Gig</Link>}
-                  {userIsOwnerState && <Link className='toggle-button-delete toggle-button-link' id="delete" to={`/delete-gig/${gigId}/${sub}`}>Delete Gig</Link>}
+                  {userIsOwnerState && <Link className='toggle-button-delete toggle-button-link' id="delete" onClick={handleDelete}>Delete Gig</Link>}
                 </Col>
               </>
             </Row>
