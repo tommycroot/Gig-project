@@ -14,7 +14,7 @@ import { userIsOwner, authenticated, getPayloadSub } from '../helpers/Auth'
 
 const GigPage = () => {
   const navigate = useNavigate()
-  const { gigId } = useParams()
+  const { gigId, reviewId } = useParams()
 
   const [gig, setGig] = useState([])
 
@@ -29,31 +29,19 @@ const GigPage = () => {
   const [addToCollectionClicked, setAddToCollectionClicked] = useState(false)
   const [alreadyOwned, setAlreadyOwned] = useState(false)
   const [userIsOwnerState, setUserIsOwnerState] = useState(false)
+  const [reviewDeleted, setReviewDeleted] = useState(false)
 
 
 
   const sub = getPayloadSub()
 
-  useEffect(() => {
-    const getGig = async () => {
-      try {
-        const { data } = await authenticated.get(`/api/gigs/${gigId}/`)
-        const camelizedData = camelizeKeys(data)
-        console.log('GIG DATA', camelizedData)
-        setGig(camelizedData)
-      } catch (err) {
-        console.log(err)
-        setError(err.message)
-      }
-    }
-    getGig()
-  }, [])
 
 
 
   useEffect(() => {
     const getUser = async () => {
       try {
+
         const { data } = await axios.get(`/api/auth/${sub}/`)
         // const { gigId } = await axios.get(`/api/gigs/${gigId}`)
         console.log('USER DATA', data.gigs)
@@ -115,6 +103,22 @@ const GigPage = () => {
     }
     getUser()
   }, [])
+
+  useEffect(() => {
+    const getGig = async () => {
+      try {
+        const { data } = await authenticated.get(`/api/gigs/${gigId}/`)
+        console.log('CURRENCY', data.currency)
+        const camelizedData = camelizeKeys(data)
+        console.log('GIG DATA', camelizedData)
+        setGig(camelizedData)
+      } catch (err) {
+        console.log(err)
+        setError(err.message)
+      }
+    }
+    getGig()
+  }, [reviewDeleted])
 
   const addToGigs = async () => {
     try {
@@ -195,11 +199,31 @@ const GigPage = () => {
       } else {
         console.log('Deletion canceled')
       }
-      
+
     } catch (err) {
       console.log(err)
     }
   }
+  const handleReviewDelete = async (reviewId) => {
+    try {
+
+      console.log('REVIEW ID', reviewId)
+      const confimation = window.confirm('Are you sure you want to permanently delete this review?')
+      if (confimation) {
+        await axios.delete(`/api/reviews/${reviewId}/`)
+        console.log('deleted')
+        setReviewDeleted(true)
+        console.log(reviewDeleted)
+        navigate(`/gigs/${gigId}`)
+      } else {
+        console.log('Deletion canceled')
+      }
+
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
 
     <main>
@@ -217,10 +241,15 @@ const GigPage = () => {
               <>
                 <Col className='gig-info'>
                   <img className='d-md-none mobile-image' src={gig.image} alt='gig pic'></img>
+
                   <h1>{gig?.band}</h1>
                   <h2>@ {gig?.venue}</h2>
-                  <p>Date: {gig?.date}</p>
-                  <p>Price: {gig?.price}</p>
+                  <p>Date: {new Date(gig?.date).toLocaleDateString('en-GB')}</p>
+                  <p>Price: {gig?.currency}{gig?.price}</p>
+                  <div className='edit-delete'>
+                    {userIsOwnerState && <Link className='toggle-button-edit toggle-button-link' id="edit" to={`/gigs/${gigId}/edit`}>Edit Gig</Link>}
+                    {userIsOwnerState && <Link className='toggle-button-delete toggle-button-link' id="delete" onClick={handleDelete}>Delete Gig</Link>}
+                  </div>
                   <p>Setlist: {gig?.setlist}</p>
                   {gig.reviews && gig.reviews.length > 0 ? (
                     <p>Average Rating: {averageRating}</p>
@@ -228,8 +257,9 @@ const GigPage = () => {
                     <p>No reviews yet</p>
                   )}
                   {error && <p className="error-message">{error}</p>}
+                  
                   <button className='toggle-button' onClick={addToGigs}>
-                    {addedToGigs ? 'Remove gig from gigs' : 'Add gig to gigs'}
+                    {addedToGigs ? 'Remove Gig from Gigs' : 'Add Gig to Gigs'}
                   </button>
                   {addToCollectionClicked && (
                     <>
@@ -237,7 +267,7 @@ const GigPage = () => {
                         <p>Gig successfully added to your gig collection!</p>
 
                       ) : (
-                        <p>Gig succesfully removed from your gig collection.</p>
+                        <p>Gig succesfully removed from your gig collection!</p>
 
 
                       )}
@@ -245,20 +275,19 @@ const GigPage = () => {
                   )}
 
                   <button className='toggle-button' onClick={addToUpcoming}>
-                    {addedToUpcoming ? 'Remove gig from upcoming' : 'Add gig to upcoming'}
+                    {addedToUpcoming ? 'Remove Gig from Upcoming' : 'Add Gig to Upcoming'}
                   </button>
                   {addToUpcomingClicked && (
                     <>
                       {!alreadyOwned ? (
                         <p>Gig successfully added to your upcoming gigs!</p>
                       ) : (
-                        <p>Gig succesfully removed from your upcoming gigs.</p>
+                        <p>Gig succesfully removed from your upcoming gigs!</p>
                       )}
                     </>
                   )}
-                  <Link className='toggle-button toggle-button-link' to={`/add-review/${gigId}/${sub}`}>Submit gig review</Link>
-                  {userIsOwnerState && <Link className='toggle-button-edit toggle-button-link' id="edit" to={`/gigs/${gigId}/edit`}>Edit Gig</Link>}
-                  {userIsOwnerState && <Link className='toggle-button-delete toggle-button-link' id="delete" onClick={handleDelete}>Delete Gig</Link>}
+                  <Link className='toggle-button toggle-button-link' to={`/add-review/${gigId}/${sub}`}>Submit Gig Review</Link>
+
                 </Col>
               </>
             </Row>
@@ -267,15 +296,19 @@ const GigPage = () => {
               <>
                 <Col className='review-info slider'>
                   <h2>REVIEWS</h2>
+                  <p>{gig.reviews ? `Number of Reviews: ${gig.reviews.length}` : 'No reviews yet'}</p>
                   {gig.reviews && gig.reviews.length > 0 ?
                     gig.reviews.map(review => {
                       const { id, reviewText, rating, owner } = review
+                      console.log('OWNER', owner.id, 'SUB', sub)
                       if (review) {
                         return (
                           <div key={id} className='review-container'>
-                            <p className='review-content'><Link to={`/profile/${owner.id}`}>{owner.username}</Link></p>
-                            <p className='review-content'>Rating: {rating}/5</p>
-                            <p className='review-content'>{reviewText}</p>
+                            
+                            <p className='review-content' id='review-owner'><Link to={`/profile/${owner.id}`}>{owner.username}</Link></p>
+                            <p className='review-content'>{rating}/5</p>
+                            <p className='review-content' id='review-text'>{reviewText}</p>
+                            <p className='toggle-button-delete toggle-button-link' id="delete-review" >{owner.id === sub && <Link  onClick={() => handleReviewDelete(review.id)}>Delete</Link>}</p>
                           </div>
                         )
                       }

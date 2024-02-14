@@ -51,7 +51,7 @@ const NavBar = () => {
     <Navbar bg='light' expand='lg'>
       <Container>
         <Navbar.Brand href={isAuthenticated() ? `/profile/${sub}` : '/'}>
-          <img
+          <img 
             alt='Encore logo'
             src={logo}
             className='d-inline-block align-top logo'
@@ -77,7 +77,7 @@ const NavBar = () => {
               :
               <>
                 <Nav.Link to='/add-gig' as={Link}>Add Gig</Nav.Link>
-                <Nav.Link to='/search-gigs' as={Link}>Search Shows</Nav.Link>
+                <Nav.Link to='/search-gigs' as={Link}>Search Gigs</Nav.Link>
                 <Nav.Link to='/search-users' as={Link}>Search Users</Nav.Link>
                 <span className='nav-link' onClick={handleLogOut}>Sign Out</span>
 

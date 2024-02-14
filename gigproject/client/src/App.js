@@ -36,6 +36,7 @@ const App = () => {
           <Route path='/gigs/:gigId/' element={<GigPage />}></Route>
           <Route path='/gigs/:gigId/edit/' element={<EditGig />}></Route>
           <Route path='/add-review/:gigId/:sub' element={<AddReview />}></Route>
+          <Route path='/gigs/:gigId/reviews/:reviewId' element={<GigPage />}></Route>
           <Route path='/search-gigs' element={<SearchGigs />}></Route>
           <Route path='/add-gig' element={<AddGig />}></Route>
           <Route path='/search-users' element={<SearchUsers />}></Route>

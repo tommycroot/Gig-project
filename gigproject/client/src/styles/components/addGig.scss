@@ -6,6 +6,29 @@
 .form-img {
   height: 70px;
   margin-bottom: 25px;
+  filter: drop-shadow(2px 2px 1.5rem #0f1e3c);
+  animation: sparklingAnimation 0.5s infinite alternate;
+}
+
+@keyframes sparklingAnimation {
+  0% {
+    filter: drop-shadow(0 0 0.5rem #0f1e3c);
+  }
+
+  50% {
+    filter: drop-shadow(2px 2px 0.5rem #0f1e3c);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 1.5rem #0f1e3c);
+  }
+}
+
+.title-box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 35px;
 }
 
 /* Styles for band suggestions */
@@ -43,3 +66,43 @@
   background-color: #0056b3;
 }
 
+#submit {
+  margin-top: 15px;
+  margin-bottom: 20px !important;
+}
+
+.currency-field {
+  width: 100px; 
+}
+
+.price-currency {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.price-field {
+  width: 460px;
+}
+.price-placeholder::placeholder {
+  margin-right: 97px !important; /* Adjust the margin as needed */
+}
+@media (max-width: 767px) {
+  .price-field {
+    width: 265px;
+  }
+}
+
+.setlist-area{
+  padding-top: 20px !important;
+}
+
+.setlist-area::placeholder {
+  padding-left: 230px !important;
+}
+
+@media (max-width: 767px) {
+  .setlist-area::placeholder {
+    padding-left: 135px !important;
+  }
+}

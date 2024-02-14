@@ -84,10 +84,10 @@ footer {
   display: none;
 }
 
-.content-slider-vert {
-  overflow-y: scroll;
-  max-height: calc(100vh - 0px);
-}
+// .content-slider-vert {
+//   overflow-y: scroll;
+//   max-height: calc(100vh - 0px);
+// }
 
 .content-slider-vert::-webkit-scrollbar {
   display: none;
@@ -118,13 +118,13 @@ footer {
 }
 
 .glowing-img {
-  filter: drop-shadow(2px 2px 0.5rem #ff69b4);
-  animation: sparkleAnimation 3.5s infinite alternate;
+  filter: drop-shadow(2px 2px 1rem #ff69b4);
+  animation: sparkleAnimation 4.5s infinite alternate-reverse;
 }
 
 @keyframes sparkleAnimation {
   0% {
-    filter: drop-shadow(0 0 1.5rem #ff69b4);
+    filter: drop-shadow(0 0 0.5rem #ff69b4);
   }
 
   50% {
@@ -190,4 +190,8 @@ footer {
     max-width: 180px;
     height: auto;
   }
+}
+
+a {
+  text-decoration: none;
 }

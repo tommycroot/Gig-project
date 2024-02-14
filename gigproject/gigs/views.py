@@ -1,14 +1,32 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-
+from rest_framework.permissions import IsAuthenticated
 from .serializers.common import GigSerializer
 from .serializers.populated import PopulatedGigSerializer
 from .models import Gig
+from django.http import JsonResponse
 
 from lib.exceptions import exceptions
 
+from rest_framework.permissions import BasePermission
+
+class IsOwnerOrReadOnly(BasePermission):
+    """
+    Custom permission to only allow owners of an object to edit or delete it.
+    """
+
+    def has_object_permission(self, request, view, obj):
+        # Read permissions are allowed to any request,
+        # so we'll always allow GET, HEAD or OPTIONS requests.
+        if request.method in ['GET', 'HEAD', 'OPTIONS']:
+            return True
+
+        # Write permissions are only allowed to the owner of the gig.
+        return obj.owner == request.user
+
 class GigListView(APIView):
+  permission_classes = (IsOwnerOrReadOnly,)
   #GET ALL GIGS
   #endpoint: /api/gigs/
   def get(self, request):
@@ -30,6 +48,7 @@ class GigListView(APIView):
     return Response(gig_serializer.data, status=status.HTTP_201_CREATED)
 
 class GigDetailView(APIView):
+  permission_classes = (IsOwnerOrReadOnly,)
   #GET A SPECIFIC GIG
   #endpoint: /api/gigs/:id
   @exceptions
@@ -38,6 +57,7 @@ class GigDetailView(APIView):
     gig = Gig.objects.get(id=id)
     serialized_gig = PopulatedGigSerializer(gig)
     return Response(serialized_gig.data)
+  
   
   #UPDATE RECORD
   #endpoint: /api/gigs/:id
@@ -57,3 +77,4 @@ class GigDetailView(APIView):
     gig = Gig.objects.get(id=id)
     gig.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
+

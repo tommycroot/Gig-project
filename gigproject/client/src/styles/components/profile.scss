@@ -5,7 +5,7 @@
     justify-content: center;
 
     .profile-pic {
-      width: 150px;
+      width: 122px;
       margin-top: 7%;
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
       border: solid 5px white;
@@ -14,7 +14,7 @@
     }
 
     .user-info {
-      margin-top: 15px;
+      margin-top: 17px;
       background: #ff69b4;
       text-align: center;
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
@@ -52,11 +52,7 @@
         color: #ff69b4;
       }
 
-      .delete {
-        background-color: red;
-        color: white;
-        font-size: 14px;
-      }
+      
 
       a {
         background-color: #0f1e3c;
@@ -102,7 +98,22 @@
   color: #0f1e3c;
 }
 
+.card-title {
+  color:#0f1e3c;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
 
+#date {
+  font-size: 14px;
+  color:#0f1e3c;
+}
+
+#venue {
+  color:#ff69b4;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
 .right {
 
   h4{
@@ -122,19 +133,18 @@
 }
 
 @media (max-width: 767px) {
+
+  .profile-pic {
+    width: 150px !important;
+  }
   .card-title {
     font-size: 10px;
-    color:#0f1e3c;
   }
   span {
     font-size: 10px;
     color:#0f1e3c;
   }
-  .card-text-mob {
-    display: flex;
-    flex-direction: column;
-    
-  }
+
 
   .search-bars input {
     border: none;
@@ -147,9 +157,17 @@
   .gig-card .card-title,
   .gig-card span {
     white-space: normal;
-    display: block;
+    display: block !important;
   }
+
+
 }
+
+.card-body {
+  min-height: 150px;
+}
+
+
 .following-collection-wrapper {
   width: 100% !important;
   margin-left: 0px !important;
@@ -174,11 +192,36 @@ input {
   margin: 5px 0px 0px 0px;
 }
 
-#show-upcoming {
-  padding: 10px;
-}
 
 .profile-p {
   margin-top: 50px;
   color: #ff69b4;
+}
+.content-slider-vert {
+  overflow-y: scroll !important;
+  height: 100vh;
+}
+
+#h41, #h42 {
+  margin-bottom: 20px;
+}
+
+#band-title {
+  font-weight: 900;
+  font-size: 11px;
+}
+
+#venue-title {
+  font-weight: 900;
+  color: wheat;
+
+}
+
+#date-title {
+  font-weight: 800;
+  font-size: 10px;
+}
+
+.mobile-card-col {
+  min-width: 100px;
 }

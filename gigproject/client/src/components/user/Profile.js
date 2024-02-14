@@ -160,10 +160,10 @@ const Profile = () => {
   const toggleGigView = (e) => {
     if (gigView) {
       setGigView(false)
-      e.target.innerText = 'Show gigs'
+      e.target.innerText = 'Show Gigs'
     } else {
       setGigView(true)
-      e.target.innerText = 'Show upcoming'
+      e.target.innerText = 'Show Upcoming'
     }
     console.log('GIG VIEW', gigView)
     console.log(e.target)
@@ -245,10 +245,13 @@ const Profile = () => {
                 {profile.profile_image ? <img src={profile.profile_image} alt="profile picture" className='profile-pic'></img> : <img src='https://png.pngtree.com/png-clipart/20210129/ourmid/pngtree-default-male-avatar-png-image_2811083.jpg' alt="profile picture" className='profile-pic'></img>}
                 <div className='user-info'>
                   <h2 className='username text-wrap'>{profile.username}</h2>
-                  {profile.gigs ? <p>Gigs attended: {profile.gigs.length}</p> : <p>Gigs: 0</p>}
+                  {profile.location ? <p>Location: {profile.location}</p> : <p>Location: unknown</p>}
+                  {profile.gigs ? <p>Gigs: {profile.gigs.length}</p> : <p>Gigs: 0</p>}
                   {profile.following ? <p>Following: {profile.following.length}</p> : <p>Following: 0</p>}
                   {profile.reviews ? <p>Reviews: {profile.reviews.length}</p> : <p>Reviews: 0</p>}
                   <button className='toggle-button' id='show-upcoming' onClick={toggleGigView}>Show Upcoming</button>
+                  <button onClick={followUnfollow} className={sub === profile.id ? 'd-none' : 'toggle-button'}>{followButtonVal}</button>
+                  <Link to={`/auth/${id}/edit`} state={{ info: profile }} className={sub !== profile.id ? 'd-none' : 'toggle-button'}>Account Settings</Link>
                   <div className="search-bars">
                     <input
                       type="text"
@@ -272,9 +275,8 @@ const Profile = () => {
                       className="form-row"
                     />
                   </div>
-                  <button onClick={followUnfollow} className={sub === profile.id ? 'd-none' : 'toggle-button'}>{followButtonVal}</button>
-                  <Link to={`/auth/${id}/edit`} state={{ info: profile }} className={sub !== profile.id ? 'd-none' : 'toggle-button'}>Edit Profile</Link>
-                  <button className={sub !== profile.id ? 'd-none' : 'toggle-button delete'} onClick={deleteAccount}>Delete Account</button>
+
+                  {/* <button className={sub !== profile.id ? 'd-none' : 'toggle-button delete'} onClick={deleteAccount}>Delete Account</button> */}
                 </div>
               </>
             </Row>
@@ -297,27 +299,28 @@ const Profile = () => {
                   })
                 ) : (
                   <>
-                    {sub === profile.id ? <p>Find friends to follow <Link to={'/search-users'}>here</Link></p> : <p>{profile.username} is not following anyone</p>}
+                    {sub === profile.id ? <p >Find friends to follow <Link to={'/search-users'}>here</Link></p> : <p>{profile.username} is not following anyone</p>}
                   </>
                 )}
               </Row>
             </div>
             <div className='following-collection-wrapper d-md-none'>
-              {gigView ? <h4 className='d-md-none'>Gigs:</h4> : <h4 className='d-md-none'>Upcoming Gigs:</h4>}
+              {gigView ? <h4 className='d-md-none' id='h41'>Gigs:</h4> : <h4 className='d-md-none' id='h42'>Upcoming:</h4>}
 
 
               <Row className='content-slider d-md-none' xs={12} sm={12}>
                 {isLoading && <ProfileSpinner />}
                 {gigView ?
-                  profile.gigs && profile.gigs.length > 0 ?
-                    profile.gigs.map(gig => {
+                  filteredGigs.attended && filteredGigs.attended.length > 0 ?
+                    filteredGigs.attended.map(gig => {
                       const { id, band, image, venue, date } = gig
+                      const ukFormattedDate = new Date(date).toLocaleDateString('en-GB')
                       return (
-                        <Col key={id}>
+                        <Col className='mobile-card-col'  key={id}>
 
                           <Link to={`/gigs/${id}`}>
                             <img src={image} height='100' alt={`${band} at ${venue} on ${date}`} />
-                            <span>{band} {venue} {date}</span>
+                            <span id='upcoming-mobile-span'><br></br><span id='band-title'>{band}</span><br></br><span id='venue-title'>{venue}</span><br></br><span id='date-title'>{ukFormattedDate}</span></span>
                           </Link>
                         </Col>
                       )
@@ -328,14 +331,17 @@ const Profile = () => {
                     </>
 
                   :
-                  profile.upcoming && profile.upcoming.length > 0 ?
-                    profile.upcoming.map(gig => {
+
+                  filteredGigs.upcoming && filteredGigs.upcoming.length > 0 ?
+                    filteredGigs.upcoming.map(gig => {
                       const { id, band, image, venue, date } = gig
+                      const ukFormattedDate = new Date(date).toLocaleDateString('en-GB')
                       return (
-                        <Col key={id}>
-                          <Link to={`/gigs/${id}`}>
+                        <Col className='mobile-card-col' key={id}>
+
+                          <Link className='mobile-card' to={`/gigs/${id}`}>
                             <img src={image} height='100' alt={`${band} at ${venue} on ${date}`} />
-                            <span>{band} {venue} {date}</span>
+                            <span id='upcoming-mobile-span'><br></br><span id='band-title'>{band}</span><br></br><span id='venue-title'>{venue}</span><br></br><span id='date-title'>{ukFormattedDate}</span></span>
                           </Link>
                         </Col>
                       )
@@ -353,7 +359,7 @@ const Profile = () => {
 
           <Col xs={0} sm={0} md={6} lg={6} className='d-none d-md-block right'>
 
-            {gigView ? <h4>Gigs:</h4> : <h4>Upcoming gigs:</h4>}
+            {gigView ? <h4>Gigs:</h4> : <h4>Upcoming:</h4>}
 
 
             <Row className='content-slider-vert'>
@@ -367,6 +373,8 @@ const Profile = () => {
                   filteredGigs.attended && filteredGigs.attended.length > 0 ?
                     filteredGigs.attended.map(gig => {
                       const { id, image, band, venue, date } = gig
+                      console.log('DATE', gig.date)
+                      const ukFormattedDate = new Date(date).toLocaleDateString('en-GB')
                       return (
                         <Col key={id} md={8} lg={4} className='gig-container'>
                           <Link to={`/gigs/${id}`}>
@@ -381,8 +389,8 @@ const Profile = () => {
                               )}
                               <CardBody>
                                 <Card.Title>{band}</Card.Title>
-                                <Card.Text>{venue}</Card.Text>
-                                <Card.Text>{date}</Card.Text>
+                                <Card.Text id='venue'>{venue}</Card.Text>
+                                <Card.Text id='date'>{ukFormattedDate}</Card.Text>
                               </CardBody>
                             </Card>
                           </Link>
@@ -395,18 +403,24 @@ const Profile = () => {
                   filteredGigs.upcoming && filteredGigs.upcoming.length > 0 ?
                     filteredGigs.upcoming.map(gig => {
                       const { id, image, band, venue, date } = gig
+                      const ukFormattedDate = new Date(date).toLocaleDateString('en-GB')
                       return (
-                        <Col key={id} sm={16} md={8} lg={4} className='gig-container'>
+                        <Col key={id} md={8} lg={4} className='gig-container'>
                           <Link to={`/gigs/${id}`}>
                             <Card className='gig-card'>
-                              <Card.Img variant='top' src={image} alt={`${band} at ${venue} on ${date}`} />
-                              <Card.Body>
-                                <div className='card-text-mob'>
-                                  <Card.Title>{band}</Card.Title>
-                                  <Card.Text>@ {venue}</Card.Text>
-                                  <Card.Text>{date}</Card.Text>
+                              {image ? (
+                                <Card.Img variant='top' src={image} alt={`${band} at ${venue} on ${date}`} />
+                              ) : (
+                                <div>
+                                  {/* Some fallback content when image is missing */}
+                                  No Image Available
                                 </div>
-                              </Card.Body>
+                              )}
+                              <CardBody>
+                                <Card.Title>{band}</Card.Title>
+                                <Card.Text id='venue'>{venue}</Card.Text>
+                                <Card.Text id='date'>{ukFormattedDate}</Card.Text>
+                              </CardBody>
                             </Card>
                           </Link>
                         </Col>

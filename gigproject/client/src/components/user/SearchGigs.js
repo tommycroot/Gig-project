@@ -81,9 +81,9 @@ const SearchGigs = () => {
 
         <Row>
           <Col className='text-center'>
-            <h1 className='search-h1'>SEARCH SHOWS</h1>
-            <h3 className='search-h3'>Use the search bar below to find shows to add.</h3>
-            <Link className='search-link' to={'/add-gig'}>Can&apos;t see the show you&apos;re looking for? Click here to add it to the our database!</Link>
+            <h1 className='search-h1'>SEARCH GIGS</h1>
+            <h3 className='search-h3'>Use the search bar below to find gigs to add.</h3>
+            <Link className='search-link' to={'/add-gig'}>Can&apos;t see the show you&apos;re looking for? Click <span id='here-span'>here</span> to add it to the our database!</Link>
             <div className='search-field-wrapper'>
               <div className='search-field-wrapper'>
                 <input
@@ -114,6 +114,7 @@ const SearchGigs = () => {
           ) : filteredGigs.length > 0 ? (
             filteredGigs.map(gig => {
               const { id, band, date, venue, image } = gig
+              const ukFormattedDate = new Date(date).toLocaleDateString('en-GB')
               return (
                 <Col key={id} lg={2} md={2} sm={4} xs={4} className='gig-container'>
                   <Link to={`/gigs/${id}`}>
@@ -121,8 +122,8 @@ const SearchGigs = () => {
                       <Card.Img variant='top' src={image}></Card.Img>
                       <Card.Body>
                         <Card.Title>{band}</Card.Title>
-                        <Card.Text>{venue}</Card.Text>
-                        <Card.Text>{date}</Card.Text>
+                        <Card.Text id='venue'>{venue}</Card.Text>
+                        <Card.Text id='date'>{ukFormattedDate}</Card.Text>
                       </Card.Body>
                     </Card>
                   </Link>

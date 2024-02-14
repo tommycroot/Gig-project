@@ -10,12 +10,13 @@ import Button from 'react-bootstrap/Button'
 import { useNavigate } from 'react-router-dom'
 import favicon from '../../images/favicon.png'
 import { getPayloadSub } from '../helpers/Auth'
+import InputMask from 'react-input-mask'
 
 import humps from 'humps'
 
 const AddGig = () => {
   const navigate = useNavigate()
-  
+
   const sub = getPayloadSub()
   //! STATE
 
@@ -25,10 +26,13 @@ const AddGig = () => {
     price: '',
     venue: '',
     image: '',
+    currency: '',
     setlist: '',
     reviews: [],
   })
-
+  const CURRENCY_CHOICES = [
+    '$', '£', '€', '¥', '₣', '₤', '₺', '₹', '₽', '₩', '₱', '₦', '฿', '₿', '₮', '₡', '₫', '₸', '₠', '₯', '₢', '₣', '₧', '₣', '₠'
+  ]
   const [bandSuggestions, setBandSuggestions] = useState([])
   const [totalResults, setTotalResults] = useState(10)
   const [displayedResults, setDisplayedResults] = useState(5)
@@ -72,7 +76,7 @@ const AddGig = () => {
       setFormFields({
         ...formFields,
         band: suggestion.name,
-        setlist: artistInfo.bio.summary, // Set the setlist to band information
+        // setlist: artistInfo.bio.summary, // Set the setlist to band information
       })
 
       setBandSuggestions([])
@@ -97,7 +101,9 @@ const AddGig = () => {
       if (!formFields.image) {
         formFields.image = 'https://w7.pngwing.com/pngs/104/393/png-transparent-musical-ensemble-musician-rock-band-angle-animals-logo-thumbnail.png'
       }
-
+      const [day, month, year] = formFields.date.split('/')
+      const formattedDate = `${year}-${month}-${day}`
+      setFormFields({ ...formFields, date: formattedDate })
       const vals = humps.decamelizeKeys(formFields)
       const response = await axios.post('/api/gigs/', vals)
       const currentDate = new Date()
@@ -111,7 +117,7 @@ const AddGig = () => {
         await axios.put(`/api/auth/${sub}/gigs/${response.data.id}/`)
         navigate(`/profile/${sub}`)
       }
-     
+
     } catch (err) {
       console.log('error', err)
       setError(err.response.data.message)
@@ -135,8 +141,10 @@ const AddGig = () => {
 
               <Form onSubmit={handleSubmit} >
                 <div className='form-container'>
-                  <h2>ADD GIG</h2>
-                  <img className='form-img' src={favicon} />
+                  <div className='title-box'>
+                    <h2>Add Gig</h2>
+                    <img className='form-img' src={favicon} />
+                  </div>
                   {/* <p className='text-center'>Enter the gig&apos;s info into the form to add it to the ENCORE database.</p> */}
                   <Form.Group className='mb-3'>
                     <Form.Control
@@ -160,23 +168,41 @@ const AddGig = () => {
                     )}
                   </Form.Group>
 
-                  <Form.Group className='mb-3'>
-                    <Form.Control type="text" name="date" placeholder='Date' onChange={handleChange} value={formFields.date} />
-                  </Form.Group>
+                  <InputMask mask="99/99/9999" value={formFields.date} onChange={handleChange}>
+                    {(inputProps) => <Form.Control type="text" name="date" placeholder='DD/MM/YYYY' {...inputProps} />}
+                  </InputMask>
 
                   <Form.Group className='mb-3'>
                     <Form.Control type="text" name="venue" placeholder='Venue' onChange={handleChange} value={formFields.venue} />
                   </Form.Group>
-
                   <Form.Group className='mb-3'>
-                    <Form.Control type="text" name="price" placeholder='Price' onChange={handleChange} value={formFields.price} />
+                    <Row className='price-currency'>
+                      <Col xs={6} md={4} className='currency-field'>
+                        <Form.Select name="currency" onChange={handleChange} value={formFields.currency}>
+                          {CURRENCY_CHOICES.map((symbol) => (
+                            <option key={symbol} value={symbol}>{symbol}</option>
+                          ))}
+                        </Form.Select>
+                      </Col>
+                      <Col xs={6} md={8} className='price-field'>
+                        <Form.Control className='price-placeholder'
+                          type="text"
+                          name="price"
+                          placeholder='Price'
+                          onChange={handleChange}
+                          value={formFields.price}
+                        />
+                      </Col>
+
+                    </Row>
                   </Form.Group>
+
 
                   <Form.Group className='mb-3'>
                     <Form.Control
                       type="text"
                       name="gigImage"
-                     
+
                       onChange={handleChange}
                       value={formFields.image}
                       placeholder={'Gig Picture (insert image URL)'}
@@ -184,10 +210,10 @@ const AddGig = () => {
                   </Form.Group>
 
                   <Form.Group className='mb-3'>
-                    <Form.Control type="text" name="setlist" placeholder='Set List' onChange={handleChange} value={formFields.setlist} />
+                    <Form.Control className='setlist-area' as="textarea" type="text" name="setlist" placeholder='Set List' onChange={handleChange} value={formFields.setlist} />
                   </Form.Group>
 
-                  <Button variant='primary' type='submit' className='mb-3'>
+                  <Button variant='primary' type='submit' id='submit' className='mb-3'>
                     Add Show
                   </Button>
 

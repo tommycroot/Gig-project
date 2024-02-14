@@ -14,3 +14,38 @@
     margin-bottom: 0px;  
   }
 }
+
+#second-container {
+  background-color: #ff69b4;
+  margin-top: 15px;
+  background: #ff69b4;
+  text-align: center;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
+  border: solid 5px white;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+}
+
+#delete-profile-text {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.delete-profile {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.delete {
+  background-color: red;
+  color: white;
+  font-size: 14px;
+}
+
+#gig-picture {
+  margin-top: 35px;
+}
