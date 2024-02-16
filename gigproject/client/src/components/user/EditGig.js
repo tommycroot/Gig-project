@@ -20,7 +20,7 @@ const EditGig = () => {
   const [bandSuggestions, setBandSuggestions] = useState([])
   const [displayedResults, setDisplayedResults] = useState(5)
   const CURRENCY_CHOICES = [
-    '$', '£', '€', '¥', '₣', '₤', '₺', '₹', '₽', '₩', '₱', '₦', '฿', '₿', '₮', '₡', '₫', '₸', '₠', '₯', '₢', '₣', '₧', '₣', '₠'
+    '$', '£', '€', '¥', '₣', '₤', '₺', '₹', '₽', '₩', '₱', '₦', '฿', '₿', '₮', '₡', '₫', '₸', '₯', '₢', '₧', '₠'
   ]
   const [formFields, setFormFields] = useState({
     date: '',
@@ -55,7 +55,7 @@ const EditGig = () => {
     const [year, month, day] = dateString.split('-')
     return `${day}-${month}-${year}`
   }
-  
+
 
   useEffect(() => {
     const getGig = async () => {
@@ -85,21 +85,27 @@ const EditGig = () => {
     getGig()
   }, [gigId])
 
+
   const handleSubmit = async (e) => {
+    
     e.preventDefault()
+
+
     try {
-      const [day, month, year] = formFields.date.split('/')
+      const delimiter = formFields.date.includes('-') ? '-' : '/' // Detect delimiter
+      const [day, month, year] = formFields.date.split(delimiter)
       const formattedDate = `${year}-${month}-${day}`
-      const formFieldsRefact = {
-        ...formFields,
-        date: formattedDate,
-      }
-      console.log('formFieldsRefact', formFieldsRefact)
-      console.log('id', gigId)
-      await authenticated.put(`/api/gigs/${gigId}/`, formFieldsRefact)
+      const updatedFormFields = { ...formFields, date: formattedDate }
+      // Update the form fields
+      setFormFields(updatedFormFields)
+
+      const vals = humps.decamelizeKeys(updatedFormFields)
+      console.log('VALS', vals)
+      await authenticated.put(`/api/gigs/${gigId}/`, vals)
       navigate(`/gigs/${gigId}/`)
     } catch (err) {
       console.log(err)
+      console.log('ERROR', formFields)
     }
   }
 
@@ -153,7 +159,14 @@ const EditGig = () => {
   }
 
   const handleChange = (e) => {
+    
+    
+    // const delimiter = formFields.date.includes('-') ? '-' : '/' // Detect delimiter
+    // const [day, month, year] = formFields.date.split(delimiter)
+    // const formattedDate = `${year}-${month}-${day}`
+    // const updatedFormFields = { ...formFields, date: formattedDate }
     setFormFields({ ...formFields, [e.target.name]: e.target.value })
+    console.log('FORM FIELDS', formFields)
 
   }
 
@@ -216,8 +229,8 @@ const EditGig = () => {
                           ))}
                         </Form.Select>
                       </Col>
-                      <Col xs={6} md={8} className='price-field'>
-                        <Form.Control className='price-placeholder'
+                      <Col xs={6} md={8} className='price-field-edit'>
+                        <Form.Control className='price-placeholder-edit'
                           type="text"
                           name="price"
                           placeholder='Price'
@@ -241,7 +254,7 @@ const EditGig = () => {
                   </Form.Group>
 
                   <Form.Group className='mb-3'>
-                    <Form.Control type="text" name="setlist" placeholder='Set List' onChange={handleChange} value={formFields.setlist} />
+                    <Form.Control className='setlist-area' type="text" name="setlist" as="textarea" placeholder='Set List' onChange={handleChange} value={formFields.setlist} />
                   </Form.Group>
 
                   <Button variant='primary' type='submit' id='submit' className='mb-3'>

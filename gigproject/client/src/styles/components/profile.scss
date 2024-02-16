@@ -107,6 +107,7 @@
 #date {
   font-size: 14px;
   color:#0f1e3c;
+  margin-left: 1px;
 }
 
 #venue {
@@ -130,6 +131,9 @@
 
 .gig-card {
   overflow: hidden;
+}
+.card-body {
+  min-height: 140px;
 }
 
 @media (max-width: 767px) {
@@ -159,13 +163,13 @@
     white-space: normal;
     display: block !important;
   }
-
+  .card-body {
+    min-height: 100px !important;
+  }
 
 }
 
-.card-body {
-  min-height: 150px;
-}
+
 
 
 .following-collection-wrapper {

@@ -4,14 +4,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    margin-top: 20px;
+    height: 85%;
+    margin-top: 55px;
 
 
 
 
     img {
-      max-height: 65%;
+     
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
       border: solid 5px white;
       border-radius: 15px;
@@ -58,8 +58,7 @@
 
   .toggle-button {
     background-color: #0f1e3c;
-    border: #0f1e3c;
-    width: 50%;
+    width: 40%;
     color: ff69b4;
     border-radius: 5px;
     padding: 10px 0;
@@ -74,20 +73,19 @@
 }
 
 .toggle-button-edit {
-  background-color: orange;
+  background-color: #0f1e3c;
   border: #0f1e3c;
-
-  color: black;
   border-radius: 5px;
+  color: pink;
   padding: 10px 10px 10px 10px;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 600;
   margin-right: 10px;
   text-decoration: none;
   margin-top: 10px;
 
   &.toggle-button-link {
-    color: black;
+    
     text-decoration-color: black;
   }
 }
@@ -95,13 +93,13 @@
 .toggle-button-delete {
   background-color: red;
   border: #0f1e3c;
-  padding: 10px 10px 10px 10px;
-  font-size: 14px;
+  padding: 5px 5px 5px 5px;
+  font-size: 10px;
   font-weight: 600;
-
   border-radius: 5px;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
 
   &.toggle-button-link {
     color: wheat;
@@ -121,7 +119,7 @@
   text-align: center;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
   border: solid 5px white;
-  width: 80%;
+  width: 100%;
   padding: 15px 0;
   margin-right: 10px;
   margin-left: 10px;
@@ -189,16 +187,96 @@ h2 {
 
 #review-text {
   overflow-y: hidden;
-  width: 100%;
+  width: 300px;
+  text-align: left;
+  margin-top: 2px;
+  font-size: 12px;
 }
 
 .edit-delete {
-  margin-bottom: 15px;
+  margin-bottom: 45px;
+  margin-left: 15px;
+  margin-top: 10px;
 }
 
 #delete-review {
   font-size: 10px;
   color: wheat !important;
-  padding: 8px;
-  max-height: 30px;
+  padding: 4px;
+  max-height: 20px;
+  margin-top: 17px;
+}
+#review-p {
+  margin-bottom: 5px;
+}
+
+.span-key {
+color: wheat;
+font-weight: 600;
+}
+
+.span-value {
+  color:#0f1e3c;
+  font-weight: 600;
+  white-space: break-spaces;
+}
+
+@media (max-width: 767px) {
+  .span-key, .span-value {
+    font-size: 16px;
+  }
+
+  .gig-info .toggle-button {
+    width: 60%;
+    padding: 2%;
+  }
+
+  .review-info {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.review-container {
+  max-width: 100%;
+}
+
+#delete-review {
+margin-right:10px;
+}
+
+#add-gig-button {
+  margin-top: 25px;
+}
+
+#here {
+  font-weight: 600;
+  color: wheat;
+  a {
+    color: wheat;
+  }
+}
+}
+
+#reviews-count {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+#reviews-number {
+  font-weight: 800;
+  font-size: 14px;
+  color: wheat;
+}
+
+#reviews-count-lg {
+  font-weight: 800;
+  font-size: 14px;
+  color: #0f1e3c;
+}
+
+#reviews-number-lg {
+  font-weight: 800;
+  font-size: 14px;
+  color: wheat;
 }

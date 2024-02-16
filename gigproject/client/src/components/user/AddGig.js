@@ -18,7 +18,8 @@ const AddGig = () => {
   const navigate = useNavigate()
 
   const sub = getPayloadSub()
-  //! STATE
+  console.log('SUB', sub)
+  //! STATEconst sub = getPayloadSub()
 
   const [formFields, setFormFields] = useState({
     date: '',
@@ -29,9 +30,10 @@ const AddGig = () => {
     currency: '',
     setlist: '',
     reviews: [],
+    owner: `${sub}`,
   })
   const CURRENCY_CHOICES = [
-    '$', '£', '€', '¥', '₣', '₤', '₺', '₹', '₽', '₩', '₱', '₦', '฿', '₿', '₮', '₡', '₫', '₸', '₠', '₯', '₢', '₣', '₧', '₣', '₠'
+    '$', '£', '€', '¥', '₣', '₤', '₺', '₹', '₽', '₩', '₱', '₦', '฿', '₿', '₮', '₡', '₫', '₸', '₯', '₢', '₧', '₠'
   ]
   const [bandSuggestions, setBandSuggestions] = useState([])
   const [totalResults, setTotalResults] = useState(10)
@@ -91,23 +93,36 @@ const AddGig = () => {
   }
 
   const handleChange = (e) => {
-    setFormFields({ ...formFields, [e.target.name]: e.target.value })
-
+    if (e.target.name === 'setlist') {
+      setFormFields({ ...formFields, [e.target.name]: e.target.value })
+    } else {
+      setFormFields({ ...formFields, [e.target.name]: e.target.value, owner: sub })
+    }
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+   
     try {
+      console.log('HELP', formFields.date)
       if (!formFields.image) {
         formFields.image = 'https://w7.pngwing.com/pngs/104/393/png-transparent-musical-ensemble-musician-rock-band-angle-animals-logo-thumbnail.png'
       }
+      
+      if (!formFields.owner) {
+        const ownerSub = getPayloadSub()
+        formFields.owner = ownerSub
+      }
+      console.log('SUB CHECK', formFields)
       const [day, month, year] = formFields.date.split('/')
       const formattedDate = `${year}-${month}-${day}`
-      setFormFields({ ...formFields, date: formattedDate })
-      const vals = humps.decamelizeKeys(formFields)
+      const updatedFormFields = { ...formFields, date: formattedDate }
+      setFormFields(updatedFormFields)
+      console.log('SUB CHECK 2', updatedFormFields)
+      const vals = humps.decamelizeKeys(updatedFormFields)
       const response = await axios.post('/api/gigs/', vals)
       const currentDate = new Date()
-      const gigDate = new Date(formFields.date)
+      const gigDate = new Date(updatedFormFields.date)
       if (gigDate > currentDate) {
         const sub = getPayloadSub()
         await axios.put(`/api/auth/${sub}/upcoming/${response.data.id}/`)
@@ -117,12 +132,10 @@ const AddGig = () => {
         await axios.put(`/api/auth/${sub}/gigs/${response.data.id}/`)
         navigate(`/profile/${sub}`)
       }
-
     } catch (err) {
       console.log('error', err)
       setError(err.response.data.message)
     }
-
   }
 
 

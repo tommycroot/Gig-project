@@ -41,7 +41,7 @@ class GigListView(APIView):
   def post(self, request):
     print('POST /api/gigs endpoint hit')
     print('Request data =>', request.data)
-    gig_data = {**request.data, 'owner': request.user.id}  # Add owner field with user's ID
+    gig_data = {**request.data}  # Add owner field with user's ID
     gig_serializer = GigSerializer(data=gig_data)
     gig_serializer.is_valid(raise_exception=True)
     gig_serializer.save()

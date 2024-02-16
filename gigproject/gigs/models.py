@@ -9,6 +9,7 @@ class Gig(models.Model):
     image = models.URLField(validators=[URLValidator()], default='https://w7.pngwing.com/pngs/104/393/png-transparent-musical-ensemble-musician-rock-band-angle-animals-logo-thumbnail.png')
     venue = models.CharField(max_length=500)
     setlist = models.CharField(max_length=1000, default='', blank=True)
+    
     currency = models.CharField(max_length=50, default='$', blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, blank=True)
     

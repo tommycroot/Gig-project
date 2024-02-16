@@ -269,7 +269,7 @@ const Profile = () => {
                     />
                     <input
                       type="text"
-                      placeholder="Search by Date"
+                      placeholder="YYYY-MM-DD"
                       value={dateSearch}
                       onChange={(e) => setDateSearch(e.target.value)}
                       className="form-row"

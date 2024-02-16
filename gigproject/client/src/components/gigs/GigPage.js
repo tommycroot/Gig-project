@@ -234,6 +234,41 @@ const GigPage = () => {
             <div className='desktop-img'>
               <img src={gig.image}></img>
             </div>
+            <Col className='review-info slider'>
+              <h2>REVIEWS</h2>
+              <p style={{ height: '10px' }}>
+                <span id="reviews-count-lg">
+                  Number of Reviews:
+                </span>
+                <span id='reviews-number-lg'>
+                  {gig.reviews ? ` ${gig.reviews.length}` : 'No reviews yet'}
+                </span>
+
+              </p>
+
+              {gig.reviews && gig.reviews.length > 0 ?
+                gig.reviews.map(review => {
+                  const { id, reviewText, rating, owner } = review
+                  console.log('OWNER', owner.id, 'SUB', sub)
+                  if (review) {
+                    return (
+                      <div key={id} className='review-container'>
+
+                        <p className='review-content' id='review-owner'><Link to={`/profile/${owner.id}`}>{owner.username}</Link></p>
+                        <p className='review-content'>{rating}/5</p>
+                        <p className='review-content' id='review-text'>{reviewText}</p>
+                        <p className='toggle-button-delete toggle-button-link' id="delete-review" >{owner.id === sub && <Link onClick={() => handleReviewDelete(review.id)}>Delete</Link>}</p>
+                      </div>
+                    )
+                  }
+                })
+                :
+                <>
+                  <p>No reviews. Click <Link id='here' to={`/add-review/${gigId}/${sub}`}>here </Link>
+                    to add one.</p>
+                </>
+              }
+            </Col>
           </Col>
 
           <Col xs={12} sm={12} md={6} lg={6} className='right'>
@@ -244,22 +279,23 @@ const GigPage = () => {
 
                   <h1>{gig?.band}</h1>
                   <h2>@ {gig?.venue}</h2>
-                  <p>Date: {new Date(gig?.date).toLocaleDateString('en-GB')}</p>
-                  <p>Price: {gig?.currency}{gig?.price}</p>
                   <div className='edit-delete'>
                     {userIsOwnerState && <Link className='toggle-button-edit toggle-button-link' id="edit" to={`/gigs/${gigId}/edit`}>Edit Gig</Link>}
-                    {userIsOwnerState && <Link className='toggle-button-delete toggle-button-link' id="delete" onClick={handleDelete}>Delete Gig</Link>}
+
                   </div>
-                  <p>Setlist: {gig?.setlist}</p>
+                  <p><span className='span-key'>Date:</span> <span className='span-value'>{new Date(gig?.date).toLocaleDateString('en-GB')}</span></p>
+                  <p><span className='span-key'>Price:</span> <span className='span-value'>{gig?.currency}{gig?.price}</span></p>
+
+                  <p><span className='span-key'>Setlist:<br></br></span> <span className='span-value'>{gig?.setlist}</span></p>
                   {gig.reviews && gig.reviews.length > 0 ? (
-                    <p>Average Rating: {averageRating}</p>
+                    <p><span className='span-key'>Average Rating:</span> <span className='span-value'>{averageRating}</span></p>
                   ) : (
-                    <p>No reviews yet</p>
+                    <p><span className='span-key'>No reviews yet</span></p>
                   )}
                   {error && <p className="error-message">{error}</p>}
-                  
-                  <button className='toggle-button' onClick={addToGigs}>
-                    {addedToGigs ? 'Remove Gig from Gigs' : 'Add Gig to Gigs'}
+
+                  <button className='toggle-button' id='add-gig-button' onClick={addToGigs}>
+                    {addedToGigs ? 'Remove Gig' : 'Add Gig'}
                   </button>
                   {addToCollectionClicked && (
                     <>
@@ -275,7 +311,7 @@ const GigPage = () => {
                   )}
 
                   <button className='toggle-button' onClick={addToUpcoming}>
-                    {addedToUpcoming ? 'Remove Gig from Upcoming' : 'Add Gig to Upcoming'}
+                    {addedToUpcoming ? 'Remove Upcoming Gig' : 'Add Upcoming Gig'}
                   </button>
                   {addToUpcomingClicked && (
                     <>
@@ -288,15 +324,27 @@ const GigPage = () => {
                   )}
                   <Link className='toggle-button toggle-button-link' to={`/add-review/${gigId}/${sub}`}>Submit Gig Review</Link>
 
+                  {userIsOwnerState && <Link className='toggle-button-delete toggle-button-link' id="delete" onClick={handleDelete}>Delete Gig</Link>}
+
+
                 </Col>
               </>
             </Row>
 
             <Row>
               <>
-                <Col className='review-info slider'>
+                <Col xs={12} className='review-info slider d-block d-md-none'>
                   <h2>REVIEWS</h2>
-                  <p>{gig.reviews ? `Number of Reviews: ${gig.reviews.length}` : 'No reviews yet'}</p>
+                  <p style={{ height: '10px' }}>
+                    <span id="reviews-count">
+                      Number of Reviews:
+                    </span>
+                    <span id='reviews-number'>
+                      {gig.reviews ? ` ${gig.reviews.length}` : 'No reviews yet'}
+                    </span>
+
+                  </p>
+
                   {gig.reviews && gig.reviews.length > 0 ?
                     gig.reviews.map(review => {
                       const { id, reviewText, rating, owner } = review
@@ -304,18 +352,19 @@ const GigPage = () => {
                       if (review) {
                         return (
                           <div key={id} className='review-container'>
-                            
+
                             <p className='review-content' id='review-owner'><Link to={`/profile/${owner.id}`}>{owner.username}</Link></p>
                             <p className='review-content'>{rating}/5</p>
                             <p className='review-content' id='review-text'>{reviewText}</p>
-                            <p className='toggle-button-delete toggle-button-link' id="delete-review" >{owner.id === sub && <Link  onClick={() => handleReviewDelete(review.id)}>Delete</Link>}</p>
+                            <p className='toggle-button-delete toggle-button-link' id="delete-review" >{owner.id === sub && <Link onClick={() => handleReviewDelete(review.id)}>Delete</Link>}</p>
                           </div>
                         )
                       }
                     })
                     :
                     <>
-                      <p>No reviews for this gig. Click the link to add one.</p>
+                      <p>No reviews. Click <Link id='here' to={`/add-review/${gigId}/${sub}`}>here </Link>
+                        to add one.</p>
                     </>
                   }
                 </Col>
