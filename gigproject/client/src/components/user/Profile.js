@@ -160,7 +160,7 @@ const Profile = () => {
   const toggleGigView = (e) => {
     if (gigView) {
       setGigView(false)
-      e.target.innerText = 'Show Gigs'
+      e.target.innerText = 'Shows'
     } else {
       setGigView(true)
       e.target.innerText = 'Show Upcoming'
@@ -216,20 +216,6 @@ const Profile = () => {
     navigate('/')
   }
 
-  const deleteAccount = async () => {
-
-    if (window.confirm('Are you sure you want to delete your account?')) {
-      try {
-        console.log('Confirmed')
-        await axios.delete(`/api/auth/${id}/`)
-        handleLogOut()
-
-      } catch (err) {
-        console.log(err)
-        setError(err.message)
-      }
-    }
-  }
 
 
 
@@ -245,17 +231,17 @@ const Profile = () => {
                 {profile.profile_image ? <img src={profile.profile_image} alt="profile picture" className='profile-pic'></img> : <img src='https://png.pngtree.com/png-clipart/20210129/ourmid/pngtree-default-male-avatar-png-image_2811083.jpg' alt="profile picture" className='profile-pic'></img>}
                 <div className='user-info'>
                   <h2 className='username text-wrap'>{profile.username}</h2>
-                  {profile.location ? <p>Location: {profile.location}</p> : <p>Location: unknown</p>}
-                  {profile.gigs ? <p>Gigs: {profile.gigs.length}</p> : <p>Gigs: 0</p>}
-                  {profile.following ? <p>Following: {profile.following.length}</p> : <p>Following: 0</p>}
-                  {profile.reviews ? <p>Reviews: {profile.reviews.length}</p> : <p>Reviews: 0</p>}
+                  {profile.location ? <p><span id='span-profile'>Location: </span> {profile.location}</p> : <p><span id='span-profile'>Location: </span> unknown</p>}
+                  {profile.gigs ? <p><span id='span-profile'>Shows: </span> {profile.gigs.length}</p> : <p><span id='span-profile'>Shows: </span> 0</p>}
+                  {profile.following ? <p><span id='span-profile'>Following: </span> {profile.following.length}</p> : <p><span id='span-profile'>Following: </span> 0</p>}
+                  {profile.reviews ? <p><span id='span-profile'>Reviews: </span> {profile.reviews.length}</p> : <p><span id='span-profile'>Reviews: </span> 0</p>}
                   <button className='toggle-button' id='show-upcoming' onClick={toggleGigView}>Show Upcoming</button>
                   <button onClick={followUnfollow} className={sub === profile.id ? 'd-none' : 'toggle-button'}>{followButtonVal}</button>
                   <Link to={`/auth/${id}/edit`} state={{ info: profile }} className={sub !== profile.id ? 'd-none' : 'toggle-button'}>Account Settings</Link>
                   <div className="search-bars">
                     <input
                       type="text"
-                      placeholder="Search by Band"
+                      placeholder="Search by Artist"
                       value={bandSearch}
                       onChange={(e) => setBandSearch(e.target.value)}
                       className="form-row"
@@ -299,13 +285,13 @@ const Profile = () => {
                   })
                 ) : (
                   <>
-                    {sub === profile.id ? <p >Find friends to follow <Link to={'/search-users'}>here</Link></p> : <p>{profile.username} is not following anyone</p>}
+                    {sub === profile.id ? <p >Find friends to follow <Link id='here'to={'/search-users'}>here</Link></p> : <p>{profile.username} is not following anyone</p>}
                   </>
                 )}
               </Row>
             </div>
             <div className='following-collection-wrapper d-md-none'>
-              {gigView ? <h4 className='d-md-none' id='h41'>Gigs:</h4> : <h4 className='d-md-none' id='h42'>Upcoming:</h4>}
+              {gigView ? <h4 className='d-md-none' id='h41'>Shows:</h4> : <h4 className='d-md-none' id='h42'>Upcoming:</h4>}
 
 
               <Row className='content-slider d-md-none' xs={12} sm={12}>
@@ -327,7 +313,7 @@ const Profile = () => {
                     })
                     :
                     <>
-                      <p>No attended gigs.</p>
+                      <p>No attended shows.</p>
                     </>
 
                   :
@@ -348,7 +334,7 @@ const Profile = () => {
                     })
                     :
                     <>
-                      <p>No gigs in upcoming</p>
+                      <p>No upcoming shows.</p>
                     </>
                 }
               </Row>
@@ -359,7 +345,7 @@ const Profile = () => {
 
           <Col xs={0} sm={0} md={6} lg={6} className='d-none d-md-block right'>
 
-            {gigView ? <h4>Gigs:</h4> : <h4>Upcoming:</h4>}
+            {gigView ? <h4>Shows:</h4> : <h4>Upcoming:</h4>}
 
 
             <Row className='content-slider-vert'>
@@ -398,7 +384,7 @@ const Profile = () => {
                       )
                     })
                     :
-                    <p className='profile-p'>No attended gigs match the search criteria.</p>
+                    <p className='profile-p'>No shows match the search criteria.</p>
                 ) : (
                   filteredGigs.upcoming && filteredGigs.upcoming.length > 0 ?
                     filteredGigs.upcoming.map(gig => {
@@ -427,7 +413,7 @@ const Profile = () => {
                       )
                     })
                     :
-                    <p className='profile-p'>No upcoming gigs match the search criteria.</p>
+                    <p className='profile-p'>No upcoming shows match the search criteria.</p>
                 )
               )}
             </Row>

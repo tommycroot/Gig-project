@@ -49,7 +49,7 @@ const Login = () => {
 
     } catch (err) {
       console.log('error', err)
-      setError(err.message)
+      setError(err.response.data.detail)
     }
 
   }
@@ -92,10 +92,10 @@ const Login = () => {
                     Login
                   </Button>
 
-                  {error && <p className='text-danger text-center'>{error}</p>}
+
 
                 </div>
-
+                {error && <p className='text-danger text-center'>{error}</p>}
               </Form>
 
             </Row>

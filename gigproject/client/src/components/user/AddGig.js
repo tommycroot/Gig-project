@@ -28,6 +28,8 @@ const AddGig = () => {
     venue: '',
     image: '',
     currency: '',
+    notes: '',
+    support: '',
     setlist: '',
     reviews: [],
     owner: `${sub}`,
@@ -132,9 +134,9 @@ const AddGig = () => {
         await axios.put(`/api/auth/${sub}/gigs/${response.data.id}/`)
         navigate(`/profile/${sub}`)
       }
-    } catch (err) {
-      console.log('error', err)
-      setError(err.response.data.message)
+    } catch (error) {
+      console.log('error', error)
+      setError(error.response.data.detail)
     }
   }
 
@@ -155,7 +157,7 @@ const AddGig = () => {
               <Form onSubmit={handleSubmit} >
                 <div className='form-container'>
                   <div className='title-box'>
-                    <h2>Add Gig</h2>
+                    <h2>Add Show</h2>
                     <img className='form-img' src={favicon} />
                   </div>
                   {/* <p className='text-center'>Enter the gig&apos;s info into the form to add it to the ENCORE database.</p> */}
@@ -221,7 +223,12 @@ const AddGig = () => {
                       placeholder={'Gig Picture (insert image URL)'}
                     />
                   </Form.Group>
-
+                  <Form.Group className='mb-3'>
+                    <Form.Control type="text" name="support" placeholder='Support' onChange={handleChange} value={formFields.support} />
+                  </Form.Group>
+                  <Form.Group className='mb-3'>
+                    <Form.Control type="text" name="notes" placeholder='Notes' onChange={handleChange} value={formFields.notes} />
+                  </Form.Group>
                   <Form.Group className='mb-3'>
                     <Form.Control className='setlist-area' as="textarea" type="text" name="setlist" placeholder='Set List' onChange={handleChange} value={formFields.setlist} />
                   </Form.Group>
@@ -230,7 +237,15 @@ const AddGig = () => {
                     Add Show
                   </Button>
 
-                  {error && <p className='text-danger text-center'>{error}</p>}
+                  {error && (
+                    <ul className="error">
+                      {Object.keys(error).map((key) =>
+                        error[key].map((errorMessage) => (
+                          <li className='text-danger text-center' key={`${key}-${errorMessage}`}>{`${key}: ${errorMessage}`}</li>
+                        ))
+                      )}
+                    </ul>
+                  )}
 
                 </div>
 

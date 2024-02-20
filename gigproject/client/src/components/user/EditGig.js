@@ -30,6 +30,8 @@ const EditGig = () => {
     venue: '',
     image: '',
     setlist: '',
+    notes: '',
+    support: '',
     reviews: [],
   })
 
@@ -63,7 +65,7 @@ const EditGig = () => {
         const { data } = await authenticated.get(`/api/gigs/${gigId}`)
         console.log('YO DATA', data)
         console.log('DATE DATE', data.date)
-        // if (!isAuthenticated() || !userIsOwner(data)) navigate(`/gigs/${gigId}`)
+       
 
         // Create a new object with the gig data mapped to formFields keys
         const newFormFields = {
@@ -73,8 +75,13 @@ const EditGig = () => {
           currency: data.currency || '',
           venue: data.venue || '',
           image: data.image || '',
+          notes: data.notes || '',
+          support: data.support || '',
           setlist: data.setlist || '',
           reviews: data.reviews || [],
+        }
+        if (!newFormFields.image === 'https://w7.pngwing.com/pngs/104/393/png-transparent-musical-ensemble-musician-rock-band-angle-animals-logo-thumbnail.png') {
+          newFormFields.image = ''
         }
         console.log('DATE DATE', data.date)
         setFormFields(newFormFields)
@@ -87,14 +94,18 @@ const EditGig = () => {
 
 
   const handleSubmit = async (e) => {
-    
+
     e.preventDefault()
 
 
     try {
+      if (!formFields.image) {
+        formFields.image = 'https://w7.pngwing.com/pngs/104/393/png-transparent-musical-ensemble-musician-rock-band-angle-animals-logo-thumbnail.png'
+      }
       const delimiter = formFields.date.includes('-') ? '-' : '/' // Detect delimiter
       const [day, month, year] = formFields.date.split(delimiter)
       const formattedDate = `${year}-${month}-${day}`
+      
       const updatedFormFields = { ...formFields, date: formattedDate }
       // Update the form fields
       setFormFields(updatedFormFields)
@@ -103,9 +114,9 @@ const EditGig = () => {
       console.log('VALS', vals)
       await authenticated.put(`/api/gigs/${gigId}/`, vals)
       navigate(`/gigs/${gigId}/`)
-    } catch (err) {
-      console.log(err)
-      console.log('ERROR', formFields)
+    } catch (error) {
+      console.log(error)
+      setError(error.response.data.detail)
     }
   }
 
@@ -148,8 +159,8 @@ const EditGig = () => {
       })
 
       setBandSuggestions([])
-    } catch (err) {
-      setError(err.message)
+    } catch (error) {
+      setError(error)
     }
   }
 
@@ -159,12 +170,6 @@ const EditGig = () => {
   }
 
   const handleChange = (e) => {
-    
-    
-    // const delimiter = formFields.date.includes('-') ? '-' : '/' // Detect delimiter
-    // const [day, month, year] = formFields.date.split(delimiter)
-    // const formattedDate = `${year}-${month}-${day}`
-    // const updatedFormFields = { ...formFields, date: formattedDate }
     setFormFields({ ...formFields, [e.target.name]: e.target.value })
     console.log('FORM FIELDS', formFields)
 
@@ -186,7 +191,7 @@ const EditGig = () => {
               <Form onSubmit={handleSubmit} >
                 <div className='form-container'>
                   <div className='title-box'>
-                    <h2>Edit Gig</h2>
+                    <h2>Edit Show</h2>
                     <img className='form-img' src={favicon} />
                   </div>
                   {/* <p className='text-center'>Enter the gig&apos;s info into the form to add it to the ENCORE database.</p> */}
@@ -245,23 +250,36 @@ const EditGig = () => {
                   <Form.Group className='mb-3'>
                     <Form.Control
                       type="text"
-                      name="gigImage"
+                      name="image"
 
                       onChange={handleChange}
                       value={formFields.image}
                       placeholder={'Gig Picture (insert image URL)'}
                     />
                   </Form.Group>
-
+                  <Form.Group className='mb-3'>
+                    <Form.Control className='venue' type="text" name="support" placeholder='Support Bands' onChange={handleChange} value={formFields.support} />
+                  </Form.Group>
+                  <Form.Group className='mb-3'>
+                    <Form.Control className='venue' type="text" name="notes" placeholder='Notes' onChange={handleChange} value={formFields.notes} />
+                  </Form.Group>
                   <Form.Group className='mb-3'>
                     <Form.Control className='setlist-area' type="text" name="setlist" as="textarea" placeholder='Set List' onChange={handleChange} value={formFields.setlist} />
                   </Form.Group>
-
+                  {error && (
+                    <ul className="error">
+                      {Object.keys(error).map((key) =>
+                        error[key].map((errorMessage) => (
+                          <li className='text-danger text-center' key={`${key}-${errorMessage}`}>{`${key}: ${errorMessage}`}</li>
+                        ))
+                      )}
+                    </ul>
+                  )}
                   <Button variant='primary' type='submit' id='submit' className='mb-3'>
-                    Update Gig
+                    Update Show
                   </Button>
 
-                  {error && <p className='text-danger text-center'>{error}</p>}
+
 
                 </div>
 

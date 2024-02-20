@@ -5,7 +5,8 @@
     justify-content: center;
 
     .profile-pic {
-      width: 122px;
+      max-width: 150px;
+      max-height: 200px;
       margin-top: 7%;
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
       border: solid 5px white;
@@ -62,6 +63,7 @@
         border-radius: 5px;
         text-decoration: none;
         margin-top: 10px;
+        color: wheat;
       }
     }
 
@@ -167,6 +169,12 @@
     min-height: 100px !important;
   }
 
+  #span-profile {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f1e3c;
+  }
+
 }
 
 
@@ -228,4 +236,17 @@ input {
 
 .mobile-card-col {
   min-width: 100px;
+}
+
+.card {
+  border: none;
+}
+
+#span-profile {
+  font-weight: 800;
+  color: #0f1e3c;
+}
+
+#here {
+  color: wheat;
 }

@@ -6,7 +6,7 @@
     align-items: center;
     height: 85%;
     margin-top: 55px;
-
+    
 
 
 
@@ -15,6 +15,9 @@
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
       border: solid 5px white;
       border-radius: 15px;
+      max-height: 360px;
+      max-width: 450px;
+
 
 
     }
@@ -98,7 +101,6 @@
   font-weight: 600;
   border-radius: 5px;
   text-decoration: none;
-  margin-top: 30px;
   margin-bottom: 20px;
 
   &.toggle-button-link {
@@ -126,6 +128,8 @@
   height: 250px;
   margin-top: 20px;
   border-radius: 15px;
+  height: 288px;
+  
 
   h2 {
     font-weight: 800;
@@ -194,29 +198,36 @@ h2 {
 }
 
 .edit-delete {
-  margin-bottom: 45px;
+  margin-bottom: 25px;
   margin-left: 15px;
   margin-top: 10px;
 }
 
 #delete-review {
   font-size: 10px;
-  color: wheat !important;
   padding: 4px;
   max-height: 20px;
   margin-top: 17px;
+  display: none; /* Hide the delete button by default */
 }
+
+/* Show the delete button only when the user owns the review */
+#delete-review.show-delete {
+  color: wheat !important;
+  display: inline-block;
+}
+
 #review-p {
   margin-bottom: 5px;
 }
 
 .span-key {
-color: wheat;
-font-weight: 600;
+  color: #0f1e3c;
+  font-weight: 800;
 }
 
 .span-value {
-  color:#0f1e3c;
+  color: #0f1e3c;
   font-weight: 600;
   white-space: break-spaces;
 }

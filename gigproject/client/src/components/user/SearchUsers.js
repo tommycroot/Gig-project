@@ -99,9 +99,9 @@ const SearchUsers = () => {
                       <Card.Img className='card-image' style={{ backgroundImage: `url('${profile_image}')` }}></Card.Img>
                       <Card.Body>
                         <Card.Title id='search-users-title'>{username}</Card.Title>
-                        <Card.Text id='search-users-text'>Location: {location ? location : 'unknown'}</Card.Text>
-                        <Card.Text id='search-users-text'>Gigs attended: {gigs.length}</Card.Text>
-                        <Card.Text id='search-users-text'>Reviews: {reviews ? reviews.length : '0'}</Card.Text>
+                        <Card.Text id='search-users-text'><span id='span-card'>Location:</span> {location ? location : 'unknown'}</Card.Text>
+                        <Card.Text id='search-users-text'><span id='span-card'>Shows:</span>  {gigs.length}</Card.Text>
+                        <Card.Text id='search-users-text'><span id='span-card'>Reviews:</span>  {reviews ? reviews.length : '0'}</Card.Text>
                       </Card.Body>
                     </Card>
                   </Link>

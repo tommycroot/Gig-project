@@ -81,8 +81,8 @@ const SearchGigs = () => {
 
         <Row>
           <Col className='text-center'>
-            <h1 className='search-h1'>SEARCH GIGS</h1>
-            <h3 className='search-h3'>Use the search bar below to find gigs to add.</h3>
+            <h1 className='search-h1'>SEARCH SHOWS</h1>
+            <h3 className='search-h3'>Use the search bar below to find shows to add.</h3>
             <Link className='search-link' to={'/add-gig'}>Can&apos;t see the show you&apos;re looking for? Click <span id='here-span'>here</span> to add it to the our database!</Link>
             <div className='search-field-wrapper'>
               <div className='search-field-wrapper'>

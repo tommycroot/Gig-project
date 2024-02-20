@@ -42,9 +42,10 @@ const Register = () => {
       const vals = humps.decamelizeKeys(formFields)
       await axios.post('http://localhost:8000/api/auth/register/', vals)
       navigate('/login')
-    } catch (err) {
-      console.log('error', err)
-      setError(err.response.data.message)
+    } catch (error) {
+      console.log('error', error)
+      setError(error.response.data.detail)
+      console.log('ERROR FE', error)
     }
 
   }
@@ -93,9 +94,15 @@ const Register = () => {
                   <Button variant='primary' type='submit' className='mb-3'>
                     Register
                   </Button>
-
-                  {error && <p className='text-danger text-center'>{error}</p>}
-
+                  {error && (
+                    <ul className="error">
+                      {Object.keys(error).map((key) =>
+                        error[key].map((errorMessage) => (
+                          <li className='text-danger text-center' key={`${key}-${errorMessage}`}>{`${key}: ${errorMessage}`}</li>
+                        ))
+                      )}
+                    </ul>
+                  )}
                 </div>
 
               </Form>
