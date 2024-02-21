@@ -22,6 +22,7 @@ const EditProfile = () => {
   const navigate = useNavigate()
 
   console.log('IMPORTED STATE', state.info.username)
+  console.log('LOCATION', state.info.location)
 
   const { info } = state
 
@@ -33,6 +34,7 @@ const EditProfile = () => {
   const [formFields, setFormFields] = useState({
     profile_image: info.profile_image,
     first_name: info.username,
+    location: info.location || 'Location',
   })
 
   const [error, setError] = useState('')
@@ -116,10 +118,15 @@ const EditProfile = () => {
                   </Form.Group>
                   <p id="image-text">Username</p>
                   <Form.Group className='mb-3'>
-                    <Form.Control type="text" name="first_name" placeholder={info.username || 'Username'} onChange={handleChange} value={formFields.username} />
+                    <Form.Control type="text" name="username" placeholder={info.username || 'Username'} onChange={handleChange} value={formFields.username} />
+                  </Form.Group>
+                  <p id="image-text">Location</p>
+                  <Form.Group className='mb-3'>
+                    <Form.Control type="text" name="location" placeholder={info.location || 'Location'} onChange={handleChange} value={formFields.location} />
+
                   </Form.Group>
 
-                  <Button variant='primary' type='submit' className='mb-3'>
+                  <Button variant='primary' type='submit' id='submit' className='mb-3'>
                     Update
                   </Button>
 

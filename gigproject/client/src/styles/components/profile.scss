@@ -6,7 +6,7 @@
 
     .profile-pic {
       max-width: 150px;
-      max-height: 200px;
+      max-height: 210px;
       margin-top: 7%;
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
       border: solid 5px white;
@@ -26,8 +26,9 @@
       flex-direction: column;
       align-items: center;
       border-radius: 15px;
+
       p {
-        color:#0f1e3c;
+        color: #0f1e3c;
         font-weight: 600;
         font-size: 18px;
         margin-bottom: 0px;
@@ -51,9 +52,15 @@
         font-weight: 600;
         font-size: 16px;
         color: #ff69b4;
+        box-shadow: 0 0 40px 40px #0f1e3c inset, 0 0 0 0 #0f1e3c;
+        transition: all 150ms ease-in-out;
       }
 
-      
+      .toggle-button:hover {
+        background-color: #102040;
+        box-shadow: 0 0 10px 0 #102040 inset, 0 0 10px 4px #102040;
+      }
+
 
       a {
         background-color: #0f1e3c;
@@ -73,7 +80,7 @@
 
   }
 
- 
+
   .following-collection-wrapper {
     overflow-x: hidden;
     margin-top: 15px;
@@ -101,25 +108,26 @@
 }
 
 .card-title {
-  color:#0f1e3c;
+  color: #0f1e3c;
   font-weight: 700;
   margin-bottom: 5px;
 }
 
 #date {
   font-size: 14px;
-  color:#0f1e3c;
+  color: #0f1e3c;
   margin-left: 1px;
 }
 
 #venue {
-  color:#ff69b4;
+  color: #ff69b4;
   font-weight: 700;
   margin-bottom: 5px;
 }
+
 .right {
 
-  h4{
+  h4 {
     font-size: 70px;
     font-weight: 700;
     margin-top: 5%;
@@ -134,6 +142,7 @@
 .gig-card {
   overflow: hidden;
 }
+
 .card-body {
   min-height: 140px;
 }
@@ -143,12 +152,14 @@
   .profile-pic {
     width: 150px !important;
   }
+
   .card-title {
     font-size: 10px;
   }
+
   span {
     font-size: 10px;
-    color:#0f1e3c;
+    color: #0f1e3c;
   }
 
 
@@ -165,6 +176,7 @@
     white-space: normal;
     display: block !important;
   }
+
   .card-body {
     min-height: 100px !important;
   }
@@ -191,9 +203,9 @@
   flex-direction: column;
 
 
- 
 
-  
+
+
 }
 
 input {
@@ -209,12 +221,14 @@ input {
   margin-top: 50px;
   color: #ff69b4;
 }
+
 .content-slider-vert {
   overflow-y: scroll !important;
   height: 100vh;
 }
 
-#h41, #h42 {
+#h41,
+#h42 {
   margin-bottom: 20px;
 }
 
@@ -249,4 +263,19 @@ input {
 
 #here {
   color: wheat;
+  padding: 3px;
+  border-radius: 5px;
+  box-shadow: 0 0 40px 40px #0f1e3c inset, 0 0 0 0 #0f1e3c;
+  transition: all 150ms ease-in-out;
+  line-height: 3;
+  margin-left: 5px;
+}
+
+#here:hover {
+  background-color: #102040;
+  box-shadow: 0 0 10px 0 #102040 inset, 0 0 10px 4px #102040;
+}
+
+#following {
+  margin-bottom: 20px;
 }

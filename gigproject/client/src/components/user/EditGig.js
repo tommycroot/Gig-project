@@ -72,7 +72,7 @@ const EditGig = () => {
           date: data.date ? formatDate(data.date) : '',
           band: data.band || '',
           price: data.price || '',
-          currency: data.currency || '',
+          currency: data.currency || '$',
           venue: data.venue || '',
           image: data.image || '',
           notes: data.notes || '',
@@ -92,6 +92,13 @@ const EditGig = () => {
     getGig()
   }, [gigId])
 
+  useEffect(() => {
+    if (error) {
+      const [day, month, year] = formFields.date.split('-')
+      const formattedDate = `${year}-${month}-${day}`
+      setFormFields({ ...formFields, date: formattedDate })
+    }
+  }, [error])
 
   const handleSubmit = async (e) => {
 
@@ -102,10 +109,8 @@ const EditGig = () => {
       if (!formFields.image) {
         formFields.image = 'https://w7.pngwing.com/pngs/104/393/png-transparent-musical-ensemble-musician-rock-band-angle-animals-logo-thumbnail.png'
       }
-      const delimiter = formFields.date.includes('-') ? '-' : '/' // Detect delimiter
-      const [day, month, year] = formFields.date.split(delimiter)
+      const [day, month, year] = formFields.date.split('-')
       const formattedDate = `${year}-${month}-${day}`
-      
       const updatedFormFields = { ...formFields, date: formattedDate }
       // Update the form fields
       setFormFields(updatedFormFields)
@@ -117,6 +122,12 @@ const EditGig = () => {
     } catch (error) {
       console.log(error)
       setError(error.response.data.detail)
+      const [day, month, year] = formFields.date.split('-')
+      const formattedDate = `${year}-${month}-${day}`
+      console.log('New date error', formattedDate)
+      // Update date directly instead of formFields.date
+      const updatedDate = formattedDate
+      setFormFields({ ...formFields, date: updatedDate })
     }
   }
 
@@ -217,8 +228,8 @@ const EditGig = () => {
                     )}
                   </Form.Group>
 
-                  <InputMask mask="99/99/9999" value={formFields.date} onChange={handleChange}>
-                    {(inputProps) => <Form.Control type="text" name="date" placeholder='DD/MM/YYYY' {...inputProps} />}
+                  <InputMask mask="99-99-9999" value={formFields.date} onChange={handleChange}>
+                    {(inputProps) => <Form.Control type="text" name="date" placeholder='DD-MM-YYYY' {...inputProps} />}
                   </InputMask>
 
                   <Form.Group className='mb-3'>

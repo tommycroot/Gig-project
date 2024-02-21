@@ -59,6 +59,7 @@ const Profile = () => {
 
         // Filter attended gigs based on search criteria
         let filteredAttendedGigs = data.gigs || []
+        filteredAttendedGigs.sort((a, b) => new Date(a.date) - new Date(b.date))
         if (bandSearch) {
           filteredAttendedGigs = filteredAttendedGigs.filter(gig => gig.band.toLowerCase().includes(bandSearch.toLowerCase()))
         }
@@ -71,6 +72,7 @@ const Profile = () => {
 
         // Filter upcoming gigs based on search criteria
         let filteredUpcomingGigs = data.upcoming || []
+        filteredUpcomingGigs.sort((a, b) => new Date(a.date) - new Date(b.date))
         if (bandSearch) {
           filteredUpcomingGigs = filteredUpcomingGigs.filter(gig => gig.band.toLowerCase().includes(bandSearch.toLowerCase()))
         }
@@ -285,7 +287,7 @@ const Profile = () => {
                   })
                 ) : (
                   <>
-                    {sub === profile.id ? <p >Find friends to follow <Link id='here'to={'/search-users'}>here</Link></p> : <p>{profile.username} is not following anyone</p>}
+                    {sub === profile.id ? <p >Find friends to follow <Link id='here'to={'/search-users'}>  here</Link></p> : <p>{profile.username} is not following anyone</p>}
                   </>
                 )}
               </Row>

@@ -307,7 +307,7 @@ const GigPage = () => {
                 })
                 :
                 <>
-                  <p>No reviews. Click <Link id='here' to={`/add-review/${gigId}/${sub}`}>here </Link>
+                  <p><br></br><Link id='here-review' to={`/add-review/${gigId}/${sub}`}>Click here</Link>
                     to add one.</p>
                 </>
               }
@@ -322,9 +322,9 @@ const GigPage = () => {
 
                   <h1>{gig?.band}</h1>
                   <h2>@ {gig?.venue}</h2>
-                  <p>Added by <p className='review-content' id='review-owner'><Link to={`/profile/${ownerSub}`}>{ownerUsername}</Link></p></p>
+                  <p>Added by <br></br><p className='review-content' id='owner-link'><Link to={`/profile/${ownerSub}`}>{ownerUsername}</Link></p></p>
                   <div className='edit-delete' style={{ display: userIsOwnerState ? 'block' : 'none' }}>
-                    {userIsOwnerState ? <Link className='toggle-button-edit toggle-button-link' id="edit" to={`/gigs/${gigId}/edit`}>Edit Show</Link> : null}
+                    {userIsOwnerState ? <Link className='toggle-button-edit toggle-button-link' id="submit" to={`/gigs/${gigId}/edit`}>Edit Show</Link> : null}
 
                   </div>
                   <p><span className='span-key'>Date:</span> <span className='span-value'>{new Date(gig?.date).toLocaleDateString('en-GB')}</span></p>
@@ -346,10 +346,10 @@ const GigPage = () => {
                   {addToCollectionClicked && (
                     <>
                       {!alreadyOwned ? (
-                        <p>Show successfully added to your collection!</p>
+                        <p><br></br>Show successfully added to your collection!</p>
 
                       ) : (
-                        <p>Show succesfully removed from your collection!</p>
+                        <p><br></br>Show succesfully removed from your collection!</p>
 
 
                       )}
@@ -362,9 +362,9 @@ const GigPage = () => {
                   {addToUpcomingClicked && (
                     <>
                       {!alreadyOwned ? (
-                        <p>Show successfully added to your upcoming collection!</p>
+                        <p><br></br>Show successfully added to your upcoming collection!</p>
                       ) : (
-                        <p>Show succesfully removed from your upcoming collection!</p>
+                        <p><br></br>Show succesfully removed from your upcoming collection!</p>
                       )}
                     </>
                   )}
@@ -403,14 +403,14 @@ const GigPage = () => {
                             <p className='review-content' id='review-owner'><Link to={`/profile/${owner.id}`}>{owner.username}</Link></p>
                             <p className='review-content'>{rating}/5</p>
                             <p className='review-content' id='review-text'>{reviewText}</p>
-                            <p className='toggle-button-delete toggle-button-link' id="delete-review" >{owner.id === sub ? <Link onClick={() => handleReviewDelete(review.id)}>Delete</Link> : null}</p>
+                            <p className={`toggle-button-delete toggle-button-link ${owner.id === sub ? 'show-delete' : ''}`} id="delete-review">{owner.id === sub && <Link onClick={() => handleReviewDelete(review.id)}>Delete</Link>}</p>
                           </div>
                         )
                       }
                     })
                     :
                     <>
-                      <p>No reviews. Click <Link id='here' to={`/add-review/${gigId}/${sub}`}>here </Link>
+                      <p><br></br><Link id='here-review' to={`/add-review/${gigId}/${sub}`}>Click here</Link>
                         to add one.</p>
                     </>
                   }

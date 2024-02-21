@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import favicon from '../../images/favicon.png'
 import { getPayloadSub } from '../helpers/Auth'
 import InputMask from 'react-input-mask'
@@ -27,7 +28,7 @@ const AddGig = () => {
     price: '',
     venue: '',
     image: '',
-    currency: '',
+    currency: '$',
     notes: '',
     support: '',
     setlist: '',
@@ -102,21 +103,30 @@ const AddGig = () => {
     }
   }
 
+  useEffect(() => {
+    if (error) {
+      const [day, month, year] = formFields.date.split('-')
+      const formattedDate = `${year}-${month}-${day}`
+      setFormFields({ ...formFields, date: formattedDate })
+    }
+  }, [error])
+
   const handleSubmit = async (e) => {
     e.preventDefault()
-   
+
     try {
       console.log('HELP', formFields.date)
       if (!formFields.image) {
         formFields.image = 'https://w7.pngwing.com/pngs/104/393/png-transparent-musical-ensemble-musician-rock-band-angle-animals-logo-thumbnail.png'
       }
-      
+
       if (!formFields.owner) {
         const ownerSub = getPayloadSub()
         formFields.owner = ownerSub
       }
+
       console.log('SUB CHECK', formFields)
-      const [day, month, year] = formFields.date.split('/')
+      const [day, month, year] = formFields.date.split('-')
       const formattedDate = `${year}-${month}-${day}`
       const updatedFormFields = { ...formFields, date: formattedDate }
       setFormFields(updatedFormFields)
@@ -137,6 +147,13 @@ const AddGig = () => {
     } catch (error) {
       console.log('error', error)
       setError(error.response.data.detail)
+      const [day, month, year] = formFields.date.split('-')
+      const formattedDate = `${year}-${month}-${day}`
+      console.log('New date error', formattedDate)
+      // Update date directly instead of formFields.date
+      const updatedDate = formattedDate
+      setFormFields({ ...formFields, date: updatedDate })
+
     }
   }
 
@@ -183,8 +200,8 @@ const AddGig = () => {
                     )}
                   </Form.Group>
 
-                  <InputMask mask="99/99/9999" value={formFields.date} onChange={handleChange}>
-                    {(inputProps) => <Form.Control type="text" name="date" placeholder='DD/MM/YYYY' {...inputProps} />}
+                  <InputMask mask="99-99-9999" value={formFields.date} onChange={handleChange}>
+                    {(inputProps) => <Form.Control type="text" name="date" placeholder='DD-MM-YYYY' {...inputProps} />}
                   </InputMask>
 
                   <Form.Group className='mb-3'>
@@ -232,11 +249,6 @@ const AddGig = () => {
                   <Form.Group className='mb-3'>
                     <Form.Control className='setlist-area' as="textarea" type="text" name="setlist" placeholder='Set List' onChange={handleChange} value={formFields.setlist} />
                   </Form.Group>
-
-                  <Button variant='primary' type='submit' id='submit' className='mb-3'>
-                    Add Show
-                  </Button>
-
                   {error && (
                     <ul className="error">
                       {Object.keys(error).map((key) =>
@@ -246,6 +258,11 @@ const AddGig = () => {
                       )}
                     </ul>
                   )}
+                  <Button variant='primary' type='submit' id='submit' className='mb-3'>
+                    Add Show
+                  </Button>
+
+
 
                 </div>
 

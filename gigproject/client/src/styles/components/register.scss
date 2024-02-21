@@ -79,3 +79,17 @@
   }
 }
 
+ul {
+  list-style: none;
+}
+
+#submit {
+  box-shadow: 0 0 40px 40px #0f1e3c inset, 0 0 0 0 #0f1e3c;
+  transition: all 150ms ease-in-out;
+  margin: 10px 0px 10px 0px;
+}
+
+#submit:hover {
+  background-color: #102040;
+  box-shadow: 0 0 10px 0 #102040 inset, 0 0 10px 4px #102040;
+}

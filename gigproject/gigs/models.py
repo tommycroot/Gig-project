@@ -12,7 +12,7 @@ class Gig(models.Model):
     setlist = models.CharField(max_length=800, default='', blank=True)
     notes = models.CharField(max_length=300, default='', blank=True)
     support = models.CharField(max_length=300, default='', blank=True) 
-    currency = models.CharField(max_length=50, default='£', blank=True)
+    currency = models.CharField(max_length=50, default='$', blank=True)
     price = models.DecimalField(max_digits=10, default='0', decimal_places=2, blank=True)
     
     

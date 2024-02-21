@@ -6,12 +6,12 @@
     align-items: center;
     height: 85%;
     margin-top: 55px;
-    
+
 
 
 
     img {
-     
+
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
       border: solid 5px white;
       border-radius: 15px;
@@ -67,10 +67,16 @@
     padding: 10px 0;
     text-decoration: none;
     margin-top: 10px;
+    box-shadow: 0 0 40px 40px #0f1e3c inset, 0 0 0 0 #0f1e3c;
+    transition: all 350ms ease-in-out;
 
     &.toggle-button-link {
       color: #ff69b4;
       text-decoration-color: #ff69b4;
+    }
+
+    &:hover {
+      box-shadow: 0 0 10px 0 #091224 inset, 0 0 10px 4px #091224;
     }
   }
 }
@@ -88,7 +94,7 @@
   margin-top: 10px;
 
   &.toggle-button-link {
-    
+
     text-decoration-color: black;
   }
 }
@@ -129,7 +135,7 @@
   margin-top: 20px;
   border-radius: 15px;
   height: 288px;
-  
+
 
   h2 {
     font-weight: 800;
@@ -199,21 +205,24 @@ h2 {
 
 .edit-delete {
   margin-bottom: 25px;
-  margin-left: 15px;
-  margin-top: 10px;
 }
 
 #delete-review {
   font-size: 10px;
   padding: 4px;
   max-height: 20px;
-  margin-top: 17px;
-  display: none; /* Hide the delete button by default */
+  margin-top: 12px;
+  box-shadow: 0 0 40px 40px red inset, 0 0 0 0 red;
+  transition: all 150ms ease-in-out;
+  display: none;
+  /* Hide the delete button by default */
 }
-
+#delete-review:hover {
+  background-color: rgb(150, 7, 7);
+  box-shadow: 0 0 10px 0 rgb(150, 7, 7) inset, 0 0 10px 4px rgb(150, 7, 7);
+}
 /* Show the delete button only when the user owns the review */
 #delete-review.show-delete {
-  color: wheat !important;
   display: inline-block;
 }
 
@@ -233,7 +242,9 @@ h2 {
 }
 
 @media (max-width: 767px) {
-  .span-key, .span-value {
+
+  .span-key,
+  .span-value {
     font-size: 16px;
   }
 
@@ -246,27 +257,28 @@ h2 {
     width: 95%;
     margin: 0 auto;
     margin-top: 10px;
-}
-
-.review-container {
-  max-width: 100%;
-}
-
-#delete-review {
-margin-right:10px;
-}
-
-#add-gig-button {
-  margin-top: 25px;
-}
-
-#here {
-  font-weight: 600;
-  color: wheat;
-  a {
-    color: wheat;
   }
-}
+
+  .review-container {
+    max-width: 100%;
+  }
+
+  #add-gig-button {
+    margin-top: 25px;
+  }
+
+  #here-review {
+    font-weight: 600;
+    color: wheat;
+
+    a {
+      color: wheat;
+    }
+  }
+
+  #delete-review {
+    margin-right: 8px;
+  }
 }
 
 #reviews-count {
@@ -290,4 +302,54 @@ margin-right:10px;
   font-weight: 800;
   font-size: 14px;
   color: wheat;
+}
+
+#owner-link {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #0f1e3c;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 0 40px 40px #0f1e3c inset, 0 0 0 0 #0f1e3c;
+  transition: all 150ms ease-in-out;
+  margin: 10px 0px 10px 0px;
+}
+
+#owner-link a {
+  text-decoration: none;
+  color: #ff69b4;
+}
+
+#owner-link:hover {
+  box-shadow: 0 0 10px 0 #091224 inset, 0 0 10px 4px #091224;
+}
+
+
+#delete {
+  box-shadow: 0 0 40px 40px red inset, 0 0 0 0 red;
+  transition: all 150ms ease-in-out;
+  margin: 10px 0px 10px 0px;
+}
+
+#delete:hover {
+  box-shadow: 0 0 10px 0 rgb(150, 7, 7) inset, 0 0 10px 4px rgb(150, 7, 7);
+}
+
+#here-review {
+  color: wheat;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 40px 40px #0f1e3c inset, 0 0 0 0 #0f1e3c;
+  transition: all 150ms ease-in-out;
+  line-height: 3;
+  margin-right: 7px;
+}
+
+#here-review:hover {
+  background-color: #102040;
+  box-shadow: 0 0 10px 0 #102040 inset, 0 0 10px 4px #102040;
+  
 }

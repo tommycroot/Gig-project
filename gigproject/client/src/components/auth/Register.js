@@ -90,10 +90,7 @@ const Register = () => {
                   <Form.Group className='mb-3'>
                     <Form.Control type="password" name="passwordConfirmation" placeholder='Password Confirmation' onChange={handleChange} value={formFields.passwordConfirmation} />
                   </Form.Group>
-
-                  <Button variant='primary' type='submit' className='mb-3'>
-                    Register
-                  </Button>
+                  <br></br>
                   {error && (
                     <ul className="error">
                       {Object.keys(error).map((key) =>
@@ -103,6 +100,10 @@ const Register = () => {
                       )}
                     </ul>
                   )}
+                  <Button variant='primary' type='submit' id='submit' className='mb-3'>
+                    Register
+                  </Button>
+
                 </div>
 
               </Form>

@@ -87,15 +87,15 @@ const Login = () => {
                   <Form.Group className='mb-3'>
                     <Form.Control type="password" name="password" placeholder='Password' onChange={handleChange} value={formFields.password} />
                   </Form.Group>
-
-                  <Button variant='primary' type='submit' className='mb-3'>
+                  {error && <p className='text-danger text-center'>{error}</p>}
+                  <Button variant='primary' type='submit' id='submit' className='mb-3'>
                     Login
                   </Button>
 
 
 
                 </div>
-                {error && <p className='text-danger text-center'>{error}</p>}
+                
               </Form>
 
             </Row>

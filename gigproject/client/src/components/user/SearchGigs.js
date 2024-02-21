@@ -35,7 +35,8 @@ const SearchGigs = () => {
         setIsLoading(true)
         const { data } = await axios.get('/api/gigs/')
         console.log(data)
-        setGigs(data.sort((a, b) => a.band > b.band ? 1 : -1))
+        const sortedGigs = data.sort((a, b) => new Date(a.date) - new Date(b.date))
+        setGigs(sortedGigs)
         setIsLoading(false)
       } catch (err) {
         console.log(err)
