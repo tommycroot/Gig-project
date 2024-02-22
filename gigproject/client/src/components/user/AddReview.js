@@ -90,17 +90,17 @@ const AddReview = () => {
 
               <Form onSubmit={handleSubmit} className='review' >
                 <div className='form-container '>
-                  <h2>Review Info</h2>
+                  <h2>Comment</h2>
                   <Form.Group className='mb-3'>
-                    <Form.Control type="text" name='reviewText' placeholder='Review text' onChange={handleChange} value={formFields.reviewText} />
+                    <Form.Control type="text" as='textarea' name='reviewText' placeholder='Comment text' onChange={handleChange} value={formFields.reviewText} />
                   </Form.Group>
 
-                  <Form.Group className='mb-3'>
+                  {/* <Form.Group className='mb-3'>
                     <Form.Control type="number" name="rating" placeholder='Rating out of 5' onChange={handleChange} value={formFields.rating} />
-                  </Form.Group>
+                  </Form.Group> */}
 
                   <Button variant='primary' type='submit' className='mb-3'>
-                    Submit review
+                    Submit Comment
                   </Button>
 
                   {error && <p className='text-danger text-center'>{error}</p>}

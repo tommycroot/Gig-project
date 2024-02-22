@@ -174,7 +174,7 @@ const AddGig = () => {
               <Form onSubmit={handleSubmit} >
                 <div className='form-container'>
                   <div className='title-box'>
-                    <h2>Add Show</h2>
+                    <h2 id='add-show'>Add Show</h2>
                     <img className='form-img' src={favicon} />
                   </div>
                   {/* <p className='text-center'>Enter the gig&apos;s info into the form to add it to the ENCORE database.</p> */}
@@ -233,7 +233,7 @@ const AddGig = () => {
                   <Form.Group className='mb-3'>
                     <Form.Control
                       type="text"
-                      name="gigImage"
+                      name="image"
 
                       onChange={handleChange}
                       value={formFields.image}

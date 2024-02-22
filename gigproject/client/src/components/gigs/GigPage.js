@@ -265,6 +265,15 @@ const GigPage = () => {
     }
   }
 
+  useEffect(() => {
+    const gigInfoDiv = document.querySelector('.gig-info')
+    const reviewInfoSlider = document.querySelector('.review-info.slider')
+    if (gigInfoDiv && reviewInfoSlider) {
+      // Set review info slider height based on gig info div height
+      const gigInfoHeight = gigInfoDiv.offsetHeight
+      reviewInfoSlider.style.height = `${gigInfoHeight - 461}px`
+    }
+  }, [gig])
 
   return (
 
@@ -277,13 +286,13 @@ const GigPage = () => {
               <img src={gig.image}></img>
             </div>
             <Col className='review-info slider'>
-              <h2>REVIEWS</h2>
+              <h2>COMMENTS</h2>
               <p style={{ height: '10px' }}>
                 <span id="reviews-count-lg">
-                  Number of Reviews:
+                  Number of Comments:
                 </span>
                 <span id='reviews-number-lg'>
-                  {gig.reviews ? ` ${gig.reviews.length}` : 'No reviews yet'}
+                  {gig.reviews ? ` ${gig.reviews.length}` : 'No comments yet'}
                 </span>
 
               </p>
@@ -308,7 +317,7 @@ const GigPage = () => {
                 :
                 <>
                   <p><br></br><Link id='here-review' to={`/add-review/${gigId}/${sub}`}>Click here</Link>
-                    to add one.</p>
+                    to add a comment.</p>
                 </>
               }
             </Col>
@@ -322,7 +331,7 @@ const GigPage = () => {
 
                   <h1>{gig?.band}</h1>
                   <h2>@ {gig?.venue}</h2>
-                  <p>Added by <br></br><p className='review-content' id='owner-link'><Link to={`/profile/${ownerSub}`}>{ownerUsername}</Link></p></p>
+                  <p>Added by<br></br><p className='review-content' id='owner-link'><Link to={`/profile/${ownerSub}`}>{ownerUsername}</Link></p></p>
                   <div className='edit-delete' style={{ display: userIsOwnerState ? 'block' : 'none' }}>
                     {userIsOwnerState ? <Link className='toggle-button-edit toggle-button-link' id="submit" to={`/gigs/${gigId}/edit`}>Edit Show</Link> : null}
 
@@ -330,14 +339,14 @@ const GigPage = () => {
                   <p><span className='span-key'>Date:</span> <span className='span-value'>{new Date(gig?.date).toLocaleDateString('en-GB')}</span></p>
                   <p><span className='span-key'>Price:</span> <span className='span-value'>{gig?.currency}{gig?.price}</span></p>
 
-                  <p><span className='span-key'>Setlist:<br></br></span> <span className='span-value'>{gig?.setlist}</span></p>
-                  <p><span className='span-key'>Notes:</span><br></br> <span className='span-value'>{gig?.notes}</span></p>
+                  <p id='notes'><span className='span-key'>Set list:</span><br></br><span className='span-value'>{gig?.setlist}</span></p>
+                  <p id='notes'><span className='span-key'>Notes:</span><br></br> <span className='span-value-notes'>{gig?.notes}</span></p>
                   <p><span className='span-key'>Support Bands:</span><br></br> <span className='span-value'>{gig?.support}</span></p>
-                  {gig.reviews && gig.reviews.length > 0 ? (
+                  {/* {gig.reviews && gig.reviews.length > 0 ? (
                     <p><span className='span-key'>Average Rating:</span> <span className='span-value'>{averageRating}</span></p>
                   ) : (
                     <p><span className='span-key'>No reviews yet</span></p>
-                  )}
+                  )} */}
 
 
                   <button className='toggle-button' id='add-gig-button' onClick={addToGigs}>
@@ -368,7 +377,7 @@ const GigPage = () => {
                       )}
                     </>
                   )}
-                  <Link className='toggle-button toggle-button-link' to={`/add-review/${gigId}/${sub}`}>Submit Review</Link>
+                  <Link className='toggle-button toggle-button-link' to={`/add-review/${gigId}/${sub}`}>Comment</Link>
                   <br></br>{error && <p className="error-message">{error}</p>}
 
                   {userIsOwnerState ? <Link className='toggle-button-delete toggle-button-link' id="delete" onClick={handleDelete}>Delete Gig</Link> : null}
@@ -381,13 +390,13 @@ const GigPage = () => {
             <Row>
               <>
                 <Col xs={12} className='review-info slider d-block d-md-none'>
-                  <h2>REVIEWS</h2>
+                  <h2>Comments</h2>
                   <p style={{ height: '10px' }}>
                     <span id="reviews-count">
-                      Number of Reviews:
+                      Number of Comment:
                     </span>
                     <span id='reviews-number'>
-                      {gig.reviews ? ` ${gig.reviews.length}` : 'No reviews yet'}
+                      {gig.reviews ? ` ${gig.reviews.length}` : 'No comments yet'}
                     </span>
 
                   </p>
@@ -411,7 +420,7 @@ const GigPage = () => {
                     :
                     <>
                       <p><br></br><Link id='here-review' to={`/add-review/${gigId}/${sub}`}>Click here</Link>
-                        to add one.</p>
+                        to add a comment.</p>
                     </>
                   }
                 </Col>

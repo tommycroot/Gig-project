@@ -131,10 +131,10 @@
   padding: 15px 0;
   margin-right: 10px;
   margin-left: 10px;
-  height: 250px;
+ 
   margin-top: 20px;
   border-radius: 15px;
-  height: 288px;
+  
 
 
   h2 {
@@ -241,6 +241,18 @@ h2 {
   white-space: break-spaces;
 }
 
+.span-value-setlist {
+  color: wheat;
+  font-weight: 600;
+  white-space: break-spaces;
+}
+
+.span-value-notes {
+  color: #0f1e3c;
+  font-weight: 600;
+  white-space: break-spaces;
+}
+
 @media (max-width: 767px) {
 
   .span-key,
@@ -257,6 +269,7 @@ h2 {
     width: 95%;
     margin: 0 auto;
     margin-top: 10px;
+    min-height: 400px !important;
   }
 
   .review-container {
@@ -278,6 +291,18 @@ h2 {
 
   #delete-review {
     margin-right: 8px;
+  }
+
+  .span-value-setlist {
+    color: wheat;
+    font-weight: 600;
+    white-space: break-spaces;
+  }
+
+  .span-value-notes {
+    color: #0f1e3c;
+    font-weight: 600;
+    white-space: break-spaces;
   }
 }
 
@@ -352,4 +377,8 @@ h2 {
   background-color: #102040;
   box-shadow: 0 0 10px 0 #102040 inset, 0 0 10px 4px #102040;
   
+}
+
+#notes {
+  width: 90%;
 }

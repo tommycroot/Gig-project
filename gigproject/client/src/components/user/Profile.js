@@ -230,27 +230,30 @@ const Profile = () => {
           <Col xs={12} sm={12} md={6} lg={6} className='left-col'>
             <Row className='user-info'>
               <>
-                {profile.profile_image ? <img src={profile.profile_image} alt="profile picture" className='profile-pic'></img> : <img src='https://png.pngtree.com/png-clipart/20210129/ourmid/pngtree-default-male-avatar-png-image_2811083.jpg' alt="profile picture" className='profile-pic'></img>}
+
                 <div className='user-info'>
                   <h2 className='username text-wrap'>{profile.username}</h2>
+                  {profile.profile_image ? <img src={profile.profile_image} alt="profile picture" className='profile-pic'></img> : <img src='https://png.pngtree.com/png-clipart/20210129/ourmid/pngtree-default-male-avatar-png-image_2811083.jpg' alt="profile picture" className='profile-pic'></img>}
                   {profile.location ? <p><span id='span-profile'>Location: </span> {profile.location}</p> : <p><span id='span-profile'>Location: </span> unknown</p>}
                   {profile.gigs ? <p><span id='span-profile'>Shows: </span> {profile.gigs.length}</p> : <p><span id='span-profile'>Shows: </span> 0</p>}
                   {profile.following ? <p><span id='span-profile'>Following: </span> {profile.following.length}</p> : <p><span id='span-profile'>Following: </span> 0</p>}
-                  {profile.reviews ? <p><span id='span-profile'>Reviews: </span> {profile.reviews.length}</p> : <p><span id='span-profile'>Reviews: </span> 0</p>}
+                  {profile.reviews ? <p><span id='span-profile'>Comments: </span> {profile.reviews.length}</p> : <p><span id='span-profile'>Reviews: </span> 0</p>}
                   <button className='toggle-button' id='show-upcoming' onClick={toggleGigView}>Show Upcoming</button>
                   <button onClick={followUnfollow} className={sub === profile.id ? 'd-none' : 'toggle-button'}>{followButtonVal}</button>
                   <Link to={`/auth/${id}/edit`} state={{ info: profile }} className={sub !== profile.id ? 'd-none' : 'toggle-button'}>Account Settings</Link>
                   <div className="search-bars">
                     <input
+                      id='profile-search'
                       type="text"
-                      placeholder="Search by Artist"
+                      placeholder="Artist Search"
                       value={bandSearch}
                       onChange={(e) => setBandSearch(e.target.value)}
                       className="form-row"
                     />
                     <input
+                      id='profile-search'
                       type="text"
-                      placeholder="Search by Venue"
+                      placeholder="Venue Search"
                       value={venueSearch}
                       onChange={(e) => setVenueSearch(e.target.value)}
                       className="form-row"
@@ -280,14 +283,14 @@ const Profile = () => {
                       <Col key={id}>
                         {/* eslint-disable-next-line camelcase */}
                         <img src={profile_image} height='100' />
-                        <h4><Link to={`/profile/${id}`}>{username}</Link></h4>
+                        <h4 id='follow'><Link to={`/profile/${id}`}>{username}</Link></h4>
 
                       </Col>
                     )
                   })
                 ) : (
                   <>
-                    {sub === profile.id ? <p >Find friends to follow <Link id='here'to={'/search-users'}>  here</Link></p> : <p>{profile.username} is not following anyone</p>}
+                    {sub === profile.id ? <p >Find friends to follow <Link id='here' to={'/search-users'}>  here</Link></p> : <p>{profile.username} is not following anyone</p>}
                   </>
                 )}
               </Row>
@@ -304,11 +307,12 @@ const Profile = () => {
                       const { id, band, image, venue, date } = gig
                       const ukFormattedDate = new Date(date).toLocaleDateString('en-GB')
                       return (
-                        <Col className='mobile-card-col'  key={id}>
+                        <Col className='mobile-card-col' key={id}>
 
                           <Link to={`/gigs/${id}`}>
+                            <span id='band-title'>{band}</span><br></br>
                             <img src={image} height='100' alt={`${band} at ${venue} on ${date}`} />
-                            <span id='upcoming-mobile-span'><br></br><span id='band-title'>{band}</span><br></br><span id='venue-title'>{venue}</span><br></br><span id='date-title'>{ukFormattedDate}</span></span>
+                            <span id='upcoming-mobile-span'><br></br><span id='venue-title'>{venue}<br></br></span><span id='date-title'>{ukFormattedDate}</span></span>
                           </Link>
                         </Col>
                       )

@@ -3,11 +3,13 @@
 
   .user-info {
     justify-content: center;
+    margin-top: 90px;
 
     .profile-pic {
       max-width: 150px;
       max-height: 210px;
-      margin-top: 7%;
+      margin-top: 10px;
+      margin-bottom: 25px;
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
       border: solid 5px white;
       padding: 0;
@@ -48,7 +50,7 @@
         border-radius: 5px;
 
         text-decoration: none;
-        margin-top: 10px;
+        margin-top: 20px;
         font-weight: 600;
         font-size: 16px;
         color: #ff69b4;
@@ -90,8 +92,8 @@
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
     border: solid 5px white;
     border-radius: 15px;
-    width: 80%;
-    margin-left: 46px;
+    width: 84%;
+    margin-left: 50px;
 
     p {
       color: #0f1e3c;
@@ -187,15 +189,26 @@
     color: #0f1e3c;
   }
 
-}
+  .left-col .user-info {
+    margin-top: 20px !important;
+  }
 
+  .content-slider .col img {
+    margin-top: 5px;
+    border: none !important;
+  }
 
-
-
-.following-collection-wrapper {
+  .following-collection-wrapper {
   width: 100% !important;
   margin-left: 0px !important;
 }
+
+}
+
+
+
+
+
 
 .search-bars {
   margin: 15px 0;
@@ -229,7 +242,7 @@ input {
 
 #h41,
 #h42 {
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 #band-title {
@@ -239,17 +252,21 @@ input {
 
 #venue-title {
   font-weight: 900;
-  color: wheat;
+
 
 }
 
 #date-title {
   font-weight: 800;
   font-size: 10px;
+  margin-bottom: 40px;
+  color: wheat;
 }
 
 .mobile-card-col {
-  min-width: 100px;
+  min-width: 170px;
+  margin-bottom: 25px;
+  border-right: 1px solid #0f1e3c;
 }
 
 .card {
@@ -260,6 +277,8 @@ input {
   font-weight: 800;
   color: #0f1e3c;
 }
+
+
 
 #here {
   color: wheat;
@@ -278,4 +297,12 @@ input {
 
 #following {
   margin-bottom: 20px;
+}
+
+#profile-search {
+  margin-bottom: 5px;
+}
+
+.content-slider .col h4 a {
+  color:#0f1e3c !important;
 }

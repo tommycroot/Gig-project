@@ -7,7 +7,7 @@ class Gig(models.Model):
     date = models.DateField()
     band = models.CharField(max_length=1000)
     venue = models.CharField(max_length=500)
-    image = models.URLField(validators=[URLValidator()], default='https://w7.pngwing.com/pngs/104/393/png-transparent-musical-ensemble-musician-rock-band-angle-animals-logo-thumbnail.png')
+    image = models.URLField(validators=[URLValidator()], max_length=1000, default='https://w7.pngwing.com/pngs/104/393/png-transparent-musical-ensemble-musician-rock-band-angle-animals-logo-thumbnail.png')
     
     setlist = models.CharField(max_length=800, default='', blank=True)
     notes = models.CharField(max_length=300, default='', blank=True)

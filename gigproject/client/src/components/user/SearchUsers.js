@@ -96,12 +96,12 @@ const SearchUsers = () => {
                   <Link to={`/profile/${id}/`}>
                     <Card>
                       {/* eslint-disable-next-line camelcase */}
-                      <Card.Img className='card-image' style={{ backgroundImage: `url('${profile_image}')` }}></Card.Img>
+                      <Card.Img variant='top' src={profile_image}></Card.Img>
                       <Card.Body>
                         <Card.Title id='search-users-title'>{username}</Card.Title>
                         <Card.Text id='search-users-text'><span id='span-card'>Location:</span> {location ? location : 'unknown'}</Card.Text>
                         <Card.Text id='search-users-text'><span id='span-card'>Shows:</span>  {gigs.length}</Card.Text>
-                        <Card.Text id='search-users-text'><span id='span-card'>Reviews:</span>  {reviews ? reviews.length : '0'}</Card.Text>
+                        <Card.Text id='search-users-text'><span id='span-card'>Comments:</span>  {reviews ? reviews.length : '0'}</Card.Text>
                       </Card.Body>
                     </Card>
                   </Link>

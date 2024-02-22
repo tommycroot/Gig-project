@@ -56,15 +56,6 @@ const NavBar = () => {
             src={logo}
             className='d-inline-block align-top logo'
           />
-          {profileImage && ( // Display profile image if available
-            <div className='profile-image-container'>
-              <img
-                src={profileImage}
-                alt='Profile'
-                className='profile-image-in-navbar'
-              />
-            </div>
-          )}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='encore-nav' />
         <Navbar.Collapse id='encore-nav' className='justify-content-end'>
