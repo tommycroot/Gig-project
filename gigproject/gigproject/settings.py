@@ -49,10 +49,6 @@ INSTALLED_APPS = [
     'reviews',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    # Add the origins that you want to allow cross-origin requests from
-    "http://localhost:3000",  # Example: React frontend URL
-]
 
 # Allow cookies to be included in cross-origin requests
 CORS_ALLOW_CREDENTIALS = True
