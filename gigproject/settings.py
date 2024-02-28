@@ -9,10 +9,10 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-import django_on_heroku
+import os
 from pathlib import Path
 import environ
-import os
+import django_on_heroku
 
 
 env = environ.Env()
@@ -71,11 +71,13 @@ TEMPLATES = [
 # Add the STATIC_URL setting
 STATIC_URL = 'static/'
 
+ROOT_URLCONF = 'gigproject.urls' 
+
 # Allow cookies to be included in cross-origin requests
 CORS_ALLOW_CREDENTIALS = True
 ROOT_URLCONF = 'gigproject.urls'
 MIDDLEWARE = [
-    
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
