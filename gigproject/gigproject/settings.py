@@ -14,6 +14,7 @@ from pathlib import Path
 import environ
 import os
 
+
 env = environ.Env()
 environ.Env.read_env()
 
@@ -49,28 +50,6 @@ INSTALLED_APPS = [
     'reviews',
 ]
 
-
-# Allow cookies to be included in cross-origin requests
-CORS_ALLOW_CREDENTIALS = True
-
-MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "https://encoreapp.herokuapp.com"
-]
-
-ROOT_URLCONF = 'gigproject.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -88,6 +67,30 @@ TEMPLATES = [
         },
     },
 ]
+
+# Add the STATIC_URL setting
+STATIC_URL = 'static/'
+
+# Allow cookies to be included in cross-origin requests
+CORS_ALLOW_CREDENTIALS = True
+ROOT_URLCONF = 'gigproject.urls'
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "https://encoreapp.herokuapp.com"
+]
+
+
 
 WSGI_APPLICATION = 'gigproject.wsgi.application'
 
@@ -151,7 +154,7 @@ DJANGO_SETTINGS_MODULE = 'gigproject.settings'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
