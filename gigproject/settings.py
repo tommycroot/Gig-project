@@ -77,7 +77,7 @@ ROOT_URLCONF = 'gigproject.urls'
 CORS_ALLOW_CREDENTIALS = True
 ROOT_URLCONF = 'gigproject.urls'
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    #'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -89,7 +89,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://encoreapp.herokuapp.com"
+    "https://encoreapp-295eca59c3a4.herokuapp.com"
 ]
 
 
