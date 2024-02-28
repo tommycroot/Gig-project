@@ -11,7 +11,8 @@ pyjwt = "*"
 django-environ = "*"
 django-on-heroku = "*"
 djangorestframework = "*"
-corsheaders = "*"
+django-cors-headers = "*"
+
 [dev-packages]
 
 [requires]
