@@ -273,6 +273,10 @@ const Profile = () => {
     }
   }
 
+  const handleLogOut = () => {
+    removeToken()
+    navigate('/')
+  }
 
 
 
