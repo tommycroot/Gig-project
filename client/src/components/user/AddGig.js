@@ -36,7 +36,7 @@ const AddGig = () => {
     owner: `${sub}`,
   })
   const CURRENCY_CHOICES = [
-    '$', '£', '€', '¥', '₣', '₤', '₺', '₹', '₽', '₩', '₱', '₦', '฿', '₿', '₮', '₡', '₫', '₸', '₯', '₢', '₧', '₠'
+    '$', '£', '€', '¥', '₣', '₤', '₺', '₹', '₩', '₦', '฿', '₿', '₮', '₡', '₫', '₸', '₯', '₢', '₧', '₠'
   ]
   const [bandSuggestions, setBandSuggestions] = useState([])
   const [totalResults, setTotalResults] = useState(10)

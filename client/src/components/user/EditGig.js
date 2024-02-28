@@ -21,7 +21,7 @@ const EditGig = () => {
   const [venueSuggestions, setVenueSuggestions] = useState([])
   const [displayedResults, setDisplayedResults] = useState(5)
   const CURRENCY_CHOICES = [
-    '$', '£', '€', '¥', '₣', '₤', '₺', '₹', '₽', '₩', '₱', '₦', '฿', '₿', '₮', '₡', '₫', '₸', '₯', '₢', '₧', '₠'
+    '$', '£', '€', '¥', '₣', '₤', '₺', '₹', '₩', '₦', '฿', '₿', '₮', '₡', '₫', '₸', '₯', '₢', '₧', '₠'
   ]
   const [formFields, setFormFields] = useState({
     date: '',
