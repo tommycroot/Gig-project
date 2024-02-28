@@ -42,7 +42,7 @@ const EditGig = () => {
     if (gigId) {
       const getGigInfo = async () => {
         try {
-          const { data } = await authenticated.get(`/api/gigs/${gigId}`)
+          const { data } = await authenticated.get(`/api/gigs/${gigId}/`)
           console.log('DATA', data)
           setGig(data)
         } catch (error) {
@@ -63,7 +63,7 @@ const EditGig = () => {
   useEffect(() => {
     const getGig = async () => {
       try {
-        const { data } = await authenticated.get(`/api/gigs/${gigId}`)
+        const { data } = await authenticated.get(`/api/gigs/${gigId}/`)
         console.log('YO DATA', data)
         console.log('DATE DATE', data.date)
 

@@ -40,7 +40,7 @@ const Register = () => {
     e.preventDefault()
     try {
       const vals = humps.decamelizeKeys(formFields)
-      await axios.post('http://localhost:8000/api/auth/register/', vals)
+      await axios.post('/api/auth/register/', vals)
       navigate('/login')
     } catch (error) {
       console.log('error', error)
