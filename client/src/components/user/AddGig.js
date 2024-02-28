@@ -90,7 +90,7 @@ const AddGig = () => {
       const apiKey = '79ed5b7b15ccda2a23fe2df661c9b0f0'
       const apiUrl = `http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${encodeURIComponent(
         bandName
-      )}&api_key=${apiKey}&format=json/`
+      )}&api_key=${apiKey}&format=json`
 
       const response = await axios.get(apiUrl)
       setBandSuggestions(response.data.results.artistmatches.artist)

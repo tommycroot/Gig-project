@@ -171,6 +171,39 @@ REST_FRAMEWORK = {
   ]
 }
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Example: Allow requests from localhost
+    "https://yourfrontenddomain.com",  # Add your frontend domain
+    # Add more origins as needed
+]
+
+# Optional: Allow credentials (cookies, authorization headers, etc.)
+CORS_ALLOW_CREDENTIALS = True
+
+# Optional: Specify allowed HTTP methods
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "DELETE",
+    "OPTIONS",
+]
+
+# Optional: Specify allowed headers
+CORS_ALLOW_HEADERS = [
+    "Accept",
+    "Content-Type",
+    "Authorization",
+    # Add more headers as needed
+]
+
+# Optional: Specify exposed headers
+CORS_EXPOSE_HEADERS = [
+    "Content-Disposition",
+    # Add more headers as needed
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'client', "build", "static"),
 )
