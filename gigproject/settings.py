@@ -87,10 +87,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "https://encoreapp-295eca59c3a4.herokuapp.com"
-]
+#CORS_ALLOWED_ORIGINS = [
+    #"http://localhost:3000",
+    #"https://encoreapp-295eca59c3a4.herokuapp.com"
+#]
 
 
 
