@@ -45,7 +45,7 @@ const Login = () => {
       console.log('DATA TOKEN', data.token)
       axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`
       const sub = getPayloadSub()
-      navigate(`/profile/${sub}`)
+      navigate(`/profile/${sub}/`)
 
     } catch (err) {
       console.log('error', err)
