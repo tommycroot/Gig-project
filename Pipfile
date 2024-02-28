@@ -9,6 +9,7 @@ pylint = "*"
 psycopg2-binary = "*"
 django-environ = "*"
 django-on-heroku = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
