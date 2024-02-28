@@ -5,12 +5,12 @@ name = "pypi"
 
 [packages]
 django = "*"
-pylint = "*"
 psycopg2-binary = "*"
+pylint = "*"
+pyjwt = "*"
 django-environ = "*"
 django-on-heroku = "*"
-django-cors-headers = "*"
-djangorestframework = "*" 
+djangorestframework = "*"
 
 [dev-packages]
 
