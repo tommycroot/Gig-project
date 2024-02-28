@@ -33,6 +33,8 @@ const AddReview = () => {
 
   const [error, setError] = useState('')
 
+  const [characterLimitReached, setCharacterLimitReached] = useState(false)
+
   //! Executions
 
   useEffect(() => {
@@ -50,8 +52,13 @@ const AddReview = () => {
   }, [])
 
   const handleChange = (e) => {
-    setFormFields({ ...formFields, [e.target.name]: e.target.value })
-
+    const { name, value } = e.target
+    if (name === 'reviewText' && value.length > 280) {
+      setCharacterLimitReached(true)
+      return
+    }
+    setCharacterLimitReached(false)
+    setFormFields({ ...formFields, [name]: value })
   }
 
   const handleSubmit = async (e) => {
@@ -94,7 +101,9 @@ const AddReview = () => {
                   <Form.Group className='mb-3'>
                     <Form.Control type="text" as='textarea' name='reviewText' placeholder='Comment text' onChange={handleChange} value={formFields.reviewText} />
                   </Form.Group>
-
+                  {characterLimitReached && (
+                    <p style={{ color: 'red' }}>Character limit reached (max 280 characters).</p>
+                  )}
                   {/* <Form.Group className='mb-3'>
                     <Form.Control type="number" name="rating" placeholder='Rating out of 5' onChange={handleChange} value={formFields.rating} />
                   </Form.Group> */}

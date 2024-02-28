@@ -18,4 +18,3 @@ class Review(models.Model):
   )
 
   review_text = models.CharField(default=0, max_length=280)
-  rating = models.IntegerField(default=0, validators=[MaxValueValidator(5), MinValueValidator(1)])

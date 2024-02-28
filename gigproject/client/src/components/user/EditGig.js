@@ -18,6 +18,7 @@ const EditGig = () => {
   const [gig, setGig] = useState(null)
   const [error, setError] = useState('')
   const [bandSuggestions, setBandSuggestions] = useState([])
+  const [venueSuggestions, setVenueSuggestions] = useState([])
   const [displayedResults, setDisplayedResults] = useState(5)
   const CURRENCY_CHOICES = [
     '$', '£', '€', '¥', '₣', '₤', '₺', '₹', '₽', '₩', '₱', '₦', '฿', '₿', '₮', '₡', '₫', '₸', '₯', '₢', '₧', '₠'
@@ -65,7 +66,7 @@ const EditGig = () => {
         const { data } = await authenticated.get(`/api/gigs/${gigId}`)
         console.log('YO DATA', data)
         console.log('DATE DATE', data.date)
-       
+
 
         // Create a new object with the gig data mapped to formFields keys
         const newFormFields = {
@@ -183,9 +184,46 @@ const EditGig = () => {
   const handleChange = (e) => {
     setFormFields({ ...formFields, [e.target.name]: e.target.value })
     console.log('FORM FIELDS', formFields)
-
+  }
+  const fetchVenueSuggestions = async (e) => {
+    const input = e.target.value
+    try {
+      const response = await axios.get(`/api/auth/google-places-proxy/?query=${encodeURIComponent(input)}`)
+      setVenueSuggestions(response.data.results)
+      console.log('RESPONSE', response.data)
+    } catch (error) {
+      console.error('Error fetching venue suggestions:', error)
+    }
   }
 
+  const handleVenueChange = (e) => {
+    const venueName = e.target.value
+    setFormFields({ ...formFields, venue: venueName })
+    if (venueName.length > 2) {
+      fetchVenueSuggestions(e)
+    }
+  }
+
+  const handleSelectVenue = (suggestion) => {
+    setFormFields({ ...formFields, venue: suggestion.name })
+    setVenueSuggestions([]) // Clear venue suggestions after selection if needed
+  }
+
+
+  const renderVenueSuggestions = () => {
+    return (
+      <ul className='band-suggestions'>
+        {venueSuggestions.slice(0, displayedResults).map((suggestion) => (
+          <li key={suggestion.place_id} onClick={() => handleSelectVenue(suggestion)}>
+            {suggestion.name}
+          </li>
+        ))}
+        {venueSuggestions.length > displayedResults && (
+          <li onClick={handleShowMore}>Show More</li>
+        )}
+      </ul>
+    )
+  }
 
 
   return (
@@ -233,7 +271,14 @@ const EditGig = () => {
                   </InputMask>
 
                   <Form.Group className='mb-3'>
-                    <Form.Control type="text" name="venue" placeholder='Venue' onChange={handleChange} value={formFields.venue} />
+                    <Form.Control
+                      type="text"
+                      name="venue"
+                      placeholder="Venue"
+                      onChange={handleVenueChange}
+                      value={formFields.venue}
+                    />
+                    {renderVenueSuggestions()}
                   </Form.Group>
 
                   <Form.Group className='mb-3'>

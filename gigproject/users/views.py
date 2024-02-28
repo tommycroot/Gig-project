@@ -14,13 +14,32 @@ from .serializers.populated import PopulatedUserSerializer
 
 from gigs.models import Gig
 from gigs.serializers.common import GigSerializer
-
+from django.http import JsonResponse
+import requests
+import urllib.parse
 
 from lib.exceptions import exceptions
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
+class GooglePlacesProxy(APIView):
+    def get(self, request):
+        query = request.GET.get('query', '')
+        api_key = 'AIzaSyBLZtcpPFzFEO4VD8BoWjfJvW-e5GQxddg'
+        
+        # URL-encode the query parameter
+        encoded_query = urllib.parse.quote(query)
+        
+        url = f'https://maps.googleapis.com/maps/api/place/textsearch/json?query={encoded_query}&key={api_key}'
+
+        try:
+            response = requests.get(url)
+            data = response.json()
+            return JsonResponse(data)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+        
 class RegisterView(APIView):
 
     # REGISTER ROUTE

@@ -44,7 +44,46 @@ const AddGig = () => {
 
   const [error, setError] = useState('')
 
+  const [venueSuggestions, setVenueSuggestions] = useState([])
+
+  const fetchVenueSuggestions = async (e) => {
+    const input = e.target.value
+    try {
+      const response = await axios.get(`/api/auth/google-places-proxy/?query=${encodeURIComponent(input)}`)
+      setVenueSuggestions(response.data.results)
+      console.log('RESPONSE', response.data)
+    } catch (error) {
+      console.error('Error fetching venue suggestions:', error)
+    }
+  }
+
+  const handleVenueChange = (e) => {
+    const venueName = e.target.value
+    setFormFields({ ...formFields, venue: venueName })
+    if (venueName.length > 2) {
+      fetchVenueSuggestions(e)
+    }
+  }
+
+  const handleSelectVenue = (suggestion) => {
+    setFormFields({ ...formFields, venue: suggestion.name })
+    setVenueSuggestions([]) // Clear venue suggestions after selection if needed
+  }
   //! Executions
+  const renderVenueSuggestions = () => {
+    return (
+      <ul className='band-suggestions'> 
+        {venueSuggestions.slice(0, displayedResults).map((suggestion) => (
+          <li key={suggestion.place_id} onClick={() => handleSelectVenue(suggestion)}>
+            {suggestion.name}
+          </li>
+        ))}
+        {venueSuggestions.length > displayedResults && (
+          <li onClick={handleShowMore}>Show More</li>
+        )}
+      </ul>
+    )
+  }
 
   const fetchBandSuggestions = async (bandName) => {
     try {
@@ -205,7 +244,14 @@ const AddGig = () => {
                   </InputMask>
 
                   <Form.Group className='mb-3'>
-                    <Form.Control type="text" name="venue" placeholder='Venue' onChange={handleChange} value={formFields.venue} />
+                    <Form.Control
+                      type="text"
+                      name="venue"
+                      placeholder="Venue"
+                      onChange={handleVenueChange}
+                      value={formFields.venue}
+                    />
+                    {renderVenueSuggestions()}
                   </Form.Group>
                   <Form.Group className='mb-3'>
                     <Row className='price-currency'>

@@ -40,7 +40,7 @@
   margin-right: 10px;
   margin-left: 10px;
   border-radius: 15px;
-
+  min-height: 730px;
 
   h1 {
     font-weight: 800;
@@ -131,10 +131,9 @@
   padding: 15px 0;
   margin-right: 10px;
   margin-left: 10px;
- 
-  margin-top: 20px;
+
   border-radius: 15px;
-  
+
 
 
   h2 {
@@ -187,9 +186,12 @@ h2 {
 #review-owner {
   font-weight: 900;
   margin-bottom: 5px;
+  min-width: 120px;
 
   a {
     color: #0f1e3c;
+    font-size: 12px;
+
   }
 }
 
@@ -197,10 +199,11 @@ h2 {
 
 #review-text {
   overflow-y: hidden;
-  width: 300px;
+  width: 450px;
   text-align: left;
-  margin-top: 2px;
+  margin-top: 5px;
   font-size: 12px;
+  font-weight: 600;
 }
 
 .edit-delete {
@@ -217,10 +220,12 @@ h2 {
   display: none;
   /* Hide the delete button by default */
 }
+
 #delete-review:hover {
   background-color: rgb(150, 7, 7);
   box-shadow: 0 0 10px 0 rgb(150, 7, 7) inset, 0 0 10px 4px rgb(150, 7, 7);
 }
+
 /* Show the delete button only when the user owns the review */
 #delete-review.show-delete {
   display: inline-block;
@@ -259,6 +264,8 @@ h2 {
   .span-value {
     font-size: 16px;
   }
+  
+
 
   .gig-info .toggle-button {
     width: 60%;
@@ -269,7 +276,7 @@ h2 {
     width: 95%;
     margin: 0 auto;
     margin-top: 10px;
-    min-height: 400px !important;
+    max-height: 350px !important;
   }
 
   .review-container {
@@ -291,6 +298,7 @@ h2 {
 
   #delete-review {
     margin-right: 8px;
+    margin-top: 18px;
   }
 
   .span-value-setlist {
@@ -303,7 +311,9 @@ h2 {
     color: #0f1e3c;
     font-weight: 600;
     white-space: break-spaces;
+    font-size: 14px !important;
   }
+
 }
 
 #reviews-count {
@@ -376,9 +386,13 @@ h2 {
 #here-review:hover {
   background-color: #102040;
   box-shadow: 0 0 10px 0 #102040 inset, 0 0 10px 4px #102040;
-  
+
 }
 
 #notes {
   width: 90%;
+}
+
+#hide {
+  display: none !important;
 }

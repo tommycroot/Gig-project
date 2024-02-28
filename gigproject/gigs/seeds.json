@@ -1,0 +1,1362 @@
+[
+{
+  "model": "gigs.gig",
+  "pk": 1,
+  "fields": {
+    "owner": 1,
+    "date": "2024-02-03",
+    "band": "The Menzingers",
+    "venue": "Electric Ballroom",
+    "image": "https://th.bing.com/th/id/OIP.n44Clr-AOaVtD7x_H61k4gHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Hope Is a Dangerous Little Thing\n2. I Don't Wanna Be an Asshole Anymore\n3. Try\n4. Good Things\n5. Lookers\n6. House on Fire\n7. Some of It Was True\n8. Anna\n9. Thick as Thieves\n10. Tellin' Lies\n11. There's No Place in This World for Me\n12. Burn After Writing\n13. Ultraviolet\n14. Nice Things\n15. Come on Heartache\n16. America (You're Freaking Me Out)\n17. The Obituaries\n18. Nobody Stays\n19. After the Party\n\nEncore:\n1. Your Wild Years\n2. Charlie's Army\n3. Casey",
+    "notes": "Third time seeing The Menzingers! They always deliver an amazing show.",
+    "support": "",
+    "currency": "£",
+    "price": "25.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 2,
+  "fields": {
+    "owner": 1,
+    "date": "2024-02-15",
+    "band": "Jeff Rosenstock",
+    "venue": "Electric Ballroom",
+    "image": "https://th.bing.com/th/id/OIP.C9jV3eoR7HGNeQU_YSyPOwAAAA?rs=1&pid=ImgDetMain",
+    "setlist": "1. WILL U STILL U\n2. HEAD\n3. Scram!\n4. LIKED U BETTER\n5. DOUBT\n6. Festival Song\n7. SOFT LIVING\n8. Wave Goodnight to Me\n9. FUTURE IS DUMB\n10. N O D R E A M\n11. Nausea\n12. State Line\n13. HEALMODE (Includes birthday message to drummer Kevin Higuchi)\n14. Blast Damage Days\n15. Leave it in The Ska\n16. The Beauty of Breathing\n17. LIFE ADMIN\n18. I WANNA BE WRONG\n19. GRAVEYARD SONG\n20. ***BNB\n21. Hey Allison!\n22. 9/10 (with Georgia Maq)\n23. You, in Weird Cities\n24. 3 SUMMERS\n\nEncore:\n1. NO TIME\n2. Pash Rash\n3. Ohio Tpke (Tour debut)\n4. We Begged 2 Explode",
+    "notes": "Second time seeing, Jeff! Great show, but trains were a nightmare coming home.",
+    "support": "Shit Present",
+    "currency": "£",
+    "price": "20.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 3,
+  "fields": {
+    "owner": 1,
+    "date": "2023-12-18",
+    "band": "The Front Bottoms",
+    "venue": "Electric Ballroom",
+    "image": "https://th.bing.com/th/id/OIP.0TgYUMCfb5fKWmOMBk4XwAHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Flying Model Rockets\n2. West Virginia\n3. Flashlight\n4. Emotional\n5. bus beat\n6. The Feud\n7. Outlook\n8. Lover Boy\n9. Funny You Should Ask\n10. Punching Bag\n11. Maps\n12. Santa Monica\n13. Vacation Town\n14. Hello World\n15. 2YL\n16. The Beers\n17. Ginger\n18. Peach\n19. Au Revoir (Adios)\n\nEncore:\n1. 12 Feet Deep\n2. Be Nice to Me\n3. Twin Size Mattress",
+    "notes": "Champagne Jam! Boxing gloves in the crowd.",
+    "support": "We Were Promised Jetpacks, Wilbur Soot (acoustic)",
+    "currency": "£",
+    "price": "30.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 4,
+  "fields": {
+    "owner": 1,
+    "date": "2022-04-09",
+    "band": "Less Than Jake",
+    "venue": "O2 Forum Kentish Town",
+    "image": "https://resources.tidal.com/images/5551ea8c/c3ef/4213/92a5/49e82be73fc0/750x750.jpg",
+    "setlist": "1. Last One Out of Liberty City\n2. Gainesville Rock City\n3. National Anthem\n4. Automatic\n5. The High Cost of Low Living\n6. Motown Never Sounded So Good\n7. Fat Mike's On Drugs\n8. Motto\n9. History of a Boring Town\n10. Look What Happened\n11. Johnny Quest Thinks We're Sellouts\n12. The Science of Selling Yourself Short\n13. Plastic Cup Politics\n14. Lie to Me\n15. The Ghosts of Me and You\n\nEncore:\n1. Nervous in the Alley\n2. My Very Own Flag\n3. All My Best Friends Are Metalheads",
+    "notes": "Fifth time seeing Less Than Jake. Went with Sam and Ant.",
+    "support": "The Used, Spunge",
+    "currency": "£",
+    "price": "20.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 5,
+  "fields": {
+    "owner": 1,
+    "date": "2023-07-04",
+    "band": "Owen",
+    "venue": "Bush Hall",
+    "image": "https://th.bing.com/th/id/OIP.oIsidyUC-kgwrcDlC3b2jAAAAA?rs=1&pid=ImgDetMain",
+    "setlist": "1. Bad News\n2. Love Is Not Enough\n3. A New Muse\n4. One of These Days\n5. The Sad Waltzes of Pietro Crespi\n6. O, Evelyn...\n7. The Desperate Act\n8. Playing Possum for a Peek\n9. The Armoire\n10. Headphoned\n11. The Contours\n12. Never Meant",
+    "notes": "Mike was in really good spirits. Spoke to him after the gig and got him to sign my vinyl.",
+    "support": "Jamie Macefield",
+    "currency": "£",
+    "price": "22.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 6,
+  "fields": {
+    "owner": 1,
+    "date": "2022-06-11",
+    "band": "Descendents",
+    "venue": "O2 Forum Kentish Town",
+    "image": "https://th.bing.com/th/id/R.3062d7c61a32565794accea407907509?rik=qvfG1j0XkD2hcw&pid=ImgRaw&r=0",
+    "setlist": "1. Everything Sux\n2. Hope\n3. Coolidge\n4. I Like Food\n5. Victim of Me\n6. Nightage\nGet the Time\n7. Global Probing\n8. 'Merican\n9. Weinerschnitzel\n10. No, All!\n11. Clean Sheets\n12. I Wanna Be a Bear\n13. Rotting Out\n14. Sailor's Choice\n15. Mr. Bass\n16. When I Get Old\n17. I'm Not a Punk\n18. Silly Girl\n19. Coffee Mug\n20 Without Love\n21. Bikeage\n22. I'm the One\n23. I Don't Want to Grow Up\n24. Thank You\n25. Suburban Home\n26. Smile\n\nEncore:\n1. All-O-Gistics (with The Linda Lindas) \n2. Myage\n3. Nothing With You\n4. Catalina",
+    "notes": "Buzzed on coffee for this one... never bring a backpack to a gig.",
+    "support": "No Use For A Name, Pennywise",
+    "currency": "£",
+    "price": "25.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 7,
+  "fields": {
+    "owner": 1,
+    "date": "2024-09-14",
+    "band": "American Football",
+    "venue": "The Roundhouse",
+    "image": "https://th.bing.com/th/id/R.ce8a9caa285af0eb660d2f57442eec5b?rik=TpE%2b7VGaLPBXBA&riu=http%3a%2f%2fimages.genius.com%2f41becf65655069d695e40fb15492a7d0.468x468x1.jpg&ehk=3HJq%2bG68tkregWYTrrbQPe4j%2bgaYStq99H%2fkn2%2fQ48Y%3d&risl=&pid=ImgRaw&r=0",
+    "setlist": "",
+    "notes": "Special LP1 anniversary show.",
+    "support": "",
+    "currency": "£",
+    "price": "40.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 8,
+  "fields": {
+    "owner": 1,
+    "date": "2023-06-20",
+    "band": "Rancid",
+    "venue": "OVO Arena Wembley",
+    "image": "https://th.bing.com/th/id/R.c3050e4e0cabb96d8d87aaba336af879?rik=9%2fckKMT6AWhFtQ&pid=ImgRaw&r=0",
+    "setlist": "1. Tomorrow Never Comes\n2. Roots Radicals\n3. Radio\n4. Maxwell Murder\n5. The 11th Hour\n6. Journey to the End of the East Bay\n7. Dead Bodies\n8. Black & Blue\n9. East Bay Night\n10. Side Kick\n11. Salvation\n12. Bloodclot\n13. Ghost of a Chance\n14. Gunshot\n15. Listed M.I.A.\n16. Hoover Street\n17. I Wanna Riot\n18. Old Friend\n19. The Wars End (Lars Solo)\n20. Something in the World Today\n21. Rejected\n22. St. Mary\n23. Olympia WA.\n24. Fall Back Down\n25. Tenderloin\n26. Time Bomb\n27. Ruby Soho",
+    "notes": "I went to this show with Peter Burkis. First time seeing Rancid.",
+    "support": "The Bronx, The Skints & Grade 2",
+    "currency": "£",
+    "price": "30.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 9,
+  "fields": {
+    "owner": 2,
+    "date": "2019-11-14",
+    "band": "Vampire Weekend",
+    "venue": "Alexandra Palace, London",
+    "image": "https://th.bing.com/th/id/R.d8d0f6756413b4b93487b021c399c39c?rik=wEhPkjbHFgtTGA&pid=ImgRaw&r=0",
+    "setlist": "1. Mansard Roof\n2. Holiday\n3. Boston (Ladies of Cambridge)\n4. Bambina\n5. Sympathy\n6. Finger Back\n7. Unbelievers\n8. White Sky\n9. One (Blake's Got a New Face)\n10. Unbearably White\n11. Step\n12. Stranger\n13. This Life\n14. Sunflower (extended 'Stoneflower' jam)\n15. Harmony Hall\n16. Diane Young\n17. Cousins\n18. A-Punk\n19. Rich Man\n20. Flower Moon\n21. Giving Up the Gun\n22. The Kids Don't Stand a Chance\n\nEncore:\n1. Big Blue\n2. Campus\n3. Run\n4. Giant\n5. Walcott",
+    "notes": "Ezra looked too cute :D",
+    "support": "HAIM",
+    "currency": "£",
+    "price": "40.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 10,
+  "fields": {
+    "owner": 2,
+    "date": "2022-11-12",
+    "band": "Biffy Clyro",
+    "venue": "The 02 Arena, London",
+    "image": "https://i.pinimg.com/originals/e8/14/d4/e814d4d40c7614665aa46865b128251a.jpg",
+    "setlist": "1. DumDum\n2. A Hunger in Your Haunt\n3. Tiny Indoor Fireworks\n4. Who's Got a Match?\n5. Black Chandelier\n6. That Golden Rule\n7. Instant History\n8. Mountains\n9. Machines\n10. Unknown Male 01\n11. 57\n12. End Of\n13. Wolves of Winter\n14. Space\n15. Cop Syrup\n16. Re-Arrange\n17. Biblical\n18. Living Is a Problem Because Everything Dies\n19. The Captain\n\nEncore:\n1. God & Satan\n2. Opposite\n3. Glitter and Trauma\n4. Bubbles\n5. Many of Horror\n6. Escape (The Pina Colada Song)",
+    "notes": "",
+    "support": "Architects",
+    "currency": "£",
+    "price": "60.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 11,
+  "fields": {
+    "owner": 2,
+    "date": "2023-07-02",
+    "band": "The 1975",
+    "venue": "Finsbury Park, London",
+    "image": "https://th.bing.com/th/id/R.a012b56edf6814bc6fb0ec6bc816984d?rik=13ZYasmcUjZi0w&pid=ImgRaw&r=0",
+    "setlist": "1. The 1975 (BFIAFL)\n2. Looking for Somebody (to Love)\n3. Happiness\n4. Love Me\n5. Part of the Band\n6. Oh Caroline\n7. I'm in Love With You\n8. Paris (Acoustic)\n9. All I Need to Hear\n10. Be My Mistake (Matty solo)\n11. At Their Very Best\n12. If You're Too Shy (Let Me Know)\n13. The Ballad of Me and My Brain\n14. Medicine\n15. About You\n16. Somebody Else\n17. A Change of Heart\n18. The Sound\n19. It's Not Living (If It's Not With You)\n20. fallingforyou\n21. Guys\n22. I Always Wanna Die (Sometimes)\n23. An Encounter\n24. Robbers\n25. I Like America & America Likes Me\n26. Love It If We Made It\n27. Sex\n28. Give Yourself a Try\n29. People",
+    "notes": "",
+    "support": "All day festival!",
+    "currency": "£",
+    "price": "60.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 12,
+  "fields": {
+    "owner": 2,
+    "date": "2023-10-19",
+    "band": "Bombay Bicycle Club",
+    "venue": "PRYZM, London",
+    "image": "https://th.bing.com/th/id/R.07fa90f30e5762cc7df1641ad1d6101e?rik=mt0NEyOLBFGFxA&riu=http%3a%2f%2fimages.genius.com%2fe26ffc31faa597259fe6e320c025eed6.640x640x1.jpg&ehk=xlmjbv2OW4u32EIWw5hUOJ5PeuV763IcyNA6eh0NlAc%3d&risl=&pid=ImgRaw&r=0",
+    "setlist": "1. Just a Little More Time\n2. Sleepless\n3. I Want to Be Your Only Pet\n4. Shuffle\n5. Tekken 2\n6. Feel\n7. My Big Day\n8. Diving\n9. Lights Out, Words Gone\n10. Turn the World On\n11. How Can You Swallow So Much Sleep\n12. Eat, Sleep, Wake (Nothing but You)\n13.Luna\n\nEncore:\n1. Always Like This",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "18.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 13,
+  "fields": {
+    "owner": 2,
+    "date": "2023-05-12",
+    "band": "Razorlight",
+    "venue": "Eventim, Apollo",
+    "image": "https://th.bing.com/th/id/R.31785b1b3b8a4bea410df6c1220ad0af?rik=2o1c9WCgme0SXw&pid=ImgRaw&r=0",
+    "setlist": "1. Rip it Up\n2. In the Morning\n3. Stumble and Fall\n4. Golden Touch\n5. Vice\n6. Can't Stop This Feeling\n7. In the City\n8. Violence Forever\n9. Get It and Go\n10. Wire to Wire\n11. Rock 'n' Roll Lies\n12. Los Angeles Waltz\n13. Who Needs Love?\n14. Before I Fall to Pieces\n15. Somewhere Else\n\nEncore:\n1. Fall, Fall, Fall\n2. Don't Go Back to Dalston\n3. Good Night\n4. America",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "25.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 14,
+  "fields": {
+    "owner": 2,
+    "date": "2024-12-22",
+    "band": "The Shins",
+    "venue": "Koko, London",
+    "image": "https://th.bing.com/th/id/OIP.B2WpTc8dcCo5MxajHrL-VQHaF7?rs=1&pid=ImgDetMain",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "16.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 15,
+  "fields": {
+    "owner": 3,
+    "date": "2023-03-01",
+    "band": "Rammstein",
+    "venue": "Manchester Arena, Manchester",
+    "image": "https://th.bing.com/th/id/OIP.9fp-A-IC96rjfclkHs1LxwHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Sonne\n2. Wollt ihr das Bett in Flammen sehen?\n3. Keine Lust\n4. Sehnsucht\n5. Asche zu Asche\n6. Feuer frei!\n7. Mutter\n8. Mein Teil\n9. Du riechst so gut\n10. Links 2-3-4\n11. Du hast\n12. Haifisch\n13. B-Stage\n14. Bück dich\n15. Mann gegen Mann\n16. Ohne dich\n\nEncore:\n\n1. Mein Herz brennt\n2. Amerika\n3. Ich will\n\nEncore 2:\n\n1. Engel\n2. Pussy",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "24.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 16,
+  "fields": {
+    "owner": 3,
+    "date": "2017-10-28",
+    "band": "Metallica",
+    "venue": "Manchester Arena, Manchester",
+    "image": "https://th.bing.com/th/id/R.b4636b41f2b8fd3f3bcb31dca7a8b76f?rik=FGizWg%2belfV0uw&pid=ImgRaw&r=0",
+    "setlist": "The Ecstasy of Gold (Ennio Morricone song)\n\nHardwired Intro\n\n1. Hardwired\n2. Atlas, Rise!\n3. Seek & Destroy\n4. Of Wolf and Man\n5. The Day That Never Comes\n6. Now That We're Dead\n7. ManUNkind\n8. For Whom the Bell Tolls\n9. Halo on Fire\n10. Stone Cold Crazy\n11. Creeping Death\n12. Moth Into Flame\n13. Sad but True\n14. One\n15. Master of Puppets\n\nEncore:\n1. Spit Out the Bone\n2. Nothing Else Matters\n3. Enter Sandman (with 'The Frayed Ends of Sanity' outro)",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "35.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 17,
+  "fields": {
+    "owner": 3,
+    "date": "2018-05-08",
+    "band": "Nickelback",
+    "venue": "Manchester Arena, Manchester",
+    "image": "https://th.bing.com/th/id/OIP.rf57OsAu_Sk2MwtDqu6A2AHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Feed the Machine\n2. Woke Up This Morning\n3. Photograph\n4. Far Away\n5. Something in Your Mouth\n6. Someday\n7. Lullaby\n8. Figured You Out\n9. Leader of Men\n10. Edge of a Revolution\n11. Hotel California\n12. Rockstar\n13. When We Stand Together\n14. Curb / Where? / Left / Curb\n15. Animals\n16. How You Remind Me\n\nEncore:\n1. Gotta Be Somebody\n2. Burn It to the Ground",
+    "notes": "",
+    "support": "Seether",
+    "currency": "£",
+    "price": "35.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 18,
+  "fields": {
+    "owner": 3,
+    "date": "2020-01-16",
+    "band": "Slipknot",
+    "venue": "Manchester Arena, Manchester",
+    "image": "https://th.bing.com/th/id/OIP.qswpJfYr-HSmIXYNWLPZ1wHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Unsainted\n2. Disasterpiece\n3. Eeyore\n4. Nero Forte\n5. Before I Forget\n6. New Abortion\n7. Psychosocial\n8. Solway Firth\n9. Vermilion\n10. Birth of the Cruel\n11. Wait and Bleed\n12. Eyeless\n13. All Out Life\n14. Duality\n\nEncore:\n1. 742617000027\n2. (sic)\n3. People = Shit\n4. Surfacing",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "40.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 19,
+  "fields": {
+    "owner": 3,
+    "date": "2017-11-02",
+    "band": "Cradle of Filth",
+    "venue": "Manchester Academy 2, Manchester",
+    "image": "https://th.bing.com/th/id/R.54ba02c067cf3b7bbf1f8b9c513f1e8e?rik=rDC%2fl0AjBUacgg&pid=ImgRaw&r=0",
+    "setlist": "1. Gilded C**t\n2. Beneath the Howling Stars\n3. Blackest Magick in Practice\n4. Heartbreak and Seance\n5. Bathory Aria: Benighted Like Usher / A Murder of Ravens in Fugue / Eyes That Witnessed Madness\n6. Dusk and Her Embrace\n7. Under Huntress Moon\n8. You Will Know the Lion by His Claw\n\nEncore:\n1. A Bruise Upon the Silent Moon\n2. The Promise of Fever\n3. Achingly Beautiful\n4. Nymphetamine (Fix)\n5. Her Ghost in the Fog\n6. Born in a Burial Gown",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "15.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 20,
+  "fields": {
+    "owner": 3,
+    "date": "2023-04-21",
+    "band": "Cannibal Corpse",
+    "venue": "Manchester Academy, Manchester",
+    "image": "https://th.bing.com/th/id/OIP.x6lzgkQBN5kwkeGg_c0B4AAAAA?rs=1&pid=ImgDetMain",
+    "setlist": "1. Scourge of Iron\n2. The Time to Kill Is Now\n3. Inhumane Harvest\n4. Code of the Slashers\n5. Fucked With a Knife\n6. The Wretched Spawn\n7. Gutted\n8. Kill or Become\n9. I Cum Blood\n10. Evisceration Plague\n11. Death Walking Terror\n12. Condemnation Contagion\n13. Necrogenic Resurrection\n14. Unleashing the Bloodthirsty\n15. Devoured by Vermin\n16. A Skull Full of Maggots\n17. Stripped, Raped and Strangled\n18. Hammer Smashed Face",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "22.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 21,
+  "fields": {
+    "owner": 3,
+    "date": "2025-01-12",
+    "band": "Slayer",
+    "venue": "Manchester Arena, Manchester",
+    "image": "https://th.bing.com/th/id/R.151dd97c5235fb6dfc5fe33ab16580ce?rik=eUAaGkUmTcwRAA&pid=ImgRaw&r=0",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "32.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 22,
+  "fields": {
+    "owner": 4,
+    "date": "2020-03-08",
+    "band": "Reel Big Fish",
+    "venue": "Upstate Concert Hall, New York",
+    "image": "https://resources.tidal.com/images/41b890f2/3c08/4c18/a270/129c082f08ba/750x750.jpg",
+    "setlist": "1. Ska Show\n2. Trendy\n3. I Want Your Girlfriend to Be My Girlfriend Too\n4. Life Sucks... Let's Dance!\n5. Sell Out\n6. Thank You for Not Moshing\n7. Brown Eyed Girl\n8. In Love Again\n9. Everyone Else Is an Asshole\n10. Your Guts (I Hate 'Em)\n11. The Middle\n12. Good Thing\n13. You Can't Have All of Me\n14. Another F.U. Song\n15. Bob Marley's Toe\n16. Where Have You Been\n17. She Has a Girlfriend Now\n18. The Joker\n19. Take On Me\n\nEncore:\n1. Olé\n2. Pissed Off\n3. Everything Sucks\n4. Beer",
+    "notes": "",
+    "support": "Cisco In The Aquarium",
+    "currency": "$",
+    "price": "15.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 23,
+  "fields": {
+    "owner": 4,
+    "date": "2019-08-22",
+    "band": "The Mighty Mighty Bosstones",
+    "venue": "Anthology, Rochester NY",
+    "image": "https://th.bing.com/th/id/OIP._9ZyUfygc5MUqIqwizqOJAHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Devil's Night Out\n2. Green Bay, Wisconsin\n3. The Rascal King\n4. Dr. D\n5. Hugo's Wife\n6. Someday I Suppose\n7. Everybody's Better\n8. You Left Right?\n9. The Constant\n10. Simmer Down\n11. He's Back\n12. Hell of a Hat\n13. Howwhywuz, Howwhyam\n14. The Cave\n15. Hope I Never Lose My Wallet\n16. A Little Bit Ugly\n17. Graffiti Worth Reading\n18. Sister Mary\n19. Sunday Afternoons on Wisdom Ave.\n20. Bad News and Bad Breaks\n21. Wonderful Day for the Race\n22. They Will Need Music\n23. Don't Worry Desmond Dekker\n24. I Can See Clearly Now\n25. The Impression That I Get\n\nEncore:\n1. Ballad of Easy Rider\n2. Favorite Records\n3. Unified / A Pretty Sad Excuse",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "21.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 24,
+  "fields": {
+    "owner": 4,
+    "date": "2023-08-23",
+    "band": "Sublime",
+    "venue": "Artpark Amphitheater, New York",
+    "image": "https://th.bing.com/th/id/OIP.GS5c4GTAy-zw5vKvDi7mBgHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. April 29, 1992 (Miami)\n2. Smoke Two Joints\n3. Garden Grove\n4. Wrong Way\n5. What Happened\n6. Skankin' to the Beat\n7. Panic\n8. Waiting for My Ruca\n9. Cool & Collected\n10. You Better Listen\n11. Doin' Time\n12. 40oz. to Freedom\n13. Take It or Leave It\n14. Shine Eye\n15. Pawn Shop\n16. Blackout\n17. Scarlet Begonias\n\n\nEncore:\n1. Badfish\n2. Let's Go Get Stoned\n3. What I Got\n4. Santeria",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "24.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 25,
+  "fields": {
+    "owner": 4,
+    "date": "2022-06-28",
+    "band": "The Aquabats!",
+    "venue": "Brooklyn Steel, New York",
+    "image": "https://th.bing.com/th/id/R.365ab1c28d8544cc833845207ca3df03?rik=N7rgQOkKpvnJjw&pid=ImgRaw&r=0",
+    "setlist": "1. Fashion Zombies!\n2. Cat with 2 Heads!\n3. Martian Girl!\n4. Happy Birthday to You\n5. Pizza Day!\n6. (with “Blitzkrieg Bop” by The Ramones interlude)\n7. In My Dreams!\n8. Roly Poly\n9. Red Sweater!\n10. The Shark Fighter!\n11. Hey Homies!\n12. Super Rad!\n13. Burger Rain!\n14. Pool Party!",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "15.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 26,
+  "fields": {
+    "owner": 5,
+    "date": "2023-10-07",
+    "band": "Drake",
+    "venue": "Scotiabank Arena, Toronto",
+    "image": "https://resources.tidal.com/images/3812d980/630e/4948/a72e/f21a546ec2e3/750x750.jpg",
+    "setlist": "Set 1:\n1. Look What You've Done\n2. Marvins Room\n3. Say Something\n4. Shot for Me\n5. Can I\n6. Feel No Ways\n7. Jaded\n8. Jungle\n9. Over\n10. Headlines\n11. The Motto\n12. HYFR (Hell Ya Fucking Right)\n13. Started From the Bottom\n14. Energy\n15. Know Yourself\n16. Nonstop\n17. MELTDOWN\n18. SICKO MODE\n19. Way 2 Sexy\n20. BackOutsideBoyz\n21. Jumbotron Shit Poppin\n22. Laugh Now Cry Later\n23. God's Plan\n24. Pound Cake\n25. Childs Play\n26. WAIT FOR U\n27. In My Feelings\n28. Nice for What\n\nEncore:\n1. The Ride\n2. Legend",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "45.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 27,
+  "fields": {
+    "owner": 5,
+    "date": "2017-07-29",
+    "band": "J. Cole",
+    "venue": "Air Canada Centre, Toronto",
+    "image": "https://th.bing.com/th/id/R.df55c22726c47a5943fe4868d84e1904?rik=sbY9Z1foUNxNKw&pid=ImgRaw&r=0",
+    "setlist": "1. For Whom the Bell Tolls\n2. Immortal\n3. Deja Vu\n4. Ville Mentality\n5. Change\n6. Lights Please\n7. Nobody's Perfect\n8. Can't Get Enough\n9. Forbidden Fruit\n10. Neighbors\n11. Foldin Clothes\n12. She's Mine, Pt. 2\n13. Love Yourz\n14. Wet Dreamz\n15. A Tale of 2 Citiez\n16. G.O.M.D.\n17. Power Trip\n18. No Role Modelz\n19. 4 Your Eyez Only",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "45.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 28,
+  "fields": {
+    "owner": 5,
+    "date": "2017-10-04",
+    "band": "Kid Cudi",
+    "venue": "REBEL, Toronto",
+    "image": "https://resources.tidal.com/images/9cbea2eb/6f6d/4d94/b97e/870b9205b1b1/640x640.jpg",
+    "setlist": "1. Down & Out\n2. Tequila Shots\n3. She Knows This\n4. Dive\n5. Just What I Am\n6. Hyyerr (with Chip tha Ripper)\n7. GHOST!\n8. Solo Dolo, Pt. III\n9. Sept. 16\n10. Man on the Moon (The Anthem)\n11. Mr. Rager\n12. Marijuana\n13. Memories (David Guetta cover)\n14. Pursuit of Happiness (Nightmare)\n\nEncore:\n1. The Prayer\n2. love.",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "25.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 29,
+  "fields": {
+    "owner": 5,
+    "date": "2011-09-15",
+    "band": "Kid Cudi",
+    "venue": "Molson Amphitheatre, Toronto",
+    "image": "https://resources.tidal.com/images/9cbea2eb/6f6d/4d94/b97e/870b9205b1b1/640x640.jpg",
+    "setlist": "1. Baptized in Fire\n2. REVOFEV\n3. Frequency\n4. Releaser\n5. Marijuana\n6. Just What I Am\n7. Brothers\n8. By Design\n9. Kitchen\n10. through the late night\n11. Mr. Rager\n12. Rose Golden\n13. Cudi Zone\n14. Memories\n15. Day 'n' Nite\n16. Father Stretch My Hands, Pt. 1\n17. Pursuit of Happiness (Nightmare)\n18. Surfin'",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "20.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 30,
+  "fields": {
+    "owner": 5,
+    "date": "2023-07-09",
+    "band": "Beyoncé",
+    "venue": "Rogers Centre, Toronto",
+    "image": "https://stand.ie/wp-content/uploads/2020/05/beyonce-attends-tidal-x-1015-on-october-15-2016-in-new-york-city-photo-by-theo-wargogetty-images-for-tidal-sqaure-1024x1024.jpg",
+    "setlist": "1. Dangerously in Love\n2. Flaws and All\n3. 1+1\n4. I'm Going Down\n5. I Care\n6. River Deep, Mountain High\n7. RENAISSANCE\n8. I'M THAT GIRL\n9. COZY\n10 ALIEN SUPERSTAR\n11.Lift Off\n12. 7/11\n13. MOTHERBOARD\n14. CUFF IT\n15. ENERGY\n16. BREAK MY SOUL\n17. OPULENCE\n18. Formation\n19. Diva\n20. MY POWER\n21. BLACK PARADE\n22. Savage\n23. Partition\n24. ANOINTED\n25. CHURCH GIRL\n26. Get Me Bodied\n27. Before I Let Go",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "40.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 31,
+  "fields": {
+    "owner": 5,
+    "date": "2025-07-09",
+    "band": "Travis Scott",
+    "venue": "Rogers Centre, Toronto",
+    "image": "https://resources.tidal.com/images/da110c26/386a/4023/83cf/a739baee2e79/750x750.jpg",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "52.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 32,
+  "fields": {
+    "owner": 6,
+    "date": "2018-11-02",
+    "band": "Taylor Swift",
+    "venue": "ANZ Stadium, Sydney",
+    "image": "https://th.bing.com/th/id/OIP.hAwV6xxMpb_UmtRd1HC_lQHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. ...Ready for It?\n2. I Did Something Bad\n3. Gorgeous\n4. Style / Love Story / You Belong With Me\n5. Look What You Made Me Do\n6. Look What You Made Me Do\n7. End Game\n8. King of My Heart\n9. Delicate\n10 Shake It Off\n11. 22\n12. Blank Space\n13. Dress\n14. Bad Blood / Should've Said No\n15. Don't Blame Me\n16. Long Live / New Year's Day\n\nEncore:\n17. Why She Disappeared\n18. Getaway Car\n19. Call It What You Want\n20. We Are Never Ever Getting Back Together / This Is Why We Can't Have Nice Things\n21. Rather Die Young\n22. Love on Top\n23. Crazy in Love\n24. Green Light / Freedom\n25. Love Hangover\n26. PLASTIC OFF THE SOFA\n27. VIRGO'S GROOVE\n28. Naughty Girl\n29. MOVE\n30. HEATED\n31. HEATED / ALREADY\n32. MIND CONTROL\n33. AMERICA HAS A PROBLEM\n34. PURE/HONEY\n35. SUMMER RENAISSANCE",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "80.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 33,
+  "fields": {
+    "owner": 6,
+    "date": "2023-02-25",
+    "band": "Ed Sheeran",
+    "venue": "Accor Stadium, Sydney",
+    "image": "https://resources.tidal.com/images/05d72ae4/319f/4237/821f/1d7af9ec8acf/750x750.jpg",
+    "setlist": "1. Tides\n2. BLOW\n3. I'm a Mess\n4. Shivers\n5. The A Team\n6. Castle on the Hill\n7. Don't\n8. Lego House\n9. Give Me Love\n10. Own It / Peru / Beautiful People / I Don't Care\n11. Overpass Graffiti\n12. Galway Girl\n13. Celestial\n14. Thinking Out Loud\n15. Love Yourself\n16. Sing\n17. Photograph\n18. Perfect\n19. Bloodstream\n20. Afterglow\n\nEncore:\n1. Shape of You\n2. Bad Habits\n3. You Need Me, I Don't Need You",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "60.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 34,
+  "fields": {
+    "owner": 6,
+    "date": "2024-02-10",
+    "band": "P!nk",
+    "venue": "Allianz Stadium, Sydney",
+    "image": "https://resources.tidal.com/images/1df06ed4/fd75/45f4/ab93/492c3e3acba7/750x750.jpg",
+    "setlist": "1. Get the Party Started\n2. Raise Your Glass\n3. Who Knew\n4. Just Like a Pill\n5. Try\n6. What About Us\n7. Act II\n8. Heartbeat\n9. Turbulence\n10. But We Lost It\n11. Make You Feel My Love\n12. Our Song\n13. Just Give Me a Reason\n14. F**kin' Perfect\n15. Just Like Fire / Heartbreaker\n16. Please Don't Leave Me\n17. Cover Me in Sunshine\n18. Don't Let Me Get Me\n19. When I Get There\n20. I Am Here\n21. Irrelevant\n22. No Ordinary Love\n23. Are You Gonna Fall?\n24. TRUSTFALL\n25. Blow Me (One Last Kiss)\n26. Never Gonna Not Dance Again\n\nEncore:\n1. So What",
+    "notes": "Encore included aerial stunt. Also extended intro & outro!",
+    "support": "",
+    "currency": "$",
+    "price": "35.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 35,
+  "fields": {
+    "owner": 6,
+    "date": "2025-05-03",
+    "band": "Ed Sheeran",
+    "venue": "Allianz Stadium, Sydney",
+    "image": "https://resources.tidal.com/images/05d72ae4/319f/4237/821f/1d7af9ec8acf/750x750.jpg",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "35.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 36,
+  "fields": {
+    "owner": 7,
+    "date": "2023-05-20",
+    "band": "Little Simz",
+    "venue": "KOKO, London",
+    "image": "https://th.bing.com/th/id/OIP.2Lpb1gW220148YtIZt6irgHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Silhouette\n2. No Merci\n3. Angel\n4. Woman\n5. Gorilla\n6. (Unknown)\n7. Point and Kill\n8. Fear No Man\n9. Protect My Energy\n10. Selfish\n11. Angel\n12. Broken\n13. Who Even Cares\n14. Woman",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "25.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 37,
+  "fields": {
+    "owner": 7,
+    "date": "2021-08-27",
+    "band": "Enny",
+    "venue": "Victoria Park",
+    "image": "https://th.bing.com/th/id/OIP.e_PUqQPmrppo96jJWsxD8QHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. He's Not Into You\n2. Jungle\n3. Man's World\n4. The West End\n5. I'm Just Beginning \n6. New Orleans\n7. Don't You Love Me\n8. Alone\n9. Peng Black Girls Remix\n10. Same Old\n11. I Want\n12. For South",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "80.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 38,
+  "fields": {
+    "owner": 7,
+    "date": "2023-11-10",
+    "band": "Jorja Smith",
+    "venue": "Troxy, London",
+    "image": "https://resources.tidal.com/images/c2a1265e/01ed/4dd5/a502/c4fff73cb164/750x750.jpg",
+    "setlist": "1. Try Me\n2. She Feels\n3. Feelings\n4. Addicted\n5. The One\n6. falling or flying\n7. GO GO GO\n8. Make sense\n9. Greatest Gift\n10. Come Over\n11. Teenage Fantasy\n12. Blue Lights\n13. Little Things\n14. Be Honest\n15.On My Mind",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "25.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 39,
+  "fields": {
+    "owner": 8,
+    "date": "2023-04-17",
+    "band": "Paramore",
+    "venue": "Newcastle City Hall, Newcastle",
+    "image": "https://resources.tidal.com/images/91080044/0a19/404a/9de8/2bb39a04c2cf/640x640.jpg",
+    "setlist": "1. You First\n2. The News\n3. Playing God\n4. That's What You Get\n5. Running Out of Time\n6. Hard Times\n7. Caught in the Middle\n8. Ain't It Fun\n9. Liar\n10 Crystal Clear\n11. Decode\n12. Still Into You\n13. Rose-Colored Boy\n14. Baby\n15. Rip It Up\n16. Misery Business\n17. Last Hope\n18. All I Wanted\n19. Crave\n\nEncore:\n11. The Only Exception\n12. This Is Why",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "35.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 40,
+  "fields": {
+    "owner": 8,
+    "date": "2022-03-01",
+    "band": "Taking Back Sunday",
+    "venue": "02 City Hall, Newcastle",
+    "image": "https://resources.tidal.com/images/53abb0c7/5f43/4169/b485/cfc36348d3ca/750x750.jpg",
+    "setlist": "1. What's It Feel Like to Be a Ghost?\n2. A Decade Under the Influence\n3. Error: Operator\n4. Tidal Wave\n5. Liar (It Takes One to Know One)\n6. You're So Last Summer\n7. Better Homes and Gardens\n8. Timberwolves at New Jersey\n9. My Blue Heaven\n10. Flicker, Fade\n11. You Can't Look Back\n12. My Name Is Jonas\n13. Cute Without the 'E' (Cut From the Team)\n14. MakeDamnSure",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "20.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 41,
+  "fields": {
+    "owner": 9,
+    "date": "2015-12-03",
+    "band": "Mumford & Sons",
+    "venue": "3Arena, Dublin",
+    "image": "https://th.bing.com/th/id/OIP.z38tJE2WGw3ARsoRE_nWlAHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Snake Eyes\n2. I Will Wait\n3. Below My Feet\n4. Lover of the Light\n5. Thistle & Weeds\n6. Ghosts That We Knew\n7. Believe\n8. Tompkins Square Park\n9. The Cave\n10. Little Lion Man\n11. Ditmas\n12. Dust Bowl Dance\n\nEncore:\n1. Hot Gates\n2. I'm on Fire\n3. The Wolf",
+    "notes": "",
+    "support": "",
+    "currency": "€",
+    "price": "30.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 42,
+  "fields": {
+    "owner": 9,
+    "date": "2013-11-17",
+    "band": "Queens of the Stone Age",
+    "venue": "The 02, Dublin",
+    "image": "https://th.bing.com/th/id/OIP.73Aarp3Rzpb-xuTsyziXJgAAAA?rs=1&pid=ImgDetMain",
+    "setlist": "1. You Think I Ain't Worth a Dollar, but I Feel Like a Millionaire\n2. No One Knows\n3. My God Is the Sun\n4. Burn the Witch\n5. The Lost Art of Keeping a Secret\n6. Monsters in the Parasol\n7. I Sat by the Ocean\n8. …Like Clockwork\n9. Misfit Love\n10. If I Had a Tail\n11. Kalopsia\n12. Little Sister\n13. Fairweather Friends\n14. Smooth Sailing\n15. Make It Wit Chu\n16. Sick, Sick, Sick\n17. Better Living Through Chemistry\n18. Go With the Flow\n\nEncore:\n1. The Vampyre of Time and Memory\n2. I Appear Missing\n3. A Song for the Dead",
+    "notes": "",
+    "support": "AMK",
+    "currency": "€",
+    "price": "35.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 43,
+  "fields": {
+    "owner": 9,
+    "date": "2019-08-21",
+    "band": "Foo Fighters",
+    "venue": "RDS Arena, Dublin",
+    "image": "https://th.bing.com/th/id/OIP.yF-WP-6Itln1zDfczIopRAHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. The Pretender\n2. Learn to Fly\n3. Run\n4. The Sky Is a Neighborhood\n5. Times Like These\n6. Drum Solo\n7. Sunday Rain\n8. My Hero\n9. These Days\n10. La Dee Da\n11. Walk\n12. The Boys Are Back In Town / The Rocker / Jailbreak / Good Times / Keyboard solo / Ziggy Stardust / Day-oh / Where the Streets Have No Name / Sunday Bloody Sunday\n13. Under Pressure\n14. All My Life\n15. I'll Stick Around\n16. Wheels\n17. Monkey Wrench\n18. Hey, Johnny Park!\n19. Big Me\n20. Best of You\n21. Happy Birthday to You\n22. Dirty Water\n23. This Is a Call\n24. Everlong",
+    "notes": "Green Day",
+    "support": "",
+    "currency": "€",
+    "price": "30.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 44,
+  "fields": {
+    "owner": 9,
+    "date": "2013-12-17",
+    "band": "Tenacious D",
+    "venue": "The Academy, Dublin",
+    "image": "https://th.bing.com/th/id/OIP.GtHkadw68n15ihiv1mqJJAHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Kickapoo\n2. Classico\n3. Baby\n4. Dude (I Totally Miss You)\n5. Kyle Quit the Band\n6. Friendship\n7. Rize of the Fenix\n8. Low Hangin' Fruit\n9. Roadie\n10. Kielbasa\n11. History\n12. The Road\n13. Dio\n14. Señorita\n15. Throw Down\n16. Rock and Roll\n17. Rock is Dead\n18. The Ballad of Hollywood Jack and the Rage Kage\n19. Cosmic Shame\n20. To Be the Best\n21. Tribute\n22. Double Team\n\nEncore:\n1. Sax-a-Boom\n2. Wonderboy\n3. Fuck Her Gently",
+    "notes": "",
+    "support": "Motor City Machine Guns, Team 3D",
+    "currency": "€",
+    "price": "25.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 45,
+  "fields": {
+    "owner": 10,
+    "date": "2022-12-08",
+    "band": "The Strokes",
+    "venue": "Wiltern Theatre, Los Angeles",
+    "image": "https://th.bing.com/th/id/OIP.VDuDBAptWWEXqTwPpGCvrQHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Soma\n2. The Modern Age\n3. Someday\n4. The Adults Are Talking\n5. Automatic Stop\n6. New York City Cops\n7. Reptilia\n8. Killing Lies\n9. 12:51\n10. Juicebox\n11. Is This It\n12. Hard to Explain\n13. You Only Live Once",
+    "notes": "Nice one Julius x",
+    "support": "Yeah Yeah Yeahs",
+    "currency": "$",
+    "price": "33.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 46,
+  "fields": {
+    "owner": 10,
+    "date": "2023-07-26",
+    "band": "Mac DeMarco",
+    "venue": "Cabaret Sauvage, Paris",
+    "image": "https://th.bing.com/th/id/OIP.l3z5lA5iFXYYrbwZdcVaLwHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. For the First Time\n2. The Truth\n3. Still Beating\n4. Scarecrow\n5. She Want the Sandwich\n6. Heart to Heart\n7. Round Here\n8. Another One\n9. You Made the Bed\n10. I Like Her\n11. The Stars Keep On Calling My Name\n12. Nobody\n13. Let Her Go\n14. This Old Dog\n15. Proud True Toyota\n16. My Kind of Woman\n\nEncore\n1. Chamber of Reflection\n2. Still Together\n3. I See the Devil\n4. Still Together (Reprise)",
+    "notes": "Nice one Mac x",
+    "support": "",
+    "currency": "€",
+    "price": "27.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 47,
+  "fields": {
+    "owner": 10,
+    "date": "2023-10-11",
+    "band": "Weezer",
+    "venue": "The Star Theatre, Singapore",
+    "image": "https://resources.tidal.com/images/f66d46e7/9ee7/42ff/b11c/7087dcec86cb/750x750.jpg",
+    "setlist": "1. My Name Is Jonas\n2. Beverly Hills\n3. Return to Ithaka\n4. The Good Life\n5. Pork and Beans\n6. El Scorcho\n7. Across the Sea\n8. Photograph\n9. Undone - The Sweater Song\n10. Home\n11. Susanne\n12. Only in Dreams\n13. The Greatest Man That Ever Lived (Variations on a Shaker Hymn)\n14. Island in the Sun\n15. Perfect Situation\n16. All My Favorite Songs\n17. Say It Ain't So\n18. Run, Raven, Run\n19. Hash Pipe\n20. Thank You and Good Night\n\nEncore:\n1. The Waste Land\n2. Surf Wax America\n3. Buddy Holly",
+    "notes": "Nice one Rivers x",
+    "support": "Fashion Police, The Baptasm",
+    "currency": "$",
+    "price": "600.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 48,
+  "fields": {
+    "owner": 10,
+    "date": "2022-01-25",
+    "band": "Randy Newman",
+    "venue": "Cirkus, Stockholm",
+    "image": "https://th.bing.com/th/id/R.0b9b28bb3c78c0c6c560324148724a1b?rik=us5vQF705Dn4Cg&pid=ImgRaw&r=0",
+    "setlist": "1. Baltimore\n2. Follow the Flag\n3. Song for the Dead\n4. Simon Smith and the Amazing Dancing Bear \n5.Baltimore\n6. Follow the Flag\n7. Song for the Dead\n8. Simon Smith and the Amazing Dancing Bear\n9. Marie\n10. Laugh and Be Happy\n11. Guilty\n12. Louisiana 1927\n13. You Can Leave Your Hat On\n14. Jolly Coppers on Parade\n15. I'm Dead (But I Don't Know It)\n16. Living Without You\n17. God's Song (That's Why I Love Mankind)\n18. Last Night I Had a Dream\n19. Sail Away\n20. Feels Like Home\n\nEncore:\n1. Lonely at the Top\n2. I Think It's Going to Rain Today",
+    "notes": "Nice one Randy x",
+    "support": "Lil Jon",
+    "currency": "€",
+    "price": "60.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 49,
+  "fields": {
+    "owner": 10,
+    "date": "2023-12-16",
+    "band": "AC/DC",
+    "venue": "DRU Cultuurfabriek, Ulft",
+    "image": "https://resources.tidal.com/images/4e22a750/9dea/4f7d/9c70/5ece4fa3b129/750x750.jpg",
+    "setlist": "1. Riff Raff\n2. Hell Ain't a Bad Place to Be\n3. Rock 'n' Roll Damnation\n4. Moneytalks\n5. Payment Blues\n6. The Jack\n7. Dirty Deeds Done Dirt Cheap\n8. Jailbreak\n9. Thunderstruck\n10. Shoot to Thrill\n11. Hells Bells\n12. Shoot to Thrill\n13. High Voltage\n14. You Shook Me All Night Long\n15. Whole Lotta Rosie\n16. Let There Be Rock\n17. Highway to Hell\n18. Rocker\n19. For Those About to Rock (We Salute You)\n\nEncore:\n1. Lonely at the Top\n2. I Think It's Going to Rain Today",
+    "notes": "Nice one Angus z",
+    "support": "",
+    "currency": "€",
+    "price": "80.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 50,
+  "fields": {
+    "owner": 11,
+    "date": "2022-08-04",
+    "band": "Metronomy",
+    "venue": "Columbiahalle, Berlin",
+    "image": "https://resources.tidal.com/images/e0c06371/44a9/42f2/87c5/4df3ba369b27/750x750.jpg",
+    "setlist": "1. Love Factory\n2. The Bay\n3. Corinne\n4. Reservoir\n5. It's Good to Be Back\n6. Everything Goes My Way\n7. Things Will Be Fine\n8. The Light\n9. Boy Racers\n10. The End of You Too\n11. Holiday\n12. Right On Time\n13. Salted Caramel Ice Cream\n14. Insecurity\n15. Loneliness on the Run\n16. The Look\n17. The Upsetter\n\nEncore:\n1. Old Skool\n2. Love Letters\n3. You Could Easily Have Me",
+    "notes": "",
+    "support": "",
+    "currency": "€",
+    "price": "25.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 51,
+  "fields": {
+    "owner": 11,
+    "date": "2023-08-04",
+    "band": "Fatboy Slim",
+    "venue": "Pacha, Munich",
+    "image": "https://resources.tidal.com/images/b3aaefc7/5c6e/4c5f/bac0/5a6ce1c93757/750x750.jpg",
+    "setlist": "1. Praise You\n2. Don't Stop Me Now (Queen cover)\n3. The Rockafeller Skank\n4. Right Here, Right Now\n5. Eat Sleep Rave Repeat\n6. Brimful of Asha (Cornershop cover)\n7. Blue Monday (New Order cover)\n8. Pills (Crusy cover)\n9. Sex on the Streets (Pizzaman cover)\n10. Praising You (Rita Ora cover)\n11. Star 69\n12. (I Can't Get No) Satisfaction",
+    "notes": "",
+    "support": "So good!!",
+    "currency": "€",
+    "price": "42.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 52,
+  "fields": {
+    "owner": 11,
+    "date": "2018-08-17",
+    "band": "The Chemical Brothers",
+    "venue": "Zenith, Music",
+    "image": "https://i.scdn.co/image/0524d29501a51d4bb4032c37d6320be56d9e01d8",
+    "setlist": "1. Go\n2. Do It Again / Get Yourself High\n3. MAH\n4. No Reason\n5. Hey Boy Hey Girl\n6. Eve of Destruction\n7. Feels Like I Am Dreaming\n8. Swoon\n9. Temptation / Star Guitar\n10. Live Again\n11. Got to Keep On\n12. Wide Open\n13. Escape Velocity / The Golden Path\n14. Dig Your Own Hole / Get Up on It Like This\n15. Free Yourself / Saturate / Believe\n16. Goodbye\n17. Setting Sun / Elektrobank / For That Beautiful Feeling\n18. Chemical Beats\n19. Galvanize\n20. C-H-E-M-I-C-A-L\n21. Block Rockin' Beats\n22. No Geography\n23. The Darkness That You Fear\n24. The Private Psychedelic Reel",
+    "notes": "",
+    "support": "",
+    "currency": "€",
+    "price": "28.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 53,
+  "fields": {
+    "owner": 12,
+    "date": "2023-11-05",
+    "band": "Nas",
+    "venue": "Climate Pledge Arena, Seattle",
+    "image": "https://resources.tidal.com/images/a95873f4/8cc4/40b7/acd3/9f6cb6537da5/750x750.jpg",
+    "setlist": "1. Verbal Intercourse\n2. King's Disease\n3. Blue Benz\n4. Spicy\n5. 40 Side\n6. Rare\n7. Store Run\n8. Death Row East\n9. Ugly\n10. Speechless\n11. 40-16 Building\n12. Thun\n13. I’m on Fire\n14. 27 Summers\n15. Fever\n16. TSK\n17. 30\n18. Legit\n19. Eye for an Eye (Your Beef Is Mines)",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "40.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 54,
+  "fields": {
+    "owner": 12,
+    "date": "2022-07-28",
+    "band": "Three 6 Mafia",
+    "venue": "Hard Rock Stadium, Miami",
+    "image": "https://th.bing.com/th/id/R.a7621d57756b634a89dd90762819a43b?rik=uKa4UJRyUcozNQ&pid=ImgRaw&r=0",
+    "setlist": "1. Who Run It\n2. Hit a Muthafucka\n3. Tear da Club Up '97\n4. Weak Azz Bitch\n5. Side 2 Side\n6. Roll With It\n7. Half on a Sack\n8. Where's da Bud\n9. I'm so Hi\n10. Azz & Tittiez\n11. Slob on My Knob\n12. Sippin on Some Syrup\n13. Knife Talk\n14. Cheese and Dope\n15. Chickenhead\n16. Don’t Stand So Close\n17. Ridin Spinners\n18. Poppin' My Collar\n19. Bandz a Make Her Dance\n20. Stay Fly",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "50.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 55,
+  "fields": {
+    "owner": 12,
+    "date": "2024-09-26",
+    "band": "21 Savage",
+    "venue": "AREA15, Las Vegas",
+    "image": "https://th.bing.com/th/id/OIP.fWA9iCxZXW7Zt5c1dkv5cgHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "35.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 56,
+  "fields": {
+    "owner": 12,
+    "date": "2024-10-18",
+    "band": "Gucci Mane",
+    "venue": "Liv, Miami Beach",
+    "image": "https://th.bing.com/th/id/OIP.hRX60dqPhxpdnDTl3tiEiwHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "65.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 57,
+  "fields": {
+    "owner": 13,
+    "date": "2022-05-20",
+    "band": "Phoebe Bridgers",
+    "venue": "Moody Amphitheater, Austin TX",
+    "image": "https://th.bing.com/th/id/R.96016fec662d2be92dcb942f0907eb34?rik=ikGa%2bW1mTLroFg&pid=ImgRaw&r=0",
+    "setlist": "1. Motion Sickness\n2. DVD Menu\n3. Garden Song\n4. Kyoto\n5. Punisher\n6. Halloween\n7. Smoke Signals\n8. Chinese Satellite\n9. Moon Song\n10. Scott Street\n11. Savior Complex\n12. ICU\n13. Funeral\n14. Sidelines\n15. Graceland Too\n16. I Know the End\n\nEncore:\n1.Georgia",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "32.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 58,
+  "fields": {
+    "owner": 13,
+    "date": "2023-05-17",
+    "band": "Bright Eyes",
+    "venue": "The Aztex Theatre, Texas",
+    "image": "https://resources.tidal.com/images/7ffc4bb8/4084/4150/a845/055cae39a4b5/750x750.jpg",
+    "setlist": "1. An Attempt to Tip the Scales\n2. Gold Mine Gutted\n3. Down in a Rabbit Hole\n4. We Are Nowhere and It's Now\n5. Mariana Trench\n6. Make a Plan to Love Me\n7. Double Joe\n8. Jejune Stars\n9. Contrast and Compare\n10. Poison Oak\n11. Forced Convalescence\n12. Persona non grata\n13. Shell Games\n14. Train Under Water\n15. November\n16. Another Travelin' Song\n\nEncore:\n1. Hit the Switch\n2. Wrecking Ball\n3. Road to Joy",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "34.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 59,
+  "fields": {
+    "owner": 13,
+    "date": "2018-08-22",
+    "band": "Gillian Welch",
+    "venue": "Stafford Centre, Texas",
+    "image": "https://th.bing.com/th/id/OIP.oLLdasdmfi1LhqRnTGWpuAHaHJ?rs=1&pid=ImgDetMain",
+    "setlist": "1. Scarlet Town\n2. Wayside / Back in Time\n3. No One Knows My Name\n4. Midnight Train\n5. The Way It Will Be\n6. The Way It Goes\n7. I Want to Sing That Rock and Roll\n8. Annabelle\n9. Elvis Presley Blues\n10. Red Clay Halo\n\nSet 2\n1. Wrecking Ball\n2. Hard Times\n3. Down Along the Dixie Line\n4. Six White Horses\n5. Revelator\n6. Cumberland Gap\n7. Make Me a Pallet on the Floor\n8. Tennessee\n9. Caleb Meyer\n\nEncore:\n1. Black Star\n2. Look at Miss Ohio\n\nEncore 2:\n1. Snowin' on Raton\n2. I’ll Fly Away",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "40.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 60,
+  "fields": {
+    "owner": 13,
+    "date": "2023-10-13",
+    "band": "Shania Twain",
+    "venue": "Dickies Arena",
+    "image": "https://th.bing.com/th/id/R.1913f4d2327d0d03bb0218753c879aa9?rik=rGvhgjmfq0S21A&pid=ImgRaw&r=0",
+    "setlist": "1. Waking Up Dreaming\n2. Up!\n3. Don't Be Stupid (You Know I Love You)\n4. I'm Gonna Getcha Good!\n5. Come on Over\n6. You're Still the One\n7. Giddy Up!\n8. Any Man of Mine\n9. Whose Bed Have Your Boots Been Under?\n10. Honey, I'm Home\n11. Spoonful\n12. Rock This Country!\n13. Nah! / She's Not Just a Pretty Face / Waiter! Bring Me Water! / When / Thank You Baby! (for Makin' Someday Come So Soon)\n14. Pretty Liar\n15. From This Moment On\n16. Number One\n17. Party For Two\n18. Forever and for Always\n19. (If You're Not in It for Love) I'm Outta Here!\n\nEncore:\n1. That Don't Impress Me Much\n2. Man! I Feel Like a Woman!",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "50.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 61,
+  "fields": {
+    "owner": 13,
+    "date": "2024-10-12",
+    "band": "Carrie Underwood",
+    "venue": "Frost Bank Center, Texas",
+    "image": "https://resources.tidal.com/images/d389fe17/69d9/4fc7/b634/ea3819e83f61/750x750.jpg",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "55.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 62,
+  "fields": {
+    "owner": 13,
+    "date": "2025-07-22",
+    "band": "Keith Urban",
+    "venue": "Dos Equis Pavillion, Texas",
+    "image": "https://th.bing.com/th/id/OIP.4TnWl0Qgkdj_xS9kWxXjsQHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "38.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 63,
+  "fields": {
+    "owner": 14,
+    "date": "2014-09-15",
+    "band": "Linkin Park",
+    "venue": "Hollywood Bowl, LA",
+    "image": "https://resources.tidal.com/images/90e334cd/3d8b/4db4/9a62/785aabd714a7/750x750.jpg",
+    "setlist": "1. Mashup Intro #2\n2. Guilty All the Same\n3. Given Up\n4. (Ext. Outro w/ Extra Note)\n5. Points of Authority\n6. One Step Closer\n7. Blackout\n8. Papercut\n9. Rebellion\n10. Runaway\n11. Wastelands\n12. Castle of Glass\n13. Leave Out All the Rest / Shadow of the Day / Iridescent\n14. Robot Boy\n15. Joe Hahn Solo\n16. Burn It Down\n17. Waiting for the End\n18. Final Masquerade\n19. Wretches and Kings / Remember the Name\n20. Numb\n21. In the End\n22. Faint\n\nEncore:\n1. Lost in the Echo\n2. New Divide\n3. Crawling\n4. Until It's Gone\n5. What I've Done\n6. Bleed It Out",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "40.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 64,
+  "fields": {
+    "owner": 14,
+    "date": "2023-10-26",
+    "band": "Green Day",
+    "venue": "Amazon Music Live, LA",
+    "image": "https://cdns-images.dzcdn.net/images/artist/ea15e157c48dd7cc28f3e1fe3ac029a8/500x500.jpg",
+    "setlist": "1. The American Dream Is Killing Me\n2. Basket Case\n3. Holiday\n4. Know Your Enemy\n5. Boulevard of Broken Dreams\n6. Longview\n7. Welcome to Paradise\n8. Brain Stew\n9. St. Jimmy\n10. When I Come Around\n11. American Idiot\n12. Look Ma, No Brains!\n13. Minority\n14. Good Riddance (Time of Your Life)",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "23.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 65,
+  "fields": {
+    "owner": 14,
+    "date": "2016-10-03",
+    "band": "The Rolling Stones",
+    "venue": "Bellagio, Las Vegas",
+    "image": "https://th.bing.com/th/id/OIP.4WAaY04urMbpcU8SzJfs2AHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Start Me Up\n2. You Got Me Rocking\n3. It's Only Rock 'n' Roll (but I Like It)\n4. Out of Control\n5. Tumbling Dice\n6. Wild Horses\n7. Mixed Emotions\n8. Honky Tonk Women\n9. Miss You\n10. Gimme Shelter\n11. Brown Sugar\n12. Sympathy for the Devil\n13. Jumpin' Jack Flash\n\nEncore:\n1. (I Can't Get No) Satisfaction",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "110.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 66,
+  "fields": {
+    "owner": 14,
+    "date": "2025-02-22",
+    "band": "Sia",
+    "venue": "Fremont Street Experience, Las Vegas",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebe8637c96a7aa2917eae3c54d",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "45.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 67,
+  "fields": {
+    "owner": 15,
+    "date": "2025-01-08",
+    "band": "New Found Glory",
+    "venue": "Ziak, Paris",
+    "image": "https://th.bing.com/th/id/R.4defb6e526210849c0b37176747fdeba?rik=yjM4iVva8WNhRQ&pid=ImgRaw&r=0",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "€",
+    "price": "20.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 68,
+  "fields": {
+    "owner": 15,
+    "date": "2003-01-19",
+    "band": "The Starting Line",
+    "venue": "Muziekodroom, Hasselt",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb87921d7a70d06bc6727cf658",
+    "setlist": "1. Island\n2. Surprise, Surprise\n3. Almost There, Going Nowhere\n4. Up & Go\n5. Are You Alone\n6. Left Coast Envy\n7. Greg's Last Day\n8. 21\n9. Birds\n10. Blame\n11. Anyways\n12. Making Love to the Camera\n13. Inspired by the $\n14. Luck\n15. Decisions, Decisions\n16. Way With Words\n17. Direction\n18. Ready\n19. The Drama Summer\n20. Hello Houston\n21. Leaving\n22. The Best of Me",
+    "notes": "",
+    "support": "Finch, Tellison",
+    "currency": "€",
+    "price": "20.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 69,
+  "fields": {
+    "owner": 15,
+    "date": "2025-04-16",
+    "band": "The Wonder Years",
+    "venue": "Josman",
+    "image": "https://th.bing.com/th/id/OIP.FNvL2qVt1QGNcutHiDrDKAHaHW?rs=1&pid=ImgDetMain",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "€",
+    "price": "36.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 70,
+  "fields": {
+    "owner": 15,
+    "date": "2024-11-05",
+    "band": "The Early November",
+    "venue": "ERA, Paris",
+    "image": "https://th.bing.com/th/id/OIP.SLwn1K4Wnzq9bs9L0kwhIwAAAA?rs=1&pid=ImgDetMain",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "€",
+    "price": "18.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 71,
+  "fields": {
+    "owner": 16,
+    "date": "2023-11-25",
+    "band": "Ween",
+    "venue": "John Curtin Hotel, Melbourne",
+    "image": "https://th.bing.com/th/id/R.9c097be06ba4b7590fd8ff55216b63fb?rik=Qwpit4MDCLX8Ig&pid=ImgRaw&r=0",
+    "setlist": "1. Empire\n2. Electricide\n3. Futurephobic\n4. Sidewalk\n5. Weird Dog\n6. TV Baby\n7. Realization\n8. Pleasure\n9. Dracula Drug\n10. Work\n11. Cavehead\n12. Tea\n\nEncore:\n1. Bonehead",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "26.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 72,
+  "fields": {
+    "owner": 16,
+    "date": "2018-04-15",
+    "band": "Primus",
+    "venue": "Palais Theatre, Melbourne",
+    "image": "https://th.bing.com/th/id/OIP.6Y-1OFSNT3412pLwanJj7gHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Those Damned Blue-Collar Tweekers\n2. Wynona's Big Brown Beaver\n3. The Seven\n4. Moron TV\n5. Too Many Puppies\n6. Sgt. Baker (w/ Too Many Puppies reprise)\n7. Jilly's on Smack\n8. Mr. Krinkle\n9. The Trek\n10. John the Fisherman\n11. The Storm\n12. Welcome to This World\n13. Mrs. Blaileen\n14. Jerry Was a Race Car Driver\n15. My Name Is Mud\n\nEncore:\n1. Southbound Pachyderm",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "26.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 73,
+  "fields": {
+    "owner": 16,
+    "date": "2024-12-31",
+    "band": "Phish",
+    "venue": "MSG, New York",
+    "image": "https://th.bing.com/th/id/OIP.JekCZHv6ajIz4SPpi_8PKAAAAA?rs=1&pid=ImgDetMain",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "70.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 74,
+  "fields": {
+    "owner": 17,
+    "date": "2022-12-09",
+    "band": "Bad Bunny",
+    "venue": "Estadio Azteca, Mexico City",
+    "image": "https://th.bing.com/th/id/OIP.Lf2AkrcfwRlrp_NkQxiFtQHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. Moscow Mule\n2. Me porto bonito (with Chencho Corleone)\n3. Efecto\n4. Party\n5. La corriente\n6. Neverita\n7. Ni bien ni mal / 200 MPH / La romana / Estamos bien\n8. Te boté (remix)\n9. Querida\n10. (Juan Gabriel song)\n11. Si estuviésemos juntos\n12. Si veo a tu mamá\n13. Bichiyal\n14. Una vez (with Mora)\n15. Volando Remix (with Mora & Sech)\n16. Ignorantes (with Sech)\n17. Otro trago (with Sech)\n18. Yo perreo sola\n19. Siente el boom (Tito “El Bambino” feat. Randy cover) (with Jowell & Randy)\n20. Bonita (J Balvin feat. Jowell & Randy cover) (with Jowell & Randy)\n21. El 23 (Jowell & Randy cover) (with Jowell & Randy)\n22. No te veo (Jowell & Randy cover) (with Jowell & Randy)\n23. Safaera (with Jowell & Randy)\n24. Tití me preguntó",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "649.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 75,
+  "fields": {
+    "owner": 17,
+    "date": "2024-09-15",
+    "band": "J Balvin",
+    "venue": "Arena Monterrey, Monterrey",
+    "image": "https://i.scdn.co/image/cd98152e6cf7a529d0f8bd5cf38362b6f027b085",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "500.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 76,
+  "fields": {
+    "owner": 18,
+    "date": "2023-07-07",
+    "band": "The Dead South",
+    "venue": "Ryman Auditorium, Nashville",
+    "image": "https://th.bing.com/th/id/OIP.73SahFG6eI1ELSTb2PNklwAAAA?rs=1&pid=ImgDetMain",
+    "setlist": "1. The Recap\n2. Blue Trash\n3. Boots\n4. Time for Crawlin'\n5. One Armed Man\n6. Black Lung\n7. 20 Mile Jump\n8. The Good Lord\n9. Snake Man\n10. Spaghetti\n11. Little Devil\n12. Travellin' Man\n13. That Bastard Son\n14. Deep When the River's High\n15. In Hell I'll Be in Good Company\n16. Honey You\n17. Broken Cowboy\n18. Banjo Odyssey",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "23.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 77,
+  "fields": {
+    "owner": 18,
+    "date": "2023-10-17",
+    "band": "Nick Cave",
+    "venue": "Ryman Auditorium, Nashville",
+    "image": "https://th.bing.com/th/id/OIP.G4a0W7kXInbcBa2FX84gdgAAAA?rs=1&pid=ImgDetMain",
+    "setlist": "1. Girl in Amber\n2. Higgs Boson Blues\n3. Jesus of the Moon\n4. Galleon Ship\n5. Euthanasia\n6. O Children\n7. I Need You\n8. Waiting for You\n9. Papa Won't Leave You, Henry\n10. Balcony Man\n11. Carnage\n12. The Mercy Seat\n13. Black Hair\n14. (Are You) The One That I've Been Waiting For?\n15. The Weeping Song\n16. Into My Arms\n17. Jubilee Street\n18. Push the Sky Away\n\n\nEncore:\n1. Mermaids\n2. Palaces of Montezuma\n3. Shivers\n4. Idiot Prayer\n5. The Ship Song\n6. Stranger Than Kindness\n\n\nEncore 2:\n1. God Is in the House\n2. People Ain't No Good",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "30.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 78,
+  "fields": {
+    "owner": 18,
+    "date": "2022-09-23",
+    "band": "The Paper Kites",
+    "venue": "The Basement East, Nashville",
+    "image": "https://th.bing.com/th/id/OIP.1n_6ACEYc7rCswsy9hAUHgHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "1. St. Clarity\n2. Revelator Eyes\n3. Renegade\n4. Climb on Your Tears\n5. Tenenbaum\n6. Green Valleys\n7. For All You Give\n8. Arms\n9. Paint\n10. Bloom\n11. By My Side\n12. Don't Keep Driving\n13. Without Your Love\n14. Electric Indigo\n\nEncore:\n1. Featherstone\n2. Give Me Your Fire, Give Me Your Rain",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "18.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 79,
+  "fields": {
+    "owner": 18,
+    "date": "2024-10-10",
+    "band": "The Lumineers",
+    "venue": "The East Room, NashVille",
+    "image": "https://th.bing.com/th/id/OIP.Ed2sgF5r84X31a68PxOLBQHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "20.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 80,
+  "fields": {
+    "owner": 9,
+    "date": "2025-04-16",
+    "band": "Arctic Monkeys",
+    "venue": "3Arena, Dublin",
+    "image": "https://th.bing.com/th/id/OIP.0BvsviV3pCau5jy6ouiAigHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "€",
+    "price": "35.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 81,
+  "fields": {
+    "owner": 9,
+    "date": "2025-02-22",
+    "band": "The Rakes",
+    "venue": "The Grand Social, Dublin",
+    "image": "https://th.bing.com/th/id/OIP.l8vQ7E-tQMH0crmm9GwZrQAAAA?rs=1&pid=ImgDetMain",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "$",
+    "price": "20.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 82,
+  "fields": {
+    "owner": 10,
+    "date": "2025-07-27",
+    "band": "The Weeknd",
+    "venue": "Sonic Room, Fabriano",
+    "image": "https://th.bing.com/th/id/OIP.vnzBOdyGhqTHE-gFC4oUUgHaHa?rs=1&pid=ImgDetMain",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "€",
+    "price": "40.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 83,
+  "fields": {
+    "owner": 7,
+    "date": "2024-12-16",
+    "band": "Usher",
+    "venue": "02, London",
+    "image": "https://i.scdn.co/image/2b6609f142389ae1505fd090db3861eb34ce2e13",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "50.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 84,
+  "fields": {
+    "owner": 3,
+    "date": "2024-12-10",
+    "band": "Bring Me the Horizon",
+    "venue": "Manchester Academy, Manchester",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb07603145b500ea5408074053",
+    "setlist": "",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "30.00"
+  }
+},
+{
+  "model": "gigs.gig",
+  "pk": 85,
+  "fields": {
+    "owner": 1,
+    "date": "2023-07-08",
+    "band": "Joyce Manor",
+    "venue": "The Garage",
+    "image": "https://th.bing.com/th/id/OIP.tRrXcrn6zXClQMfoBvbJ_gAAAA?rs=1&pid=ImgDetMain",
+    "setlist": "1. Heart Tattoo\n2. Derailed\n3. Gotta Let It Go\n4. Beach Community\n5. Violent Inside\n6. Ashtray Petting Zoo\n7. Don't Try\n8. Eighteen\n9. Schley\n10. Chumped\n11. Big Lie\n12. NBTSA\n13. Midnight Service at the Mutter Museum\n14. Last You Heard of Me\n15. Victoria\n16. Falling in Love Again\n17. House Warning Party\n18. Christmas Card\n19. Constant Headache\n20. Leather Jacket\n21. Catalina Fight Song\n\nEncore:\n1. Stairs\n2. Five Beer Plan",
+    "notes": "",
+    "support": "",
+    "currency": "£",
+    "price": "20.00"
+  }
+}
+]

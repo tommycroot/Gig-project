@@ -34,7 +34,7 @@ const EditProfile = () => {
   const [formFields, setFormFields] = useState({
     profile_image: info.profile_image,
     first_name: info.username,
-    location: info.location || 'Location',
+    location: info.location,
   })
 
   const [error, setError] = useState('')
@@ -123,7 +123,6 @@ const EditProfile = () => {
                   <p id="image-text">Location</p>
                   <Form.Group className='mb-3'>
                     <Form.Control type="text" name="location" placeholder={info.location || 'Location'} onChange={handleChange} value={formFields.location} />
-
                   </Form.Group>
 
                   <Button variant='primary' type='submit' id='submit' className='mb-3'>

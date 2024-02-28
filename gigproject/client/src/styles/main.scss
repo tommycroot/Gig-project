@@ -119,21 +119,21 @@ footer {
 }
 
 .glowing-img {
-  filter: drop-shadow(2px 2px 1rem #ff69b4);
-  animation: sparkleAnimation 4.5s infinite alternate-reverse;
+  filter: drop-shadow(4px 4px 2rem #f6bad8);
+  animation: sparkleAnimation 2s infinite alternate-reverse;
 }
 
 @keyframes sparkleAnimation {
   0% {
-    filter: drop-shadow(0 0 0.5rem #ff69b4);
+    filter: drop-shadow(0 0 0rem #f6bad8);
   }
 
   50% {
-    filter: drop-shadow(2px 2px 0.5rem #ff69b4);
+    filter: drop-shadow(12px 10px 4rem #fbd7e9); /* Adjusted values for bigger and brighter glow */
   }
 
   100% {
-    filter: drop-shadow(0 0 1.5rem #ff69b4);
+    filter: drop-shadow(8px 4px 1.5rem #f0cdde); /* Adjusted values for maintaining intensity */
   }
 }
 

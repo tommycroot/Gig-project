@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import RegisterView, LoginView, ProfileView, AddGigToGigsView, AddGigToUpcomingView, RemoveGigFromGigs, RemoveGigFromUpcoming, FollowUser, UnfollowUser, AllProfiles
+from .views import GooglePlacesProxy, RegisterView, LoginView, ProfileView, AddGigToGigsView, AddGigToUpcomingView, RemoveGigFromGigs, RemoveGigFromUpcoming, FollowUser, UnfollowUser, AllProfiles
 
 urlpatterns = [
     path('register/', RegisterView.as_view()),
@@ -11,5 +11,6 @@ urlpatterns = [
     path('<int:id1>/delete-upcoming/<int:id2>/', RemoveGigFromUpcoming.as_view()),
     path('<int:id1>/follow/<int:id2>/', FollowUser.as_view()),
     path('<int:id1>/unfollow/<int:id2>/', UnfollowUser.as_view()),
-    path('', AllProfiles.as_view())
+    path('', AllProfiles.as_view()),
+    path('google-places-proxy/', GooglePlacesProxy.as_view(), name='google-places-proxy')
 ]

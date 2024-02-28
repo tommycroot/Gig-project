@@ -44,8 +44,16 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'gigs',
-    'reviews'
+    'reviews',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    # Add the origins that you want to allow cross-origin requests from
+    "http://localhost:3000",  # Example: React frontend URL
+]
+
+# Allow cookies to be included in cross-origin requests
+CORS_ALLOW_CREDENTIALS = True
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -56,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 CORS_ALLOWED_ORIGINS = [

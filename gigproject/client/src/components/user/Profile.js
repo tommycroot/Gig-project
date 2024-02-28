@@ -83,19 +83,79 @@ const Profile = () => {
           filteredUpcomingGigs = filteredUpcomingGigs.filter(gig => gig.date.toLowerCase().includes(dateSearch.toLowerCase()))
         }
 
-        setProfile(data)
+
+        const currentDate = new Date().toISOString().split('T')[0]
+
+
+        // Call updateGigs with passedGigs
+        await updateGigs(filteredUpcomingGigs)
+
+        await updateUpcoming(filteredAttendedGigs)
+
+
         setFilteredGigs({
           attended: filteredAttendedGigs,
           upcoming: filteredUpcomingGigs,
         })
+
+        setProfile(data)
         setIsLoading(false)
       } catch (err) {
         console.log(err)
         setError(err.message)
       }
     }
+
     getProfile()
   }, [id, bandSearch, venueSearch, dateSearch])
+
+  const updateGigs = async (filteredGigs) => {
+
+    const currentDate = new Date().toISOString().split('T')[0]
+    const updatePromises = filteredGigs.map(async (gig) => {
+      if (gig.date <= currentDate) {
+        console.log('UPDATE PROMISES', gig.date)
+        try {
+          // Delete the gig from upcoming
+          await axios.put(`/api/auth/${sub}/delete-upcoming/${gig.id}/`)
+          // Move the gig to passed gigs
+          await axios.put(`/api/auth/${sub}/gigs/${gig.id}/`)
+          await axios.get(`/api/auth/${id}/`)
+        } catch (error) {
+          console.error(`Error updating gig with id ${gig.id}: ${error.message}`)
+        }
+      }
+
+    })
+
+    await Promise.all(updatePromises)
+
+  }
+
+  const updateUpcoming = async (filteredGigs) => {
+
+    const currentDate = new Date().toISOString().split('T')[0]
+    const updatePromises = filteredGigs.map(async (gig) => {
+      if (gig.date >= currentDate) {
+        console.log('UPDATE PROMISES', gig.date)
+        try {
+          // Delete the gig from upcoming
+          await axios.put(`/api/auth/${sub}/delete-gigs/${gig.id}/`)
+          // Move the gig to passed gigs
+          await axios.put(`/api/auth/${sub}/upcoming/${gig.id}/`)
+          await axios.get(`/api/auth/${id}/`)
+
+        } catch (error) {
+          console.error(`Error updating gig with id ${gig.id}: ${error.message}`)
+        }
+      }
+
+    })
+
+    await Promise.all(updatePromises)
+
+  }
+
 
   useEffect(() => {
     const getLoggedUser = async () => {
@@ -273,16 +333,19 @@ const Profile = () => {
             </Row>
             <div className='following-collection-wrapper'>
               <h4 id='following'>Following:</h4>
-              <Row className='content-slider'>
+              <Row id='following-slider' className='content-slider slider'> 
                 {/* eslint-disable-next-line camelcase */}
                 {profile.following && profile.following.length > 0 ? (
                   profile.following.map(item => {
                     {/* eslint-disable-next-line camelcase */ }
                     const { profile_image, username, id } = item
                     return (
-                      <Col key={id}>
-                        {/* eslint-disable-next-line camelcase */}
-                        <img src={profile_image} height='100' />
+                      <Col id='following-col' key={id}>
+                        
+                        <Link to={`/profile/${id}`}>
+                          {/* eslint-disable-next-line camelcase */}
+                          <img src={profile_image} height='100' alt="Profile" />
+                        </Link>
                         <h4 id='follow'><Link to={`/profile/${id}`}>{username}</Link></h4>
 
                       </Col>
@@ -310,9 +373,9 @@ const Profile = () => {
                         <Col className='mobile-card-col' key={id}>
 
                           <Link to={`/gigs/${id}`}>
-                            <span id='band-title'>{band}</span><br></br>
-                            <img src={image} height='100' alt={`${band} at ${venue} on ${date}`} />
-                            <span id='upcoming-mobile-span'><br></br><span id='venue-title'>{venue}<br></br></span><span id='date-title'>{ukFormattedDate}</span></span>
+
+                            <img id='mobile-image' src={image} height='100' alt={`${band} at ${venue} on ${date}`} />
+                            <span id='upcoming-mobile-span'><br></br><span id='band-title'>{band}</span><br></br><span id='venue-title'>{venue}</span><br></br><span id='date-title'>{ukFormattedDate}</span></span>
                           </Link>
                         </Col>
                       )
@@ -332,7 +395,8 @@ const Profile = () => {
                         <Col className='mobile-card-col' key={id}>
 
                           <Link className='mobile-card' to={`/gigs/${id}`}>
-                            <img src={image} height='100' alt={`${band} at ${venue} on ${date}`} />
+
+                            <img id='mobile-image' src={image} height='100' alt={`${band} at ${venue} on ${date}`} />
                             <span id='upcoming-mobile-span'><br></br><span id='band-title'>{band}</span><br></br><span id='venue-title'>{venue}</span><br></br><span id='date-title'>{ukFormattedDate}</span></span>
                           </Link>
                         </Col>
@@ -365,7 +429,7 @@ const Profile = () => {
                   filteredGigs.attended && filteredGigs.attended.length > 0 ?
                     filteredGigs.attended.map(gig => {
                       const { id, image, band, venue, date } = gig
-                      console.log('DATE', gig.date)
+
                       const ukFormattedDate = new Date(date).toLocaleDateString('en-GB')
                       return (
                         <Col key={id} md={8} lg={4} className='gig-container'>

@@ -17,7 +17,7 @@
     }
 
     .user-info {
-      margin-top: 17px;
+      margin-top: 1px;
       background: #ff69b4;
       text-align: center;
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
@@ -40,6 +40,7 @@
 
         font-size: 30px;
         font-weight: 800;
+        margin-top: 10px;
       }
 
       .toggle-button {
@@ -84,7 +85,6 @@
 
 
   .following-collection-wrapper {
-    overflow-x: hidden;
     margin-top: 15px;
     padding: 15px;
     background: #ff69b4;
@@ -92,21 +92,33 @@
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 6px 0 rgba(0, 0, 0, 0.5);
     border: solid 5px white;
     border-radius: 15px;
-    width: 84%;
-    margin-left: 50px;
+    width: 83%;
+    margin-left: 54px;
+    overflow-x: auto;
 
-    p {
-      color: #0f1e3c;
-      font-weight: 600;
-      font-size: 16px;
-    }
+  }
+
+  .following-collection-wrapper p {
+    color: #0f1e3c;
+    font-weight: 600;
+    font-size: 16px;
   }
 }
 
 
+.left-col .following-collection-wrapper {
+  scrollbar-color: #0f1e3c #ff69b4;
+}
+
+.content-slider.row {
+  scrollbar-width: thin;
+  overflow-x: auto;
+}
+
 .left-col .following-collection-wrapper h4 {
   font-weight: 1000;
   color: #0f1e3c;
+
 }
 
 .card-title {
@@ -164,7 +176,6 @@
     color: #0f1e3c;
   }
 
-
   .search-bars input {
     border: none;
     border-radius: 5px;
@@ -199,26 +210,24 @@
   }
 
   .following-collection-wrapper {
-  width: 100% !important;
-  margin-left: 0px !important;
+    width: 100% !important;
+    margin-left: 0px !important;
+  }
+
+  #follow a {
+    font-size: 12px;
+  }
+
+  #mobile-image {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
 }
-
-}
-
-
-
-
-
 
 .search-bars {
   margin: 15px 0;
   display: flex;
   flex-direction: column;
-
-
-
-
-
 }
 
 input {
@@ -229,7 +238,6 @@ input {
   margin: 5px 0px 0px 0px;
 }
 
-
 .profile-p {
   margin-top: 50px;
   color: #ff69b4;
@@ -237,7 +245,7 @@ input {
 
 .content-slider-vert {
   overflow-y: scroll !important;
-  height: 100vh;
+  height: 105vh;
 }
 
 #h41,
@@ -247,26 +255,24 @@ input {
 
 #band-title {
   font-weight: 900;
-  font-size: 11px;
+  font-size: 15px;
 }
 
 #venue-title {
   font-weight: 900;
-
-
+  font-size: 11px;
 }
 
 #date-title {
   font-weight: 800;
   font-size: 10px;
   margin-bottom: 40px;
-  color: wheat;
 }
 
 .mobile-card-col {
   min-width: 170px;
   margin-bottom: 25px;
-  border-right: 1px solid #0f1e3c;
+  border-right: 1px solid wheat;
 }
 
 .card {
@@ -277,8 +283,6 @@ input {
   font-weight: 800;
   color: #0f1e3c;
 }
-
-
 
 #here {
   color: wheat;
@@ -304,5 +308,13 @@ input {
 }
 
 .content-slider .col h4 a {
-  color:#0f1e3c !important;
+  color: #0f1e3c !important;
+}
+
+#follow a {
+  font-size: 12px;
+}
+
+#following-col {
+  margin-bottom: 10px;
 }

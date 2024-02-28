@@ -1,0 +1,1343 @@
+[
+{
+  "model": "reviews.review",
+  "pk": 3,
+  "fields": {
+    "gig": 46,
+    "owner": 1,
+    "review_text": "Wow Paris! I didn't know you were such a well travelled man. I'd love to see Mac live."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 4,
+  "fields": {
+    "gig": 46,
+    "owner": 10,
+    "review_text": "Hey @TommyC! I was there on the podcast tour, so got lucky! I'd definitely see him again if I get the chance."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 5,
+  "fields": {
+    "gig": 24,
+    "owner": 10,
+    "review_text": "Sublime are one of my favourites! I think Jakob is doing a great job filling in for his Dad and is making him proud!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 6,
+  "fields": {
+    "gig": 51,
+    "owner": 10,
+    "review_text": "I was there too! Added to my gigs. Hope you're well x"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 7,
+  "fields": {
+    "gig": 85,
+    "owner": 10,
+    "review_text": "I really wish I could have gone to this gig!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 8,
+  "fields": {
+    "gig": 1,
+    "owner": 10,
+    "review_text": "My first time seeing The Menzingers! What a great night :D"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 9,
+  "fields": {
+    "gig": 1,
+    "owner": 1,
+    "review_text": "@Brannigan316 The first of many hopefully! I'm glad you tagged along for this one man."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 10,
+  "fields": {
+    "gig": 4,
+    "owner": 15,
+    "review_text": "Less Than Jake rock!!! I've seen them 18 times and counting."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 11,
+  "fields": {
+    "gig": 46,
+    "owner": 15,
+    "review_text": "Wow, you went to Paris to see Mac! I am jealous, dude!!!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 12,
+  "fields": {
+    "gig": 25,
+    "owner": 15,
+    "review_text": "This might well be the coolest set they've ever done. All the hits baby!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 13,
+  "fields": {
+    "gig": 22,
+    "owner": 15,
+    "review_text": "It's always a great time seeing Reel Big Fish! \"I think I'll have myself a beer\""
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 14,
+  "fields": {
+    "gig": 7,
+    "owner": 15,
+    "review_text": "Oh nice! This should be an amazing show. I feel old though."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 15,
+  "fields": {
+    "gig": 5,
+    "owner": 15,
+    "review_text": "Really underrated artist. Hope I get to see him live one day soon."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 16,
+  "fields": {
+    "gig": 48,
+    "owner": 3,
+    "review_text": "I didn't know you were a fan of Randy, I met him in Disneyland once - really nice guy."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 17,
+  "fields": {
+    "gig": 49,
+    "owner": 3,
+    "review_text": "I didn't think you knew who AC/DC are."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 18,
+  "fields": {
+    "gig": 49,
+    "owner": 10,
+    "review_text": "I know who AC/DC are, Paul! LOL"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 19,
+  "fields": {
+    "gig": 25,
+    "owner": 10,
+    "review_text": "I like the old school comic book look of these guys, but I've never listened to them. Is this Travis Barker's old band?"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 20,
+  "fields": {
+    "gig": 52,
+    "owner": 10,
+    "review_text": "Nice!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 21,
+  "fields": {
+    "gig": 77,
+    "owner": 3,
+    "review_text": "Nice! I am just getting into his music."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 22,
+  "fields": {
+    "gig": 42,
+    "owner": 3,
+    "review_text": "This is a real band. I love them."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 23,
+  "fields": {
+    "gig": 8,
+    "owner": 3,
+    "review_text": "Up the punx!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 24,
+  "fields": {
+    "gig": 65,
+    "owner": 10,
+    "review_text": "I remember you telling me I needed to see The Stones! Well I can proudly say I have. I saw them this summer at a festival and they were as good as you said they'd be."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 25,
+  "fields": {
+    "gig": 23,
+    "owner": 10,
+    "review_text": "\"I've never had to knock on wood, but I know someone who has...\" \nWhat a song, what a band :)"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 26,
+  "fields": {
+    "gig": 6,
+    "owner": 9,
+    "review_text": "Milo and Bill are two of the coolest nerds in punk. I really can relate to how much coffee they drink too lol."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 27,
+  "fields": {
+    "gig": 5,
+    "owner": 9,
+    "review_text": "Oh nice, I listen to him a lot whilst I'm editing. I need soothing sounds, it's a painful and unforgiving process."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 28,
+  "fields": {
+    "gig": 49,
+    "owner": 9,
+    "review_text": "I refuse to believe you know who AC/DC are!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 29,
+  "fields": {
+    "gig": 47,
+    "owner": 9,
+    "review_text": "Haha oh Weezer, how did you go from being one of my favourite bands to one of my most detested. Thank you for the memories though."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 30,
+  "fields": {
+    "gig": 51,
+    "owner": 9,
+    "review_text": "Great set."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 31,
+  "fields": {
+    "gig": 82,
+    "owner": 9,
+    "review_text": "You like The Weeknd? You are constantly full of surprises, buddy."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 32,
+  "fields": {
+    "gig": 8,
+    "owner": 9,
+    "review_text": "I prefer Operation Ivy, but I'd love to see these guys live. I'd probably even have a little mosh."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 33,
+  "fields": {
+    "gig": 38,
+    "owner": 10,
+    "review_text": "She is seriously sooooooo good."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 34,
+  "fields": {
+    "gig": 3,
+    "owner": 10,
+    "review_text": "Another gig I missed out on! I really am a Grade A Chump sometimes."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 35,
+  "fields": {
+    "gig": 3,
+    "owner": 5,
+    "review_text": "Ha what a funny name."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 36,
+  "fields": {
+    "gig": 54,
+    "owner": 5,
+    "review_text": "Now we're talking. Stay FLY Gilly."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 37,
+  "fields": {
+    "gig": 38,
+    "owner": 5,
+    "review_text": "A very impressive artist indeed."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 38,
+  "fields": {
+    "gig": 37,
+    "owner": 5,
+    "review_text": "She needs to come to Toronto!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 39,
+  "fields": {
+    "gig": 72,
+    "owner": 5,
+    "review_text": "These look like some funky cats I might enjoy and I hear this guy is incredible on the bass but they're way too heavy for me."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 40,
+  "fields": {
+    "gig": 55,
+    "owner": 5,
+    "review_text": "I'm going to see him on this tour too hopefully (if I can get it off work!)"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 41,
+  "fields": {
+    "gig": 76,
+    "owner": 9,
+    "review_text": "Great band, man."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 42,
+  "fields": {
+    "gig": 77,
+    "owner": 9,
+    "review_text": "You have great taste my friend. The Nick Cave gig I was attending got cancelled due to COVID but hopefully I'll see him soon."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 43,
+  "fields": {
+    "gig": 79,
+    "owner": 9,
+    "review_text": "Oh yes, another great band. I saw them back in 2012 and have been desperate to see them again."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 44,
+  "fields": {
+    "gig": 3,
+    "owner": 2,
+    "review_text": "They have my heart <3"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 45,
+  "fields": {
+    "gig": 49,
+    "owner": 2,
+    "review_text": "He's pretending he knows who AC/DC are again... why???"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 46,
+  "fields": {
+    "gig": 34,
+    "owner": 2,
+    "review_text": "What a voice!!!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 47,
+  "fields": {
+    "gig": 35,
+    "owner": 2,
+    "review_text": "Haha you love Ed <3"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 48,
+  "fields": {
+    "gig": 40,
+    "owner": 2,
+    "review_text": "I still listen to these guys loads, really reminds me of college lol x"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 49,
+  "fields": {
+    "gig": 74,
+    "owner": 2,
+    "review_text": "Wow, Jowell & Randy were there too! Jealous!! I will see him one day I promise xx"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 50,
+  "fields": {
+    "gig": 11,
+    "owner": 8,
+    "review_text": "These are quickly becoming my new obsession."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 51,
+  "fields": {
+    "gig": 9,
+    "owner": 8,
+    "review_text": "I wish I could have gone to this one xx"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 52,
+  "fields": {
+    "gig": 19,
+    "owner": 8,
+    "review_text": "Scary!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 53,
+  "fields": {
+    "gig": 85,
+    "owner": 8,
+    "review_text": "I love the singer so much lol xx"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 54,
+  "fields": {
+    "gig": 40,
+    "owner": 8,
+    "review_text": "They're the best. First band I ever saw lol xxx"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 55,
+  "fields": {
+    "gig": 63,
+    "owner": 8,
+    "review_text": "I love Linkin Park so much. They were my first tattoo as well. My husband Darren plays them all the time when he's painting. I'm so glad you saw them X"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 56,
+  "fields": {
+    "gig": 64,
+    "owner": 8,
+    "review_text": "Yes! OMG one of the best bands ever to see LIVE xoxox"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 57,
+  "fields": {
+    "gig": 14,
+    "owner": 8,
+    "review_text": "x Sad boys <3 x"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 58,
+  "fields": {
+    "gig": 34,
+    "owner": 6,
+    "review_text": "Incredible. I think she's got my favorite voice (except for Adele lol) x"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 59,
+  "fields": {
+    "gig": 60,
+    "owner": 6,
+    "review_text": "OMG I was just saying to the girls we need to go see Shania! xx"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 60,
+  "fields": {
+    "gig": 27,
+    "owner": 6,
+    "review_text": "The best rapper since Tupac! X"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 61,
+  "fields": {
+    "gig": 27,
+    "owner": 5,
+    "review_text": "@cattiien WORD"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 62,
+  "fields": {
+    "gig": 59,
+    "owner": 6,
+    "review_text": "She is an inspiration x"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 63,
+  "fields": {
+    "gig": 61,
+    "owner": 6,
+    "review_text": "On my bucket list to see her. What a powerful voice xx"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 64,
+  "fields": {
+    "gig": 74,
+    "owner": 6,
+    "review_text": "Bunny is sick! I wish I knew Spanish just so I knew what he was saying lol xx"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 65,
+  "fields": {
+    "gig": 74,
+    "owner": 17,
+    "review_text": "@cattiien I will teach you :) it will be fun"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 66,
+  "fields": {
+    "gig": 32,
+    "owner": 17,
+    "review_text": "I love Taylor!!!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 67,
+  "fields": {
+    "gig": 37,
+    "owner": 17,
+    "review_text": "@LemaireMSSP And Mexico too! :)"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 68,
+  "fields": {
+    "gig": 29,
+    "owner": 17,
+    "review_text": "I want to see Cudi just once in my life!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 69,
+  "fields": {
+    "gig": 26,
+    "owner": 17,
+    "review_text": "He is amazing. Every album I love so much xXx"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 70,
+  "fields": {
+    "gig": 31,
+    "owner": 17,
+    "review_text": "I wish so much I could go"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 71,
+  "fields": {
+    "gig": 29,
+    "owner": 12,
+    "review_text": "He really is your guy ha"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 72,
+  "fields": {
+    "gig": 31,
+    "owner": 12,
+    "review_text": "Yes Lemaire!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 73,
+  "fields": {
+    "gig": 72,
+    "owner": 12,
+    "review_text": "Glad to see you finally got to see Primus Mr. Matt"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 74,
+  "fields": {
+    "gig": 71,
+    "owner": 12,
+    "review_text": "We're talking about the O.G.'s of cool right here, am I right?"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 75,
+  "fields": {
+    "gig": 73,
+    "owner": 12,
+    "review_text": "I'm coming too! We are gonna have a blast, we always do."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 76,
+  "fields": {
+    "gig": 49,
+    "owner": 12,
+    "review_text": "I don't know why this guy pretends to know who AC/DC are, but it's funny."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 77,
+  "fields": {
+    "gig": 4,
+    "owner": 12,
+    "review_text": "Hope you had a blast TC"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 78,
+  "fields": {
+    "gig": 8,
+    "owner": 12,
+    "review_text": "First time seeing Rancid? That's not very punk...."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 79,
+  "fields": {
+    "gig": 3,
+    "owner": 12,
+    "review_text": "Another band I haven't heard of, TC. I'll check them out on the name alone."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 80,
+  "fields": {
+    "gig": 30,
+    "owner": 12,
+    "review_text": "You still talk about this show every time you hear a Beyonce song. I've got to say, it's rather annoying."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 81,
+  "fields": {
+    "gig": 27,
+    "owner": 12,
+    "review_text": "I hope you enjoyed it my man!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 82,
+  "fields": {
+    "gig": 49,
+    "owner": 7,
+    "review_text": "Why you lying?"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 83,
+  "fields": {
+    "gig": 74,
+    "owner": 7,
+    "review_text": "Bad Bunny is on repeat in my house atm and it's staying that way"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 84,
+  "fields": {
+    "gig": 4,
+    "owner": 7,
+    "review_text": "These guys were really fun to watch when I saw them. Glad to see they still tour :)"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 85,
+  "fields": {
+    "gig": 57,
+    "owner": 7,
+    "review_text": "Phoebe is really talented. I want to see her when she's next on tour. Please let that be soon lol xx"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 86,
+  "fields": {
+    "gig": 38,
+    "owner": 7,
+    "review_text": "She was amazing!!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 87,
+  "fields": {
+    "gig": 44,
+    "owner": 7,
+    "review_text": "LOL these guys are hilarious. Jack Black always makes me smile :)"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 88,
+  "fields": {
+    "gig": 49,
+    "owner": 15,
+    "review_text": "hahaha he does not know AC/DC"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 89,
+  "fields": {
+    "gig": 23,
+    "owner": 15,
+    "review_text": "Definitely in my Top 5 bands of all time, man"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 90,
+  "fields": {
+    "gig": 82,
+    "owner": 15,
+    "review_text": "I'm really excited to see him perform. Hope it's a good show man!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 91,
+  "fields": {
+    "gig": 51,
+    "owner": 11,
+    "review_text": "@Brannigan316 I know:) so fun :)"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 92,
+  "fields": {
+    "gig": 48,
+    "owner": 11,
+    "review_text": "I love Randy Newman more than you :)"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 93,
+  "fields": {
+    "gig": 46,
+    "owner": 11,
+    "review_text": "Paris is beautiful. I hope you had a fantastic trip and enjoyed the show."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 94,
+  "fields": {
+    "gig": 39,
+    "owner": 11,
+    "review_text": "Hayley Williams is my favourite woman in rock xxx"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 95,
+  "fields": {
+    "gig": 40,
+    "owner": 11,
+    "review_text": "hehe I love them too x"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 96,
+  "fields": {
+    "gig": 22,
+    "owner": 4,
+    "review_text": "When Fish are in town the Ska Boy is down to clown."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 97,
+  "fields": {
+    "gig": 24,
+    "owner": 4,
+    "review_text": "SkaBoy most definitely approves of young Jakob taking over the band"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 98,
+  "fields": {
+    "gig": 4,
+    "owner": 4,
+    "review_text": "Quite simply the best dudes in the whole entire universe. I've met Roger twice  now and both times he was charming and hilarious."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 99,
+  "fields": {
+    "gig": 68,
+    "owner": 4,
+    "review_text": "Wow, now this is a blast from the past. I don't always just listen to Ska you know... Spare ticket?"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 100,
+  "fields": {
+    "gig": 67,
+    "owner": 4,
+    "review_text": "Awesome, your favourite band!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 101,
+  "fields": {
+    "gig": 23,
+    "owner": 4,
+    "review_text": "The ska is strong with this band... :D"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 102,
+  "fields": {
+    "gig": 75,
+    "owner": 4,
+    "review_text": "Hope you have a great birthday! x"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 103,
+  "fields": {
+    "gig": 65,
+    "owner": 4,
+    "review_text": "A legendary band indeed. They're going to live forever!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 104,
+  "fields": {
+    "gig": 66,
+    "owner": 4,
+    "review_text": "Nice!!!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 105,
+  "fields": {
+    "gig": 47,
+    "owner": 14,
+    "review_text": "You saw Weezer and I didn't!? Say it ain't so!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 106,
+  "fields": {
+    "gig": 49,
+    "owner": 14,
+    "review_text": "He lies. He doesn't know who AC/DC are!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 107,
+  "fields": {
+    "gig": 4,
+    "owner": 14,
+    "review_text": "Aww :) I've always wanted to see LTJ"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 108,
+  "fields": {
+    "gig": 5,
+    "owner": 14,
+    "review_text": "Amazing show :)"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 109,
+  "fields": {
+    "gig": 8,
+    "owner": 14,
+    "review_text": "Yay Rancid! I saw them on this tour and it was one of the best shows I've been to, even though I lost a shoe!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 110,
+  "fields": {
+    "gig": 6,
+    "owner": 14,
+    "review_text": "Awesome dude!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 111,
+  "fields": {
+    "gig": 39,
+    "owner": 14,
+    "review_text": "I love Hayley Williams so much. If they split up, I won't ever get to see them live :("
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 112,
+  "fields": {
+    "gig": 58,
+    "owner": 14,
+    "review_text": "I saw Bright Eyes sometime around 2004 and it was honestly the best time ever. This was before he had any much mainstream success. I feel blessed :D xx"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 113,
+  "fields": {
+    "gig": 57,
+    "owner": 14,
+    "review_text": "I really like the look of that setlist. I might have to see if she's on tour soon now lol"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 114,
+  "fields": {
+    "gig": 60,
+    "owner": 14,
+    "review_text": "\"Let's go girls...\""
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 115,
+  "fields": {
+    "gig": 70,
+    "owner": 14,
+    "review_text": "I want to come to this too if I can get someone to cover my shift lol"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 116,
+  "fields": {
+    "gig": 69,
+    "owner": 14,
+    "review_text": "Finally we're going to see TWY! Woo!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 117,
+  "fields": {
+    "gig": 64,
+    "owner": 14,
+    "review_text": "@RiotLover THE best band ever haha"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 118,
+  "fields": {
+    "gig": 64,
+    "owner": 15,
+    "review_text": "I had the raddest time on this tour"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 119,
+  "fields": {
+    "gig": 72,
+    "owner": 16,
+    "review_text": "@LemaireMSSP I'm taking you to see Primus on their next tour dude and you're going to love it."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 120,
+  "fields": {
+    "gig": 54,
+    "owner": 16,
+    "review_text": "Damn dude this was a great show."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 121,
+  "fields": {
+    "gig": 53,
+    "owner": 16,
+    "review_text": "I think you during the encore at this show was the most fun I've ever seen you have in person lol"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 122,
+  "fields": {
+    "gig": 71,
+    "owner": 16,
+    "review_text": "@EvenGilly You are correct, sir."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 123,
+  "fields": {
+    "gig": 73,
+    "owner": 16,
+    "review_text": "@EvenGilly It's the defining moment of our lives lol"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 124,
+  "fields": {
+    "gig": 49,
+    "owner": 16,
+    "review_text": "Your honor, this man clearly does not know who AC/DC are and the prosecution rests."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 125,
+  "fields": {
+    "gig": 30,
+    "owner": 16,
+    "review_text": "@EvenGilly You sound like a hater"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 126,
+  "fields": {
+    "gig": 31,
+    "owner": 12,
+    "review_text": "I'm going Lemaire!!!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 127,
+  "fields": {
+    "gig": 16,
+    "owner": 18,
+    "review_text": "Metallica rock!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 128,
+  "fields": {
+    "gig": 19,
+    "owner": 18,
+    "review_text": "I'd pay to see these guys any day. They're very technical and passionate musicians."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 129,
+  "fields": {
+    "gig": 20,
+    "owner": 18,
+    "review_text": "Wow @Paul_Howes - you really love your metal!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 130,
+  "fields": {
+    "gig": 79,
+    "owner": 18,
+    "review_text": "@CaptainDragon Hopefully you won't have to wait too long my friend. They're terrific performers."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 131,
+  "fields": {
+    "gig": 77,
+    "owner": 18,
+    "review_text": "Nick Cave is my favourite artist. Simply phenomenal."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 132,
+  "fields": {
+    "gig": 36,
+    "owner": 18,
+    "review_text": "Little Simz is an artist I think will be around for a very long time."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 133,
+  "fields": {
+    "gig": 83,
+    "owner": 18,
+    "review_text": "I bet you're excited after seeing his Superbowl show!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 134,
+  "fields": {
+    "gig": 83,
+    "owner": 7,
+    "review_text": "@NorthKing11 Yes can't wait!!!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 135,
+  "fields": {
+    "gig": 57,
+    "owner": 7,
+    "review_text": "Amazing talent and performer."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 136,
+  "fields": {
+    "gig": 75,
+    "owner": 7,
+    "review_text": "We're gonna have such a good time, we've been waiting to see him forever."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 137,
+  "fields": {
+    "gig": 33,
+    "owner": 7,
+    "review_text": "That setlist is perfect *sigh*"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 138,
+  "fields": {
+    "gig": 20,
+    "owner": 3,
+    "review_text": "@NorthKing11 Indeed I do, son."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 139,
+  "fields": {
+    "gig": 17,
+    "owner": 18,
+    "review_text": "I just don't get the hate."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 140,
+  "fields": {
+    "gig": 17,
+    "owner": 3,
+    "review_text": "@NorthKing11 They're missing out"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 141,
+  "fields": {
+    "gig": 44,
+    "owner": 3,
+    "review_text": "Impressive setlist from the boys!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 142,
+  "fields": {
+    "gig": 19,
+    "owner": 12,
+    "review_text": "I still can't believe you invited me to this."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 143,
+  "fields": {
+    "gig": 20,
+    "owner": 12,
+    "review_text": "I look at these guys and think they look like they play really smooth jazz"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 144,
+  "fields": {
+    "gig": 49,
+    "owner": 13,
+    "review_text": "I've never seen such an obvious example of someone not knowing who AC/DC are."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 145,
+  "fields": {
+    "gig": 17,
+    "owner": 13,
+    "review_text": "Nickelback are really good. I don't get it!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 146,
+  "fields": {
+    "gig": 30,
+    "owner": 5,
+    "review_text": "@MojoShaman Haha absolutely."
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 147,
+  "fields": {
+    "gig": 59,
+    "owner": 13,
+    "review_text": "@cattiien Best show I've been to xx"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 148,
+  "fields": {
+    "gig": 50,
+    "owner": 13,
+    "review_text": "Great set list :) x"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 149,
+  "fields": {
+    "gig": 60,
+    "owner": 13,
+    "review_text": "@SoJessWhat @cattiien Best encore, honestly girls, I never wanted it to end x"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 150,
+  "fields": {
+    "gig": 37,
+    "owner": 13,
+    "review_text": "And Texas lol!"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 151,
+  "fields": {
+    "gig": 49,
+    "owner": 4,
+    "review_text": "The commitment to this AC/DC lie amuses the SkaBoy. Give it up my man."
+  }
+}
+]
