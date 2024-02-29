@@ -90,7 +90,7 @@ const SearchUsers = () => {
           ) : filteredUsers.length > 0 ? (
             filteredUsers.map(user => {
               // eslint-disable-next-line camelcase
-              const { id, profile_image, username, gigs, location, reviews } = user
+              const { id, profile_image, username, gigs, location, upcoming } = user
               return (
                 <Col key={id} lg={2} md={2} sm={4} xs={4} className={sub === id ? 'gig-container' : 'gig-container'}>
                   <Link to={`/profile/${id}/`}>
@@ -101,7 +101,7 @@ const SearchUsers = () => {
                         <Card.Title id='search-users-title'>{username}</Card.Title>
                         <Card.Text id='search-users-text'><span id='span-card'>Location:</span> {location ? location : 'unknown'}</Card.Text>
                         <Card.Text id='search-users-text'><span id='span-card'>Shows:</span>  {gigs.length}</Card.Text>
-                        <Card.Text id='search-users-text'><span id='span-card'>Comments:</span>  {reviews ? reviews.length : '0'}</Card.Text>
+                        <Card.Text id='search-users-text'><span id='span-card'>Upcoming:</span>  {upcoming.length}</Card.Text>
                       </Card.Body>
                     </Card>
                   </Link>

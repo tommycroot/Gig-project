@@ -105,7 +105,6 @@ footer {
 .text-center-neon {
   animation: neon 2.5s infinite alternate;
   font-size: 14px;
-  ;
 }
 
 @keyframes neon {
@@ -120,7 +119,7 @@ footer {
 
 .glowing-img {
   filter: drop-shadow(4px 4px 2rem #f6bad8);
-  animation: sparkleAnimation 2s infinite alternate-reverse;
+  animation: sparkleAnimation 2.5s infinite alternate-reverse;
 }
 
 @keyframes sparkleAnimation {
@@ -129,11 +128,11 @@ footer {
   }
 
   50% {
-    filter: drop-shadow(12px 10px 4rem #fbd7e9); /* Adjusted values for bigger and brighter glow */
+    filter: drop-shadow(8px 6px 4rem #fbd7e9); /* Adjusted values for bigger and brighter glow */
   }
 
   100% {
-    filter: drop-shadow(8px 4px 1.5rem #f0cdde); /* Adjusted values for maintaining intensity */
+    filter: drop-shadow(6px 2px 1.5rem #f1dde7); /* Adjusted values for maintaining intensity */
   }
 }
 
