@@ -138,9 +138,11 @@ const EditGig = () => {
       const apiUrl = `http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${encodeURIComponent(
         bandName
       )}&api_key=${apiKey}&format=json`
-
+  
       const response = await axios.get(apiUrl)
-      setBandSuggestions(response.data.results.artistmatches.artist)
+      // Ensure that the response data structure is consistent with the venue suggestions
+      // Set bandSuggestions to an array of suggestions if available, otherwise set it to an empty array
+      setBandSuggestions(response.data.results.artistmatches.artist || [])
     } catch (err) {
       setError(err.message)
     }
