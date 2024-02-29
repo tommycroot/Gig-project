@@ -225,6 +225,22 @@ const EditGig = () => {
     )
   }
 
+  const renderBandSuggestions = () => {
+    return (
+      <ul className='band-suggestions'>
+        {Array.isArray(bandSuggestions) && bandSuggestions.slice(0, displayedResults).map((suggestion) => (
+          <li key={suggestion.mbid} onClick={() => selectBandSuggestion(suggestion)}>
+            {suggestion.name}
+          </li>
+        ))}
+        {bandSuggestions && bandSuggestions.length > displayedResults && (
+          <Button className='show-more-button' onClick={handleShowMore}>
+            Show More
+          </Button>
+        )}
+      </ul>
+    )
+  }
 
   return (
     <main>
@@ -252,18 +268,7 @@ const EditGig = () => {
                       onChange={handleBandChange}
                       value={formFields.band}
                     />
-                    <ul className='band-suggestions'>
-                      {bandSuggestions.slice(0, displayedResults).map((suggestion) => (
-                        <li key={suggestion.mbid} onClick={() => selectBandSuggestion(suggestion)}>
-                          {suggestion.name}
-                        </li>
-                      ))}
-                    </ul>
-                    {bandSuggestions.length > displayedResults && (
-                      <Button className='show-more-button' onClick={handleShowMore}>
-                        Show More
-                      </Button>
-                    )}
+                    {renderBandSuggestions()}
                   </Form.Group>
 
                   <InputMask mask="99-99-9999" value={formFields.date} onChange={handleChange}>
