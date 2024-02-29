@@ -293,6 +293,7 @@ const Profile = () => {
                   {profile.profile_image ? <img src={profile.profile_image} alt="profile picture" className='profile-pic'></img> : <img src='https://png.pngtree.com/png-clipart/20210129/ourmid/pngtree-default-male-avatar-png-image_2811083.jpg' alt="profile picture" className='profile-pic'></img>}
                   {profile.location ? <p><span id='span-profile'>Location: </span> {profile.location}</p> : <p><span id='span-profile'>Location: </span> unknown</p>}
                   {profile.gigs ? <p><span id='span-profile'>Shows: </span> {profile.gigs.length}</p> : <p><span id='span-profile'>Shows: </span> 0</p>}
+                  {profile.gigs ? <p><span id='span-profile'>Upcoming: </span> {profile.gigs.length}</p> : <p><span id='span-profile'>Upcoming: </span> 0</p>}
                   {profile.following ? <p><span id='span-profile'>Following: </span> {profile.following.length}</p> : <p><span id='span-profile'>Following: </span> 0</p>}
                   {profile.reviews ? <p><span id='span-profile'>Comments: </span> {profile.reviews.length}</p> : <p><span id='span-profile'>Reviews: </span> 0</p>}
                   <button className='toggle-button' id='show-upcoming' onClick={toggleGigView}>Show Upcoming</button>

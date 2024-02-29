@@ -99,9 +99,9 @@ const SearchUsers = () => {
                       <Card.Img variant='top' src={profile_image}></Card.Img>
                       <Card.Body>
                         <Card.Title id='search-users-title'>{username}</Card.Title>
-                        <Card.Text id='search-users-text'><span id='span-card'>Location:</span> {location ? location : 'unknown'}</Card.Text>
+                        <Card.Text id='search-users-text'><span id='span-card-loc'>Location:</span> {location ? location : 'unknown'}</Card.Text>
                         <Card.Text id='search-users-text'><span id='span-card'>Shows:</span>  {gigs.length}</Card.Text>
-                        <Card.Text id='search-users-text'><span id='span-card'>Upcoming:</span>  {upcoming.length}</Card.Text>
+                        <Card.Text id='search-users-text'><span id='span-card-up'>Upcoming:</span>  {upcoming.length}</Card.Text>
                       </Card.Body>
                     </Card>
                   </Link>
