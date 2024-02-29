@@ -132,13 +132,14 @@ const EditGig = () => {
     }
   }
 
-  const fetchBandSuggestions = async (bandName) => {
+  const fetchBandSuggestions = async (e) => {
+    const bandName = e.target.value // Extract the band name from the event object
     try {
       const apiKey = '79ed5b7b15ccda2a23fe2df661c9b0f0'
       const apiUrl = `http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${encodeURIComponent(
         bandName
       )}&api_key=${apiKey}&format=json`
-  
+
       const response = await axios.get(apiUrl)
       // Ensure that the response data structure is consistent with the venue suggestions
       // Set bandSuggestions to an array of suggestions if available, otherwise set it to an empty array
@@ -147,14 +148,15 @@ const EditGig = () => {
       setError(err.message)
     }
   }
-
   const handleBandChange = (e) => {
     const bandName = e.target.value
     setFormFields({ ...formFields, band: bandName })
     if (bandName.length > 2) {
-      fetchBandSuggestions(bandName)
+      fetchBandSuggestions(e) // Pass the event object to fetchBandSuggestions
     }
   }
+
+
 
   const selectBandSuggestion = async (suggestion) => {
     try {
@@ -230,8 +232,8 @@ const EditGig = () => {
   const renderBandSuggestions = () => {
     return (
       <ul className='band-suggestions'>
-        {Array.isArray(bandSuggestions) && bandSuggestions.slice(0, displayedResults).map((suggestion) => (
-          <li key={suggestion.mbid} onClick={() => selectBandSuggestion(suggestion)}>
+        {Array.isArray(bandSuggestions) && bandSuggestions.slice(0, displayedResults).map((suggestion, index) => (
+          <li key={index} onClick={() => selectBandSuggestion(suggestion)}>
             {suggestion.name}
           </li>
         ))}
@@ -243,6 +245,7 @@ const EditGig = () => {
       </ul>
     )
   }
+  
 
   return (
     <main>
