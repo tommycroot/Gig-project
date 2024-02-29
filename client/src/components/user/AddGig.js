@@ -110,7 +110,7 @@ const AddGig = () => {
   const selectBandSuggestion = async (suggestion) => {
     try {
       const apiKey = '79ed5b7b15ccda2a23fe2df661c9b0f0'
-      const apiUrl = `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(
+      const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(
         suggestion.name
       )}&api_key=${apiKey}&format=json`
 
