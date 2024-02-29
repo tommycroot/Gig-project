@@ -171,7 +171,7 @@ const EditGig = () => {
       setFormFields({
         ...formFields,
         band: suggestion.name,
-        setlist: artistInfo.bio.summary, // Set the setlist to band information
+        // setlist: artistInfo.bio.summary, // Set the setlist to band information
       })
 
       setBandSuggestions([])
