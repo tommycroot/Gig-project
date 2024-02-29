@@ -136,7 +136,7 @@ const EditGig = () => {
     const bandName = e.target.value // Extract the band name from the event object
     try {
       const apiKey = '79ed5b7b15ccda2a23fe2df661c9b0f0'
-      const apiUrl = `http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${encodeURIComponent(
+      const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${encodeURIComponent(
         bandName
       )}&api_key=${apiKey}&format=json`
 
